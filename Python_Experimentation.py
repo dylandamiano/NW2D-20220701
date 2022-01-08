@@ -37,8 +37,8 @@ from os import path
 pygame.init()
 
 DISPLAYSURF = pygame.display.set_mode(size=(900,900))
-FPS = pygame.time.Clock()
-FPS.tick(60)
+FPSClock = pygame.time.Clock()
+FPS = 100
 
 pygame.display.set_caption("NAVAL Warfare 2d")
 
@@ -86,8 +86,7 @@ def createCloud():
 
 while True:
     pygame.display.update()
-
-    #print(pygame.time.Clock().get_fps())
+    pygame.time.Clock().tick(FPS)
 
     DISPLAYSURF.blit(mapInit.image, mapInit.rect)
     DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
@@ -106,7 +105,7 @@ while True:
             #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
 
     for event in pygame.event.get():
-        if event.type == "QUIT":
+        if event.type == QUIT:
             pygame.display.quit()
             break
         elif event.type == pygame.KEYDOWN:

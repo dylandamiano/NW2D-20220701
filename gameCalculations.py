@@ -1,13 +1,9 @@
 '''
-    This module will contain the mathematical functions
-    for performing actions such as casting projectiles, and
-    map boundary detection.
+    This module (gameCalculations.py) will handle player-based movement.
 
-    Without this module, there would be entities (players included)
-    sailing off of the edge of the map without any repercussions.
+    For this module, we are going to utilize Vector2, which is a representation of
+    Vectors and Points given on the their respective X and Y axis.
 '''
-
-# Defines the edges of the map #
 
 import pygame
 import warshipClonkses
@@ -30,25 +26,25 @@ terrainBorder = {
 
 # Will handle the movement of the Ship/Sprite itself, needs some minor touch up
 def move(x, y, character):
-    character.rect.move_ip(x, y)
 
+    character.rect.move_ip(x, y)
     character.setLocation(x, y)
 
     #print(character.getLocation("x"), character.getLocation("y"))
 
 # Will check to see if the Ship/Sprite is moving within the boundaries, it if is not within bounds then the function will not fire
 def checkBorder(nextX, nextY, incrX, incrY, character):
-    if ( ( (nextX - incrX) > (mapBorders["LEFT"] + 5) ) and ( (nextX + incrX) <= (mapBorders["RIGHT"] ) ) ): # Handles the horizontal movement of the Ship
+    if ( ( (nextX + incrX) > (mapBorders["LEFT"] ) ) and ( (nextX + incrX) <= (mapBorders["RIGHT"] ) ) ): # Handles the horizontal movement of the Ship
         #print("moving player...")
         move(incrX, 0, character)
-    elif ( ( (nextX + incrX) >= (mapBorders["LEFT"] + 5) ) and ( (nextX + incrX) < (mapBorders["RIGHT"]) ) ): # Handles the horizontal movement of the Ship
+    elif ( ( (nextX + incrX) >= (mapBorders["LEFT"] ) ) and ( (nextX + incrX) < (mapBorders["RIGHT"]) ) ): # Handles the horizontal movement of the Ship
         #print("moving player...")
         move(incrX, 0, character)
 
-    if ( ( (nextY - incrY ) > (mapBorders["TOP"] + 5) ) and ( (nextY + incrY ) <= (mapBorders["BOTTOM"] ) ) ): # Handles the vertical movement of the Ship
+    if ( ( (nextY + incrY ) > (mapBorders["TOP"] ) ) and ( (nextY + incrY ) <= (mapBorders["BOTTOM"] ) ) ): # Handles the vertical movement of the Ship
             #print("moving player...")
             move(0, incrY, character)
-    elif ( ( (nextY + incrY ) >= (mapBorders["TOP"] + 5) ) and ( (nextY + incrY ) < (mapBorders["BOTTOM"]) ) ): # Handles the vertical movement of the Ship
+    elif ( ( (nextY + incrY ) >= (mapBorders["TOP"] ) ) and ( (nextY + incrY ) < (mapBorders["BOTTOM"]) ) ): # Handles the vertical movement of the Ship
             #print("moving player...")
             move(0, incrY, character)
 

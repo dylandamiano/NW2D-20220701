@@ -107,13 +107,15 @@ class Carrier(Ship):
         super().__init__(player)
         self.airWing = 5
 
+        self.position = pygame.Vector2(self.getLocation("x"), self.getLocation("y"))
+
         self.imageRestore = "Ships\\CarrierConcept.png"
 
         self.image = pygame.image.load(self.imageRestore)
         self.image = pygame.transform.scale(self.image, (20, 41))
 
         self.rect = self.image.get_rect()
-        self.rect.center = (self.getLocation("x"), self.getLocation("y"))
+        self.rect.center = (self.position.x, self.position.y)
 
     def test(self):
         print("Yes")
