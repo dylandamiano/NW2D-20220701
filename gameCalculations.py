@@ -27,7 +27,7 @@ mapBorders = {
 terrainBorder = {
     
 }
-
+yes
 # Will handle the movement of the Ship/Sprite itself, needs some minor touch up
 def move(x, y, character):
     character.rect.move_ip(x, y)

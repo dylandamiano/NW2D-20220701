@@ -14,3 +14,4 @@ Project timeline is as follows:
 
 Once completed, the game will be intended for free use for others to study
 how it was created.
+
