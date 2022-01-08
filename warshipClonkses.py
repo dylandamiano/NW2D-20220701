@@ -40,7 +40,11 @@ class Ship(pygame.sprite.Sprite):
 
         self.orientation = 0
 
-        self.vec = pygame.math.Vector2
+        self.vec2 = pygame.math.Vector2
+
+        self.v2Pos = self.vec2(450, 450)
+        self.v2Rot = self.vec2(0, 0)
+        self.v2Vel = self.vec2(0, 0)
 
         self.owner = player.username # will include the player's object
         self.health = 100
@@ -107,15 +111,13 @@ class Carrier(Ship):
         super().__init__(player)
         self.airWing = 5
 
-        self.position = pygame.Vector2(self.getLocation("x"), self.getLocation("y"))
-
         self.imageRestore = "Ships\\CarrierConcept.png"
 
         self.image = pygame.image.load(self.imageRestore)
         self.image = pygame.transform.scale(self.image, (20, 41))
 
         self.rect = self.image.get_rect()
-        self.rect.center = (self.position.x, self.position.y)
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def test(self):
         print("Yes")
