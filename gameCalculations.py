@@ -28,7 +28,7 @@ terrainBorder = {
 def move(x, y, character):
 
     character.rect.move_ip(x, y)
-    character.setLocation(x, y)
+    character.setLocation(character.v2Pos.x, character.v2Pos.y)
 
     #print(character.getLocation("x"), character.getLocation("y"))
 

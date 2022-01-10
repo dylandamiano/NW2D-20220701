@@ -43,8 +43,9 @@ class Ship(pygame.sprite.Sprite):
         self.vec2 = pygame.math.Vector2
 
         self.v2Pos = self.vec2(450, 450)
-        self.v2Rot = self.vec2(0, 0)
         self.v2Vel = self.vec2(0, 0)
+
+        self.v2Rot = 0
 
         self.owner = player.username # will include the player's object
         self.health = 100
@@ -68,8 +69,9 @@ class Ship(pygame.sprite.Sprite):
             return self.shipCoords["y"]
 
     def setLocation(self, posX, posY):
-        self.shipCoords["x"] += posX
-        self.shipCoords["y"] += posY
+        self.v2Pos.rotate_ip(self.v2Rot)
+        self.v2Pos += self.v2Vel
+        self.rect.center = self.v2Pos
 
 class Battleship(Ship):
     def __init__(self, player):
