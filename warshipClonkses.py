@@ -38,6 +38,7 @@ class Ship(pygame.sprite.Sprite):
     def __init__(self, player):
         pygame.sprite.Sprite.__init__(self)
 
+        self.localOrientation = 0
         self.vec2 = pygame.math.Vector2
 
         self.v2Pos = self.vec2(450, 450)
@@ -119,11 +120,12 @@ class Carrier(Ship):
 
 
     def setRotation(self):
-        self.v2Rot = 5
+        self.v2Rot = 1
         self.v2Vel.rotate_ip(self.v2Rot)
+        self.localOrientation -= self.v2Rot
 
         self.image = pygame.image.load(self.imageRestore)
-        self.image = pygame.transform.rotate(self.image, self.v2Rot)
+        self.image = pygame.transform.rotate(self.image, self.localOrientation)
 
         self.rect = self.image.get_rect()
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
