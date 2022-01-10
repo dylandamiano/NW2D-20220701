@@ -26,11 +26,10 @@ terrainBorder = {
 
 # Will handle the movement of the Ship/Sprite itself, needs some minor touch up
 def move(x, y, character):
-
-    character.rect.move_ip(x, y)
     character.setLocation(character.v2Pos.x, character.v2Pos.y)
 
-    #print(character.getLocation("x"), character.getLocation("y"))
+def rotate():
+    pass
 
 # Will check to see if the Ship/Sprite is moving within the boundaries, it if is not within bounds then the function will not fire
 def checkBorder(nextX, nextY, incrX, incrY, character):
@@ -66,6 +65,10 @@ def key_PressedEvent(eventFired, character = None):
     elif (eventFired.key == pygame.K_s):
         checkBorder(character.getLocation("x"), character.getLocation("y"), 0, 10, character)
     elif (eventFired.key == pygame.K_d):
+        checkBorder(character.getLocation("x"), character.getLocation("y"), 10, 0, character)
+    elif (eventFired.key == pygame.K_q):
+        checkBorder(character.getLocation("x"), character.getLocation("y"), 10, 0, character)
+    elif (eventFired.key == pygame.K_e):
         checkBorder(character.getLocation("x"), character.getLocation("y"), 10, 0, character)
 
     # Will be setup for a second player in the future, not at this moment though. Will currently be 'alternative keybinds' for the time being

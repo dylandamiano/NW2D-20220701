@@ -38,12 +38,10 @@ class Ship(pygame.sprite.Sprite):
     def __init__(self, player):
         pygame.sprite.Sprite.__init__(self)
 
-        self.orientation = 0
-
         self.vec2 = pygame.math.Vector2
 
         self.v2Pos = self.vec2(450, 450)
-        self.v2Vel = self.vec2(0, 0)
+        self.v2Vel = self.vec2(0, -.5)
 
         self.v2Rot = 0
 
@@ -67,11 +65,6 @@ class Ship(pygame.sprite.Sprite):
             return self.shipCoords["x"]
         elif (req == "y"):
             return self.shipCoords["y"]
-
-    def setLocation(self, posX, posY):
-        self.v2Pos.rotate_ip(self.v2Rot)
-        self.v2Pos += self.v2Vel
-        self.rect.center = self.v2Pos
 
 class Battleship(Ship):
     def __init__(self, player):
@@ -123,3 +116,25 @@ class Carrier(Ship):
 
     def test(self):
         print("Yes")
+
+
+    def setRotation(self):
+        self.v2Rot = 5
+        self.v2Vel.rotate_ip(self.v2Rot)
+
+        self.image = pygame.image.load(self.imageRestore)
+        self.image = pygame.transform.rotate(self.image, self.v2Rot)
+
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+    def setLocation(self, posX, posY):
+        self.setRotation()
+
+        self.v2Pos += self.v2Vel
+        self.rect.center = self.v2Pos
+
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
