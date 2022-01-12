@@ -144,10 +144,12 @@ class Carrier(Ship):
 
     def setLocation(self, moveDir):
         if (moveDir == "Forward"):
+            self.v2Pos += self.v2Vel
             pass
         elif (moveDir == "Backwards"):
+            self.v2Pos -= self.v2Vel
             pass
-        self.v2Pos += self.v2Vel
+        #self.v2Pos += self.v2Vel
         self.rect.center = self.v2Pos
 
         self.rect = self.image.get_rect()

@@ -25,27 +25,27 @@ terrainBorder = {
 }
 
 # Will handle the movement of the Ship/Sprite itself, needs some minor touch up
-def move(x, y, character):
-    character.setLocation(character.v2Pos.x, character.v2Pos.y)
+def move(x, y, character, direction):
+    character.setLocation(direction)
 
 def rotateChar(character, direction):
     character.setRotation(direction)
 
 # Will check to see if the Ship/Sprite is moving within the boundaries, it if is not within bounds then the function will not fire
-def checkBorder(nextX, nextY, incrX, incrY, character):
+def checkBorder(nextX, nextY, incrX, incrY, character, moveDir):
     if ( ( (nextX + incrX) > (mapBorders["LEFT"] ) ) and ( (nextX + incrX) <= (mapBorders["RIGHT"] ) ) ): # Handles the horizontal movement of the Ship
         #print("moving player...")
-        move(incrX, 0, character)
+        move(incrX, 0, character, moveDir)
     elif ( ( (nextX + incrX) >= (mapBorders["LEFT"] ) ) and ( (nextX + incrX) < (mapBorders["RIGHT"]) ) ): # Handles the horizontal movement of the Ship
         #print("moving player...")
-        move(incrX, 0, character)
+        move(incrX, 0, character, moveDir)
 
     if ( ( (nextY + incrY ) > (mapBorders["TOP"] ) ) and ( (nextY + incrY ) <= (mapBorders["BOTTOM"] ) ) ): # Handles the vertical movement of the Ship
             #print("moving player...")
-            move(0, incrY, character)
+            move(0, incrY, character, moveDir)
     elif ( ( (nextY + incrY ) >= (mapBorders["TOP"] ) ) and ( (nextY + incrY ) < (mapBorders["BOTTOM"]) ) ): # Handles the vertical movement of the Ship
             #print("moving player...")
-            move(0, incrY, character)
+            move(0, incrY, character, moveDir)
 
     #print(character.getLocation("x"), character.getLocation("y"))
 
@@ -59,13 +59,9 @@ def key_PressedEvent(eventFired, character = None):
 
     # Primary movement keybinds initially intended for Player1.
     if (eventFired.key == pygame.K_w):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 0, -10, character)
-    elif (eventFired.key == pygame.K_a):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), -10, 0, character)
+        checkBorder(character.getLocation("x"), character.getLocation("y"), 0, -10, character, "Forward")
     elif (eventFired.key == pygame.K_s):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 0, 10, character)
-    elif (eventFired.key == pygame.K_d):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 10, 0, character)
+        checkBorder(character.getLocation("x"), character.getLocation("y"), 0, 10, character, "Backwards")
     elif (eventFired.key == pygame.K_q):
         rotateChar(character, "Left")
     elif (eventFired.key == pygame.K_e):
@@ -73,13 +69,9 @@ def key_PressedEvent(eventFired, character = None):
 
     # Will be setup for a second player in the future, not at this moment though. Will currently be 'alternative keybinds' for the time being
     if (eventFired.key == pygame.K_UP):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 0, -10, character)
-    elif (eventFired.key == pygame.K_LEFT):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), -10, 0, character)
+         checkBorder(character.getLocation("x"), character.getLocation("y"), 0, -10, character, "Forward")
     elif (eventFired.key == pygame.K_DOWN):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 0, 10, character)
-    elif (eventFired.key == pygame.K_RIGHT):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 1, 0, character)
+        checkBorder(character.getLocation("x"), character.getLocation("y"), 0, 10, character, "Backwards")
     elif (eventFired.key == pygame.K_RALT):
         rotateChar(character, "Left")
     elif (eventFired.key == pygame.K_RCTRL):

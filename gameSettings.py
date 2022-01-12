@@ -44,6 +44,7 @@ cloudDims = [
 
 '''
 
+activeEntities = []
 activeClouds = []
 
 # \\ IGNORE THE FUNCTIONS BELOW! THESE ARE FOR DEBUGGING! // #
