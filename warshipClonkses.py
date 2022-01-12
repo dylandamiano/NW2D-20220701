@@ -54,8 +54,8 @@ class Ship(pygame.sprite.Sprite):
         self.TlastMove = 0
 
         self.shipCoords = {
-            "x": 450,
-            "y": 450,
+            "x": self.v2Pos.x,
+            "y": self.v2Pos.y,
             }
 
     def shipStatus(self):
@@ -134,8 +134,6 @@ class Carrier(Ship):
 
         print(self.localOrientation)
 
-
-
         self.image = pygame.image.load(self.imageRestore)
         self.image = pygame.transform.rotate(self.image, self.localOrientation)
 
@@ -144,7 +142,11 @@ class Carrier(Ship):
 
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
-    def setLocation(self, posX, posY):
+    def setLocation(self, moveDir):
+        if (moveDir == "Forward"):
+            pass
+        elif (moveDir == "Backwards"):
+            pass
         self.v2Pos += self.v2Vel
         self.rect.center = self.v2Pos
 
