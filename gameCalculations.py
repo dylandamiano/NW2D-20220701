@@ -28,8 +28,8 @@ terrainBorder = {
 def move(x, y, character):
     character.setLocation(character.v2Pos.x, character.v2Pos.y)
 
-def rotate():
-    pass
+def rotateChar(character, direction):
+    character.setRotation(direction)
 
 # Will check to see if the Ship/Sprite is moving within the boundaries, it if is not within bounds then the function will not fire
 def checkBorder(nextX, nextY, incrX, incrY, character):
@@ -67,9 +67,9 @@ def key_PressedEvent(eventFired, character = None):
     elif (eventFired.key == pygame.K_d):
         checkBorder(character.getLocation("x"), character.getLocation("y"), 10, 0, character)
     elif (eventFired.key == pygame.K_q):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 10, 0, character)
+        rotateChar(character, "Left")
     elif (eventFired.key == pygame.K_e):
-        checkBorder(character.getLocation("x"), character.getLocation("y"), 10, 0, character)
+        rotateChar(character, "Right")
 
     # Will be setup for a second player in the future, not at this moment though. Will currently be 'alternative keybinds' for the time being
     if (eventFired.key == pygame.K_UP):
@@ -80,3 +80,7 @@ def key_PressedEvent(eventFired, character = None):
         checkBorder(character.getLocation("x"), character.getLocation("y"), 0, 10, character)
     elif (eventFired.key == pygame.K_RIGHT):
         checkBorder(character.getLocation("x"), character.getLocation("y"), 1, 0, character)
+    elif (eventFired.key == pygame.K_RALT):
+        rotateChar(character, "Left")
+    elif (eventFired.key == pygame.K_RCTRL):
+        rotateChar(character, "Right")

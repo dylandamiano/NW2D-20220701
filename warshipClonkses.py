@@ -119,10 +119,22 @@ class Carrier(Ship):
         print("Yes")
 
 
-    def setRotation(self):
-        self.v2Rot = 1
-        self.v2Vel.rotate_ip(self.v2Rot)
-        self.localOrientation -= self.v2Rot
+    def setRotation(self, rotDir):
+        if (self.localOrientation <= 0):
+            self.localOrientation = 360
+        elif (self.localOrientation >= 360):
+            self.localOrientation = 0
+
+        if (rotDir == "Left"):
+            self.v2Vel.rotate_ip(-1)
+            self.localOrientation += 1
+        elif (rotDir == "Right"):
+            self.v2Vel.rotate_ip(1)
+            self.localOrientation -= 1
+
+        print(self.localOrientation)
+
+
 
         self.image = pygame.image.load(self.imageRestore)
         self.image = pygame.transform.rotate(self.image, self.localOrientation)
@@ -133,8 +145,6 @@ class Carrier(Ship):
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def setLocation(self, posX, posY):
-        self.setRotation()
-
         self.v2Pos += self.v2Vel
         self.rect.center = self.v2Pos
 
