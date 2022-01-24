@@ -115,7 +115,7 @@ while running == True:
         elif event.type == pygame.KEYDOWN:
             gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
         
-        if event.type == MOUSEBUTTONDOWN:
+        if event.type == pygame.MOUSEBUTTONDOWN:
             graphicInterface.checkMouseInput()
 
 

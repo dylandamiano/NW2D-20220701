@@ -11,7 +11,7 @@ userInterfaces = []
 
 class menuInterface(pygame.sprite.Sprite):
     def __init__(self):
-        super().__init__(self)
+        pygame.sprite.Sprite.__init__(self)
 
         self.originalMenu = None
         self.currentMenu = None
@@ -27,14 +27,11 @@ class menuInterface(pygame.sprite.Sprite):
 
 class headsUpDisplay(pygame.sprite.Sprite):
     def __init__(self):
-        super().__init(self)
+        pygame.sprite.Sprite.__init(self)
         
         self.active = False
         self.originalMenu = None
         self.currentMenu = None
-
-mainMenu = menuInterface()
-userInterfaces.append(mainMenu)
 
 def checkMouseInput():
     mousePosition = pygame.mouse.get_pos() # Returns as tuple (x, y)
@@ -42,5 +39,5 @@ def checkMouseInput():
     for i in userInterfaces:
         if (userInterfaces[i].active == False):
             pass
-        elif userInterfaces[i].active == True):
+        elif (userInterfaces[i].active == True):
             print("This UI module is currently active!")
