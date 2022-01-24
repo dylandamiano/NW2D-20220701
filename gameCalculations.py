@@ -76,3 +76,6 @@ def key_PressedEvent(eventFired, character = None):
         rotateChar(character, "Left")
     elif (eventFired.key == pygame.K_RCTRL):
         rotateChar(character, "Right")
+
+def key_held(keysDown):
+    pass

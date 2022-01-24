@@ -14,6 +14,7 @@ import time
 
 import gameCalculations
 import gameSettings
+import graphicInterface
 
 import pygame, sys
 from pygame.locals import *
@@ -84,7 +85,11 @@ def createCloud():
         - Everything that is critical to the functionality of the game will be called in this loop such as moving characters (clouds, and other things alike) around the viewport.
 '''
 
-while True:
+running = True
+
+# pygame.display.toggle_fullscreen()
+
+while running == True:
     pygame.display.update()
     pygame.time.Clock().tick(FPS)
 
@@ -93,7 +98,6 @@ while True:
 
     for i in range (0, math.floor(random.randrange(0, 5))):
         createCloud()
-
 
     #t = time.time()
 
@@ -106,9 +110,16 @@ while True:
 
     for event in pygame.event.get():
         if event.type == QUIT:
+            running = False
             pygame.display.quit()
-            break
         elif event.type == pygame.KEYDOWN:
             gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
+        
+        if event.type == MOUSEBUTTONDOWN:
+            graphicInterface.checkMouseInput()
+
+
+    gameCalculations.key_held(pygame.key.get_pressed())
 
 print("Press <ENTER> to exit")
+

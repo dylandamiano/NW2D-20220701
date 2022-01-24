@@ -23,6 +23,8 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.username = name
         self.ship = None
+        
+        self.health = 100
           
         print("New class initialized...")
 
@@ -40,7 +42,7 @@ class Player(pygame.sprite.Sprite):
             pass
 
     def destroy(self):
-        self.health = 10
+        self.health = 0
 
     def get_stats(self, stat):
         if (stat == "username"):
@@ -53,6 +55,10 @@ class Player(pygame.sprite.Sprite):
             else:
                 print("No ship was found...")
 
+class computerEntity(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__(self)
+        pass
 
 '''
 
