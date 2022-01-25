@@ -105,11 +105,16 @@ while running == True:
         #if ((t - gameSettings.activeClouds[x].lastMove) >= gameSettings.activeClouds[x].moveInt):
             #gameSettings.activeClouds[x].lastMove = t
             gameSettings.activeClouds[x].rect.move_ip(1, 0)
+            gameSettings.activeClouds[x].posX += 1
             DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
             #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
 
+            #if (gameSettings.activeClouds[x].posX >= 1000):
+                #del gameSettings.activeClouds[x]
+                #print(gameSettings.activeClouds)
+            
     for event in pygame.event.get():
-        if event.type == QUIT:
+        if event.type == pygame.QUIT:
             running = False
             pygame.display.quit()
         elif event.type == pygame.KEYDOWN:

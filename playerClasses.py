@@ -109,8 +109,13 @@ class Cloud(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (-10, 450)
 
+        self.posX = 0
+
         self.moveInt = 0
         self.lastMove = 0
+    
+    def __del__(self):
+        print("Cloud removed!")
 
     def createLocation(self):
         randomY = math.floor(random.randrange(0, 900))

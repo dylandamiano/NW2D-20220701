@@ -132,7 +132,7 @@ class Carrier(Ship):
             self.v2Vel.rotate_ip(1)
             self.localOrientation -= 1
 
-        print(self.localOrientation)
+        #print(self.localOrientation)
 
         self.image = pygame.image.load(self.imageRestore)
         self.image = pygame.transform.rotate(self.image, self.localOrientation)
