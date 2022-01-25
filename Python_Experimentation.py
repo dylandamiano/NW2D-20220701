@@ -89,30 +89,30 @@ running = True
 
 # pygame.display.toggle_fullscreen()
 
+pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
+
 while running == True:
     pygame.display.update()
     pygame.time.Clock().tick(FPS)
 
     DISPLAYSURF.blit(mapInit.image, mapInit.rect)
     DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
+    pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
 
     for i in range (0, math.floor(random.randrange(0, 5))):
         createCloud()
 
     #t = time.time()
 
-    for x in range (0, len(gameSettings.activeClouds)):
+    for x in range(0, len(gameSettings.activeClouds)):
+
         #if ((t - gameSettings.activeClouds[x].lastMove) >= gameSettings.activeClouds[x].moveInt):
             #gameSettings.activeClouds[x].lastMove = t
-            gameSettings.activeClouds[x].rect.move_ip(1, 0)
-            gameSettings.activeClouds[x].posX += 1
-            DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
+        gameSettings.activeClouds[x].rect.move_ip(1, 0)
+        gameSettings.activeClouds[x].posX += 1
+        DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
             #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
-
-            #if (gameSettings.activeClouds[x].posX >= 1000):
-                #del gameSettings.activeClouds[x]
-                #print(gameSettings.activeClouds)
-            
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -127,4 +127,3 @@ while running == True:
     gameCalculations.key_held(pygame.key.get_pressed())
 
 print("Press <ENTER> to exit")
-
