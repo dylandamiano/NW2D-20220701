@@ -38,37 +38,37 @@ class menuInterface(pygame.sprite.Sprite):
 
         self.buttonRegions = {
             "left-one": {
-                "top-left": (125.2 - (309.1/2), 196.8 - (125.2/2)),
+                "top-left": (125.2, 196.8),
                 "bottom-right": (125.2 + (309.1/2), 196.8 + (125.2/2)),
                 "center": (125.2, 196.8)
              },
 
             "left-two": {
-                "top-left": (125.2 - (309.1/2), 298 - (125.2/2)),
+                "top-left": (125.2, 298),
                 "bottom-right": (125.2 + (309.1/2), 298 + (125.2/2)),
                 "center": (125.2, 298)
              },
 
             "left-three": {
-                "top-left": (125.2 - (309.1/2), 399.2 - (125.2/2)),
+                "top-left": (125.2, 399.2),
                 "bottom-right": (125.2 + (309.1/2), 399.2 + (125.2/2)),
                 "center": (125.2, 399.2)
              },
 
             "right-one": {
-                "top-left": (464.7 - (309.1/2), 196.8 - (125.2/2)),
+                "top-left": (464.7, 196.8),
                 "bottom-right": (464.7 + (309.1/2), 196.8 + (125.2/2)),
                 "center": (464.7, 196.8)
              },
 
             "right-two": {
-                "top-left": (464.7 - (309.1/2), 298 - (125.2/2)),
+                "top-left": (464.7, 298),
                 "bottom-right": (464.7 + (309.1/2), 298 + (125.2/2)),
                 "center": (464.7, 298)
              },
 
             "right-three": {
-                "top-left": (464.7 + (309.1/2), 399.2 + (125.2/2)),
+                "top-left": (464.7, 399.2),
                 "bottom-right": (464.7 - (309.1/2), 399.2 - (125.2/2)),
                 "center": (464.7, 399.2)
              }
@@ -87,7 +87,15 @@ mainMenu = menuInterface()
 
 def checkMouseInput():
     mousePosition = pygame.mouse.get_pos() # Returns as tuple (x, y)
-    if (mainMenu.buttonRegions["left-one"]["top-left"][0] >= mousePosition[0]) and (mainMenu.buttonRegions["left-one"]["bottom-right"][0] <= mousePosition[0]) and (mainMenu.buttonRegions["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["left-one"]["bottom-right"][1] <= mousePosition[1]):
-        print("Square one!")
+    print(mousePosition[0])
+    print(mainMenu.buttonRegions["left-one"]["top-left"][0])
+    #print(mainMenu.buttonRegions["left-one"]["bottom-right"][0])
+    if (mousePosition[0] >= abs(mainMenu.buttonRegions["left-one"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["left-one"]["bottom-right"][0]))): #and (mainMenu.buttonRegions["left-one"]["bottom-right"][0] <= mousePosition[0]): #and (mainMenu.buttonRegions["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["left-one"]["bottom-right"][1] <= mousePosition[1]):
+        if (mousePosition[1] >= abs(mainMenu.buttonRegions["left-one"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["left-one"]["bottom-right"][1]))):
+            print("Square one!")
+        elif (mousePosition[1] >= abs(mainMenu.buttonRegions["left-two"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["left-two"]["bottom-right"][1]))):
+            print("Square two!")
+        elif (mousePosition[1] >= abs(mainMenu.buttonRegions["left-three"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["left-three"]["bottom-right"][1]))):
+            print("Square three!")
     else:
         print("not quite...")
