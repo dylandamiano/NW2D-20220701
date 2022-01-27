@@ -31,7 +31,7 @@ from os import path
     we are calling the pygame framework and initializing it.
 
     To simplify:
-        - The window is being created at a scale of 900 x 900 pixels (tall and wide)
+        - The window is being created at a scale of 900 x 900 pixels (tall and wide)      - Wasky was here
         - Capping the framerate to 60 FPS to limit system resources
         - Setting the window title to inform the user on which one they have open
 '''
@@ -91,7 +91,11 @@ running = True
 
 pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
 
+#pygame.mixer.music.load('HaloMjolnirMix.mp3')
+#pygame.mixer.music.play(-1)
+
 while running == True:
+    
     pygame.display.update()
     pygame.time.Clock().tick(FPS)
 
@@ -126,6 +130,8 @@ while running == True:
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             graphicInterface.checkMouseInput()
+
+
 
 
     gameCalculations.key_held(pygame.key.get_pressed())
