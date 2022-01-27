@@ -18,6 +18,13 @@ pygame.init()
 
 '''
 
+'''
+    Projectile hit-boundaries will be based upon either a circle or square.
+    I have not decided on which to do yet
+'''
+
 class projectile(pygame.sprite.Sprite):
     def __init__(self):
+        pass
+    def __del__(self):
         pass

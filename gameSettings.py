@@ -1,3 +1,14 @@
+import pygame
+from pygame.locals import *
+
+playerOneKeys = {
+    "W_Hold": False,
+    "A_Hold": False,
+    "S_Hold": False,
+    "D_Hold": False
+}
+
+
 maxPlayers = 2
 playerCount = 0
 
@@ -27,6 +38,35 @@ cloudDims = [
     [114, 117],
     [96, 68]
 ]
+
+def getKeyStatus():
+    return playerOneKeys
+
+def setKeyStatus(regKey = None, eventType = None):
+    if (eventType == "UP"):
+        if (regKey.key == pygame.K_w):
+            playerOneKeys["W_Hold"] = False
+            print("W lifted")
+        elif (regKey.key == pygame.K_a):
+            playerOneKeys["A_Hold"] = False
+        elif (regKey.key == pygame.K_s):
+            playerOneKeys["S_Hold"] = False
+        elif (regKey.key == pygame.K_d):
+            playerOneKeys["D_Hold"] = False
+    elif (eventType == "DOWN"):
+        if (regKey.key == pygame.K_w): 
+            playerOneKeys["W_Hold"] = True
+            print("W pressed")
+        elif (regKey.key == pygame.K_a):
+            playerOneKeys["A_Hold"] = True
+        elif (regKey.key == pygame.K_s):
+            playerOneKeys["S_Hold"] = True
+        elif (regKey.key == pygame.K_d):
+            playerOneKeys["D_Hold"] = True
+    elif (regKey == None and eventType == None):
+        pass
+
+    print(getKeyStatus())
 
 '''
 

@@ -98,6 +98,7 @@ while running == True:
     DISPLAYSURF.blit(mapInit.image, mapInit.rect)
     DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
     pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
+    #DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
     for i in range (0, math.floor(random.randrange(0, 5))):
         createCloud()
@@ -119,6 +120,9 @@ while running == True:
             pygame.display.quit()
         elif event.type == pygame.KEYDOWN:
             gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
+            gameSettings.setKeyStatus(event, "DOWN")
+        elif event.type == pygame.KEYUP:
+            gameSettings.setKeyStatus(event, "UP")
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             graphicInterface.checkMouseInput()
