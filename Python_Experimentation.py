@@ -86,6 +86,7 @@ def createCloud():
 '''
 
 running = True
+pause = False
 
 # pygame.display.toggle_fullscreen()
 
@@ -96,43 +97,44 @@ pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
 
 while running == True:
     
-    pygame.display.update()
-    pygame.time.Clock().tick(FPS)
+    if (pause == False):
+        pygame.display.update()
+        pygame.time.Clock().tick(FPS)
 
-    DISPLAYSURF.blit(mapInit.image, mapInit.rect)
-    DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
-    pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
-    #DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
+        DISPLAYSURF.blit(mapInit.image, mapInit.rect)
+        DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
+        pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
+        #DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
-    for i in range (0, math.floor(random.randrange(0, 5))):
-        createCloud()
+        for i in range (0, math.floor(random.randrange(0, 5))):
+            createCloud()
 
-    #t = time.time()
+        #t = time.time()
 
-    for x in range(0, len(gameSettings.activeClouds)):
+        for x in range(0, len(gameSettings.activeClouds)):
 
-        #if ((t - gameSettings.activeClouds[x].lastMove) >= gameSettings.activeClouds[x].moveInt):
-            #gameSettings.activeClouds[x].lastMove = t
-        gameSettings.activeClouds[x].rect.move_ip(1, 0)
-        gameSettings.activeClouds[x].posX += 1
-        DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
-            #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
+            #if ((t - gameSettings.activeClouds[x].lastMove) >= gameSettings.activeClouds[x].moveInt):
+                #gameSettings.activeClouds[x].lastMove = t
+            gameSettings.activeClouds[x].rect.move_ip(1, 0)
+            gameSettings.activeClouds[x].posX += 1
+            DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
+                #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
     
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-            pygame.display.quit()
-        elif event.type == pygame.KEYDOWN:
-            gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
-            gameSettings.setKeyStatus(event, "DOWN")
-        elif event.type == pygame.KEYUP:
-            gameSettings.setKeyStatus(event, "UP")
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+                pygame.display.quit()
+            elif event.type == pygame.KEYDOWN:
+                gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
+                gameSettings.setKeyStatus(event, "DOWN")
+            elif event.type == pygame.KEYUP:
+                gameSettings.setKeyStatus(event, "UP")
         
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            graphicInterface.checkMouseInput()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                graphicInterface.checkMouseInput()
     
-    for k in gameSettings.playerOneKeys:
-        if (gameSettings.playerOneKeys[k] == True):
-            gameCalculations.key_held("W", friendlyAI_1.ship)
+        for k in gameSettings.playerOneKeys:
+            if (gameSettings.playerOneKeys[k] == True):
+                gameCalculations.key_held("W", friendlyAI_1.ship)
 
 print("Press <ENTER> to exit")
