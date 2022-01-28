@@ -86,7 +86,7 @@ def createCloud():
 '''
 
 running = True
-pause = False
+pause = True
 
 # pygame.display.toggle_fullscreen()
 
@@ -96,14 +96,20 @@ pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
 #pygame.mixer.music.play(-1)
 
 while running == True:
-    
+    #print(pause)
+    for event in pygame.event.get():
+        if (event.type == pygame.KEYDOWN):
+            if (event.key == pygame.K_m):
+                if (pause == True):
+                    pause = False
+
     if (pause == False):
         pygame.display.update()
         pygame.time.Clock().tick(FPS)
 
         DISPLAYSURF.blit(mapInit.image, mapInit.rect)
         DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
-        pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
+        #pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
         #DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
         for i in range (0, math.floor(random.randrange(0, 5))):
@@ -127,14 +133,34 @@ while running == True:
             elif event.type == pygame.KEYDOWN:
                 gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
                 gameSettings.setKeyStatus(event, "DOWN")
+
+                if (event.key == pygame.K_m):
+                    if (pause == False):
+                        pause = True
+                        gameSettings.resetKeyStatus()
+
             elif event.type == pygame.KEYUP:
                 gameSettings.setKeyStatus(event, "UP")
         
             if event.type == pygame.MOUSEBUTTONDOWN:
                 graphicInterface.checkMouseInput()
+                #pygame.mouse.get_pos()
+                #pygame.draw.line(DISPLAYSURF,(0,0,255),(450,450),(0,0),5)
     
         for k in gameSettings.playerOneKeys:
             if (gameSettings.playerOneKeys[k] == True):
-                gameCalculations.key_held("W", friendlyAI_1.ship)
+                if k == "W_Hold":
+                    gameCalculations.key_held("W", friendlyAI_1.ship)
+                elif k == "A_Hold":
+                    gameCalculations.key_held("A", friendlyAI_1.ship)
+                elif k == "S_Hold":
+                    gameCalculations.key_held("S", friendlyAI_1.ship)
+                elif k == "D_Hold":
+                    gameCalculations.key_held("D", friendlyAI_1.ship)
 
+                if k == "Q_Hold":
+                    gameCalculations.key_held("Q", friendlyAI_1.ship)
+                elif k == "E_Hold":
+                    gameCalculations.key_held("E", friendlyAI_1.ship)
+                
 print("Press <ENTER> to exit")

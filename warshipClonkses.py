@@ -7,7 +7,6 @@ from pygame.locals import *
 
 pygame.init()
 
-
 '''
 
     As of right now, the damageCalc() function has no intended purpose.
@@ -46,7 +45,7 @@ class Ship(pygame.sprite.Sprite):
 
         self.v2Rot = 0
 
-        self.owner = player.username # will include the player's object
+        self.owner = player.username # Will include the player's object
         self.health = 100
         self.smoked = True
         self.shipName = None

@@ -25,6 +25,18 @@ pygame.init()
 
 class projectile(pygame.sprite.Sprite):
     def __init__(self):
+        TTL = 5
+        v2Vel = pygame.Vector2(0, 1)
+        v2Pos = pygame.Vector2(0, 0)
+
+    def findNearestTarget(self):
         pass
-    def __del__(self):
-        pass
+
+    def countDown():
+        TTL -= 1
+
+        if TTL <= 0:
+            del self
+
+    def __del__(self, entityName):
+        #print("Projectile has been removed! Originating entity: " + entityName)

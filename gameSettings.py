@@ -5,9 +5,10 @@ playerOneKeys = {
     "W_Hold": False,
     "A_Hold": False,
     "S_Hold": False,
-    "D_Hold": False
+    "D_Hold": False,
+    "Q_Hold": False,
+    "E_Hold": False
 }
-
 
 maxPlayers = 2
 playerCount = 0
@@ -39,6 +40,10 @@ cloudDims = [
     [96, 68]
 ]
 
+def resetKeyStatus():
+    for key in playerOneKeys:
+        playerOneKeys[key] = False
+
 def getKeyStatus():
     return playerOneKeys
 
@@ -53,6 +58,10 @@ def setKeyStatus(regKey = None, eventType = None):
             playerOneKeys["S_Hold"] = False
         elif (regKey.key == pygame.K_d):
             playerOneKeys["D_Hold"] = False
+        elif (regKey.key == pygame.K_q):
+            playerOneKeys["Q_Hold"] = False
+        elif (regKey.key == pygame.K_e):
+            playerOneKeys["E_Hold"] = False
     elif (eventType == "DOWN"):
         if (regKey.key == pygame.K_w): 
             playerOneKeys["W_Hold"] = True
@@ -63,6 +72,10 @@ def setKeyStatus(regKey = None, eventType = None):
             playerOneKeys["S_Hold"] = True
         elif (regKey.key == pygame.K_d):
             playerOneKeys["D_Hold"] = True
+        elif (regKey.key == pygame.K_q):
+            playerOneKeys["Q_Hold"] = True
+        elif (regKey.key == pygame.K_e):
+            playerOneKeys["E_Hold"] = True
     elif (regKey == None and eventType == None):
         pass
 
