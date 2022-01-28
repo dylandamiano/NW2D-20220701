@@ -53,19 +53,19 @@ class Ship(pygame.sprite.Sprite):
 
         self.TlastMove = 0
 
-        self.shipCoords = {
-            "x": self.v2Pos.x,
-            "y": self.v2Pos.y,
-            }
-
+        #self.shipCoords = {
+         #   "x": self.v2Pos.x,
+          #  "y": self.v2Pos.y,
+           # }
+           
     def shipStatus(self):
         print(self.health)
 
     def getLocation(self, req):
         if (req == "x"):
-            return self.shipCoords["x"]
+            return self.v2Pos.x
         elif (req == "y"):
-            return self.shipCoords["y"]
+            return self.v2Pos.y
 
 class Battleship(Ship):
     def __init__(self, player):

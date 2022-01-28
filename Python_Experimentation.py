@@ -130,10 +130,9 @@ while running == True:
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             graphicInterface.checkMouseInput()
-
-
-
-
-    gameCalculations.key_held(pygame.key.get_pressed())
+    
+    for k in gameSettings.playerOneKeys:
+        if (gameSettings.playerOneKeys[k] == True):
+            gameCalculations.key_held("W", friendlyAI_1.ship)
 
 print("Press <ENTER> to exit")
