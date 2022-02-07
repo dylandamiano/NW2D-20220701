@@ -26,8 +26,9 @@ pygame.init()
 class projectile(pygame.sprite.Sprite):
     def __init__(self):
         TTL = 5
-        v2Vel = pygame.Vector2(0, 1)
+
         v2Pos = pygame.Vector2(0, 0)
+        v2Vel = pygame.Vector2(0, 1)
 
     def findNearestTarget(self):
         pass

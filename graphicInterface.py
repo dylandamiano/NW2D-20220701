@@ -92,6 +92,7 @@ def checkMouseInput():
     if (mousePosition[0] >= abs(mainMenu.buttonRegions["left-one"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["left-one"]["bottom-right"][0]))): #and (mainMenu.buttonRegions["left-one"]["bottom-right"][0] <= mousePosition[0]): #and (mainMenu.buttonRegions["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["left-one"]["bottom-right"][1] <= mousePosition[1]):
         if (mousePosition[1] >= abs(mainMenu.buttonRegions["left-one"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["left-one"]["bottom-right"][1]))):
             print("Square one!")
+            return "PLAY"
         elif (mousePosition[1] >= abs(mainMenu.buttonRegions["left-two"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["left-two"]["bottom-right"][1]))):
             print("Square two!")
         elif (mousePosition[1] >= abs(mainMenu.buttonRegions["left-three"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["left-three"]["bottom-right"][1]))):
@@ -103,5 +104,6 @@ def checkMouseInput():
             print("Square two!")
         elif (mousePosition[1] >= abs(mainMenu.buttonRegions["right-three"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["right-three"]["bottom-right"][1]))):
             print("Square three!")
+            return "STOP"
     else:
         print("not quite...")
