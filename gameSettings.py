@@ -111,3 +111,6 @@ def playerCount():
         Instead, try to capture the player count which should be stored in a variable...
     '''
     return playerCount
+
+def resetGame():
+    pass

@@ -41,7 +41,7 @@ class Ship(pygame.sprite.Sprite):
         self.vec2 = pygame.math.Vector2
 
         self.v2Pos = self.vec2(450, 450)
-        self.v2Vel = self.vec2(0, -.5)
+        self.v2Vel = self.vec2(0, -1)
 
         self.v2Rot = 0
 

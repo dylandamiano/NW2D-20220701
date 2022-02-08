@@ -10,6 +10,10 @@
 # Basic Module Initialization
 import datetime
 import math, random
+
+import cairo
+
+
 import time
 
 import gameCalculations
@@ -123,6 +127,9 @@ while running == True:
                 pause = True
                 running = False
                 pygame.display.quit()
+
+        if event.type == pygame.KEYUP:
+                gameSettings.setKeyStatus(event, "UP")
 
                 #pygame.mouse.get_pos()
                 #pygame.draw.line(DISPLAYSURF,(0,0,255),(450,450),(0,0),5)

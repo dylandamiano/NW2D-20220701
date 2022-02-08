@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Maps"
+    "\\Maps",
+    "\\Ships"
   ],
+  "SelectedNode": "\\Ships\\CARRIER.svg",
   "PreviewInSolutionExplorer": false
 }
