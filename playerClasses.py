@@ -23,6 +23,7 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.username = name
         self.ship = None
+        self.type = ""
         
         self.health = 100
           
@@ -30,8 +31,8 @@ class Player(pygame.sprite.Sprite):
 
     def createShip(self, type):
         print("Creating ship...")
-        if (type == "Battleship"):
-            self.ship = warshipClonkses.Battleship(self)
+        if (type == "Fighter"):
+            self.ship = warshipClonkses.Fighter(self)
             #self.ship.owner = self.username
         elif (type == "Carrier"):
             self.ship = warshipClonkses.Carrier(self)

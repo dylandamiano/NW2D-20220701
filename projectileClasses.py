@@ -24,11 +24,22 @@ pygame.init()
 '''
 
 class projectile(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self, start, orientation):
         TTL = 5
 
-        v2Pos = pygame.Vector2(0, 0)
+        localOrientation = orientation
+        lastMove = 0
+
+        v2Pos = pygame.Vector2(start[0], start[1])
         v2Vel = pygame.Vector2(0, 1)
+
+        self.v2Vel.rotate_ip(orientation)
+
+        self.imageRestore = "Ships\\lightRound.png"
+
+        self.image = pygame.image.load(self.imageRestore)
+        self.image = pygame.transform.scale(self.image, (20, 41))
+        self.image = pygame.transform.rotate(self.image, self.localOrientation)
 
     def findNearestTarget(self):
         pass
@@ -41,3 +52,9 @@ class projectile(pygame.sprite.Sprite):
 
     def __del__(self, entityName):
         #print("Projectile has been removed! Originating entity: " + entityName)
+
+class lightRound(projectile):
+    pass
+
+class heavyRound(projectile):
+    pass

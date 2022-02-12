@@ -13,7 +13,6 @@ import math, random
 
 import cairo
 
-
 import time
 
 import gameCalculations
@@ -58,6 +57,7 @@ mapInit = playerClasses.islandMap()
 
 friendlyAI_1 = playerClasses.Player("AI Entity #1")
 friendlyAI_1.createShip("Carrier")
+friendlyAI_1.type = "sea"
 
 '''
     The function below will do the following:

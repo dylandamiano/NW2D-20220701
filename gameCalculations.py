@@ -13,10 +13,10 @@ from pygame.locals import *
 
 # Defines map borders by using their coordinate position [x or y]
 mapBorders = {
-    "LEFT": 0,
-    "RIGHT": 900,
-    "TOP": 0,
-    "BOTTOM": 900
+    "LEFT": 0 + 20,
+    "RIGHT": 900 - 20,
+    "TOP": 0 + 20,
+    "BOTTOM": 900 - 20
 }
 
 
@@ -25,6 +25,8 @@ terrainBorder = {
 
     # First value is "m", next value is "b." M is for slope and B is for y-intercept
     # Y indicates an f(x) equation whereas X will indicate an equation that is not a function
+    # As far as "X" goes, the value that follows is the x location on the cartesian plane
+    
     "ISLAND_One": {
         "LINE1": ["y", -1, 1000],
         "LINE2": ["x", 120],
@@ -40,7 +42,17 @@ terrainBorder = {
         "LINE12": ["x", 380]
     },
 
-    "ISLAND_Two": {},
+    "ISLAND_Two": {
+        "LINE1": ["y", 5, 5 * -500 + 800],
+        "LINE2": ["y", (2/3), (2/3) * -520 + 760],
+        "LINE3": ["x", 520],
+        "LINE4": ["y", -1, -1 * -520 + 720],
+        "LINE5": ["y", (1/2), (1/2) * -560 + 680],
+        "LINE6": ["y", (-2/3), (-2/3) * -700 + 700],
+        "LINE7": ["x", 760],
+        "LINE8": ["y", (-1.5), (-1.5) * -760 + 580],
+        "LINE9": ["y", (-1/5), (-1/5) * -800 + 520]
+    },
     
 }
 
@@ -56,96 +68,152 @@ def rotateChar(character, direction):
 
 def checkIslandBorders(character, moveDir):
     
-    nextX = (character.v2Pos + character.v2Vel).x
-    nextY = (character.v2Pos + character.v2Vel).y
+    nextX = 0
+    nextY = 0
+
+    if moveDir == "Forward":
+            nextX = (character.v2Pos + character.v2Vel).x
+            nextY = (character.v2Pos + character.v2Vel).y
+    elif moveDir == "Backwards":
+            nextX = (character.v2Pos - character.v2Vel).x
+            nextY = (character.v2Pos - character.v2Vel).y
+
     print(nextX, nextY)
 
-    if (nextX > 100) and (nextX < 380) and (nextY > 0) and (nextY < 180):
-        print("Within Island One!")
-        if (nextX > 100) and (nextX < 120) and (nextY < 20) and (nextY > 0): # REGION 1, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE1"][1], terrainBorder["ISLAND_One"]["LINE1"][2], nextX)):
-                print("Below bounds")
-                move(0, 0, character, moveDir)
-                pass
-        elif (nextX < 120) and (nextY < 40) and (nextY > 20): # REGION 2, LEFT
-            print("Left of bounds!")
+    if character.owner.type == "sea":
+        if (nextX <= 100) and (nextY < 20) and (nextY >= 0):
+            print("<= bounds")
             move(0, 0, character, moveDir)
-            pass
-        elif (nextX > 100) and (nextX < 120) and (nextY > 40) and (nextY < 90): # REGION 3, ABOVE
-            if (nextY < linearEquation(terrainBorder["ISLAND_One"]["LINE3"][1], terrainBorder["ISLAND_One"]["LINE3"][2], nextX)):
-                print("Above bounds")
-                move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 100) and (nextX < 111) and (nextY > 90) and (nextY < 109): # Region 4, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE4"][1], terrainBorder["ISLAND_One"]["LINE4"][2], nextX)):
+        elif (nextX > 100) and (nextX < 380) and (nextY > 0) and (nextY < 180): # ISLAND ONE, REGIONAL DEFINITIONS
+            print("Within Island One!")
+            if (nextX > 100) and (nextX < 120) and (nextY < 20) and (nextY > 0): # REGION 1, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE1"][1], terrainBorder["ISLAND_One"]["LINE1"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX < 120) and (nextY < 40) and (nextY > 20): # REGION 2, LEFT
+                print("Left of bounds!")
+                move(0, 0, character, moveDir)    
+            elif (nextX > 100) and (nextX < 120) and (nextY > 40) and (nextY < 90): # REGION 3, ABOVE
+                if (nextY < linearEquation(terrainBorder["ISLAND_One"]["LINE3"][1], terrainBorder["ISLAND_One"]["LINE3"][2], nextX)):
+                    print("Above bounds")
+                    move(0, 0, character, moveDir)  
+            elif (nextX > 100) and (nextX < 111) and (nextY > 90) and (nextY < 109): # Region 4, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE4"][1], terrainBorder["ISLAND_One"]["LINE4"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)      
+            elif (nextX > 111) and (nextX < 155) and (nextY > 109) and (nextY < 116): # Region 5, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE5"][1], terrainBorder["ISLAND_One"]["LINE5"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 155) and (nextX < 223) and (nextY > 116) and (nextY < 181): # Region 6, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE6"][1], terrainBorder["ISLAND_One"]["LINE6"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 223) and (nextX < 265) and (nextY > 181): # Region 7, UNDER
                 print("Below bounds")
                 move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 111) and (nextX < 155) and (nextY > 109) and (nextY < 116): # Region 5, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE5"][1], terrainBorder["ISLAND_One"]["LINE5"][2], nextX)):
-                print("Below bounds")
+            elif (nextX > 265) and (nextX < 313) and (nextY < 181) and (nextY > 154): # Region 8, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE8"][1], terrainBorder["ISLAND_One"]["LINE8"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 313) and (nextX < 333) and (nextY < 154) and (nextY > 117): # Region 9, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE9"][1], terrainBorder["ISLAND_One"]["LINE9"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 333) and (nextX < 351) and (nextY < 117) and (nextY > 72): # Region 10, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE10"][1], terrainBorder["ISLAND_One"]["LINE10"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 351) and (nextX < 380) and (nextY < 72) and (nextY > 48): # Region 11, UNDER
+                if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE11"][1], terrainBorder["ISLAND_One"]["LINE11"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 380) and (nextY < 48) and (nextY > 0): # Region 12, RIGHT
+                print("Right of bounds!")
                 move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 155) and (nextX < 223) and (nextY > 116) and (nextY < 181): # Region 6, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE6"][1], terrainBorder["ISLAND_One"]["LINE6"][2], nextX)):
-                print("Below bounds")
+            elif (nextX > 100) and (nextX < 111) and (nextY > 109): # BOX ONE
+                print("IN SUB-REGION 1")
                 move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 223) and (nextX < 265) and (nextY > 181): # Region 7, UNDER
-            print("Below bounds")
-            move(0, 0, character, moveDir)
-        elif (nextX > 265) and (nextX < 313) and (nextY < 181) and (nextY > 154): # Region 8, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE8"][1], terrainBorder["ISLAND_One"]["LINE8"][2], nextX)):
-                print("Below bounds")
+            elif (nextX > 111) and (nextX < 155) and (nextY > 116): # BOX TWO
+                print("IN SUB-REGION 2")
                 move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 313) and (nextX < 333) and (nextY < 154) and (nextY > 117): # Region 9, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE9"][1], terrainBorder["ISLAND_One"]["LINE9"][2], nextX)):
-                print("Below bounds")
+            elif (nextX > 313) and (nextX < 333) and (nextY > 154): # BOX THREE
+                print("IN SUB-REGION 3")
                 move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 333) and (nextX < 351) and (nextY < 117) and (nextY > 72): # Region 10, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE10"][1], terrainBorder["ISLAND_One"]["LINE10"][2], nextX)):
-                print("Below bounds")
+            elif (nextX > 333) and (nextX < 351) and (nextY > 116): # BOX FOUR
+                print("IN SUB-REGION 4")
                 move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 351) and (nextX < 380) and (nextY < 72) and (nextY > 48): # Region 11, UNDER
-            if (nextY > linearEquation(terrainBorder["ISLAND_One"]["LINE11"][1], terrainBorder["ISLAND_One"]["LINE11"][2], nextX)):
-                print("Below bounds")
+            elif (nextX > 351) and (nextX < 380) and (nextY > 72): # BOX FIVE
+                print("IN SUB-REGION 5")
                 move(0, 0, character, moveDir)
-                pass
-        elif (nextX > 380) and (nextY < 48) and (nextY > 0): # Region 12, RIGHT
-            print("Right of bounds!")
-            move(0, 0, character, moveDir)
-            pass
-        elif (nextX > 100) and (nextX < 111) and (nextY > 109): # BOX ONE
-            print("IN SUB-REGION 1")
-            move(0, 0, character, moveDir)
-            pass
-        elif (nextX > 111) and (nextX < 155) and (nextY > 116): # BOX TWO
-            print("IN SUB-REGION 2")
-            move(0, 0, character, moveDir)
-            pass
-        elif (nextX > 313) and (nextX < 333) and (nextY > 154): # BOX THREE
-            print("IN SUB-REGION 3")
-            move(0, 0, character, moveDir)
-            pass
-        elif (nextX > 333) and (nextX < 351) and (nextY > 116): # BOX FOUR
-            print("IN SUB-REGION 4")
-            move(0, 0, character, moveDir)
-            pass
-        elif (nextX > 351) and (nextX < 380) and (nextY > 72): # BOX FIVE
-            print("IN SUB-REGION 5")
+
+        elif (nextX >= 520) and (nextX <= 900) and (nextY >= 0) and (nextY <= 400): # ISLAND TWO, REGIONAL DEFINITIONS
+            print("Within Island TWO")
+            if (nextX > 580) and (nextX < 600) and (nextY > 0) and (nextY < 100): # REGION 1, ABOVE
+                if (nextY < linearEquation(terrainBorder["ISLAND_Two"]["LINE1"][1], terrainBorder["ISLAND_Two"]["LINE1"][2], nextX)):
+                    print("Above bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 520) and (nextX < 580) and (nextY > 100) and (nextY < 140): # REGION 2, ABOVE
+                if (nextY < linearEquation(terrainBorder["ISLAND_Two"]["LINE2"][1], terrainBorder["ISLAND_Two"]["LINE2"][2], nextX)):
+                    print("Above bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 520) and (nextX < 600) and (nextY > 140) and (nextY < 180): # REGION 3, LEFT
+                print("Left of bounds")
+                move(0, 0, character, moveDir)
+            elif (nextX > 520) and (nextX < 560) and (nextY > 180) and (nextY < 220): # REGION 4, BELOW
+                if (nextY > linearEquation(terrainBorder["ISLAND_Two"]["LINE4"][1], terrainBorder["ISLAND_Two"]["LINE4"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 560) and (nextX < 700) and (nextY > 200) and (nextY < 220): # REGION 5, BELOW
+                if (nextY > linearEquation(terrainBorder["ISLAND_Two"]["LINE5"][1], terrainBorder["ISLAND_Two"]["LINE5"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 700) and (nextX < 760) and (nextY > 200) and (nextY < 240): # REGION 6, BELOW
+                if (nextY > linearEquation(terrainBorder["ISLAND_Two"]["LINE6"][1], terrainBorder["ISLAND_Two"]["LINE6"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX < 760) and (nextY > 240) and (nextY < 320): # BOX THREE
+                print("IN SUB-REGION 3")
+                move(0, 0, character, moveDir)
+            elif (nextX > 760) and (nextX < 800) and (nextY > 320) and (nextY < 380): # REGION 8, BELOW
+                if (nextY > linearEquation(terrainBorder["ISLAND_Two"]["LINE8"][1], terrainBorder["ISLAND_Two"]["LINE8"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 800) and (nextX < 900) and (nextY > 380) and (nextY < 400): # REGION 9, BELOW
+                if (nextY > linearEquation(terrainBorder["ISLAND_Two"]["LINE9"][1], terrainBorder["ISLAND_Two"]["LINE9"][2], nextX)):
+                    print("Below bounds")
+                    move(0, 0, character, moveDir)
+            elif (nextX > 520) and (nextX < 580) and (nextY > 0) and (nextY < 100): # BOX ONE
+                print("IN SUB-REGION 1")
+                move(0, 0, character, moveDir)
+            elif (nextX > 520) and (nextX < 700) and (nextY > 220) and (nextY < 240): # BOX TWO
+                print("IN SUB-REGION 2")
+                move(0, 0, character, moveDir)
+            elif (nextX > 520) and (nextX < 760) and (nextY > 320) and (nextY < 380): # BOX FOUR
+                print("IN SUB-REGION 4")
+                move(0, 0, character, moveDir)
+            elif (nextX > 520) and (nextX < 800) and (nextY > 380) and (nextY < 400): # BOX FIVE
+                print("IN SUB-REGION 5")
+                move(0, 0, character, moveDir)
+                
+        else:
+            print("Else executed!")
             move(0, 0, character, moveDir)
     else:
-        print("Else executed!")
         move(0, 0, character, moveDir)
         
 
 # Will check to see if the Ship/Sprite is moving within the boundaries, it if is not within bounds then the function will not fire
 def checkBorder(character, moveDir):
-    nextX = (character.v2Pos + character.v2Vel).x
-    nextY = (character.v2Pos + character.v2Vel).y
+    nextX = 0
+    nextY = 0
+
+    if moveDir == "Forward":
+            nextX = (character.v2Pos + character.v2Vel).x
+            nextY = (character.v2Pos + character.v2Vel).y
+    elif moveDir == "Backwards":
+            nextX = (character.v2Pos - character.v2Vel).x
+            nextY = (character.v2Pos - character.v2Vel).y
 
     #print(nextX, nextY) # Intended for debugging
 

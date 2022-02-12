@@ -45,7 +45,7 @@ class Ship(pygame.sprite.Sprite):
 
         self.v2Rot = 0
 
-        self.owner = player.username # Will include the player's object
+        self.owner = player # Will include the player's object
         self.health = 100
         self.smoked = True
         self.shipName = None
@@ -106,10 +106,10 @@ class Carrier(Ship):
         super().__init__(player)
         self.airWing = 5
 
-        self.imageRestore = "Ships\\CarrierConcept.png"
+        self.imageRestore = "Ships\\CarrierConcept.png" # "Ships\\CarrierConcept.png"
 
         self.image = pygame.image.load(self.imageRestore)
-        self.image = pygame.transform.scale(self.image, (20, 41))
+        self.image = pygame.transform.scale(self.image, (20, 41)) # (self.image, (20, 41))
 
         self.rect = self.image.get_rect()
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
@@ -134,6 +134,95 @@ class Carrier(Ship):
         #print(self.localOrientation)
 
         self.image = pygame.image.load(self.imageRestore)
+        self.image = pygame.transform.scale(self.image, (20, 41))
+        self.image = pygame.transform.rotate(self.image, self.localOrientation)
+
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+    def setLocation(self, moveDir):
+        if (moveDir == "Forward"):
+            self.v2Pos += self.v2Vel
+            pass
+        elif (moveDir == "Backwards"):
+            self.v2Pos -= self.v2Vel
+            pass
+        #self.v2Pos += self.v2Vel
+        self.rect.center = self.v2Pos
+
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+
+class Aircraft(pygame.sprite.Sprite):
+    def __init__(self, player):
+        pygame.sprite.Sprite.__init__(self)
+
+        self.localOrientation = 0
+        self.vec2 = pygame.math.Vector2
+
+        self.v2Pos = self.vec2(450, 450)
+        self.v2Vel = self.vec2(0, -2)
+
+        self.v2Rot = 0
+
+        self.owner = player # Will include the player's object
+        self.health = 100
+        self.smoked = True
+        self.shipName = None
+
+        self.TlastMove = 0
+
+        #self.shipCoords = {
+         #   "x": self.v2Pos.x,
+          #  "y": self.v2Pos.y,
+           # }
+           
+    def shipStatus(self):
+        print(self.health)
+
+    def getLocation(self, req):
+        if (req == "x"):
+            return self.v2Pos.x
+        elif (req == "y"):
+            return self.v2Pos.y
+
+class Fighter(Aircraft):
+    def __init__(self, player):
+        super().__init__(player)
+        self.airWing = 5
+
+        self.imageRestore = "Ships\\Fighter.png"
+
+        self.image = pygame.image.load(self.imageRestore)
+        self.image = pygame.transform.scale(self.image, (25, 26))
+
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+    def test(self):
+        print("Yes")
+
+
+    def setRotation(self, rotDir):
+        if (self.localOrientation <= 0):
+            self.localOrientation = 360
+        elif (self.localOrientation >= 360):
+            self.localOrientation = 0
+
+        if (rotDir == "Left"):
+            self.v2Vel.rotate_ip(-2)
+            self.localOrientation += 2
+        elif (rotDir == "Right"):
+            self.v2Vel.rotate_ip(2)
+            self.localOrientation -= 2
+
+        #print(self.localOrientation)
+
+        self.image = pygame.image.load(self.imageRestore)
+        self.image = pygame.transform.scale(self.image, (25, 26))
         self.image = pygame.transform.rotate(self.image, self.localOrientation)
 
         self.rect = self.image.get_rect()
