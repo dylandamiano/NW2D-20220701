@@ -2,6 +2,7 @@ import playerClasses
 import pygame
 
 import gameSettings
+import logHandler
 
 from pygame.locals import *
 

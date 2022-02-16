@@ -4,6 +4,7 @@ import warshipClonkses
 import gameSettings
 
 import math, random
+import logHandler
 
 from pygame.locals import *
 
@@ -102,7 +103,7 @@ class islandMap(pygame.sprite.Sprite):
 '''
 
 class Cloud(pygame.sprite.Sprite):
-    def __init__(self, cloudDes, cloudDims):
+    def __init__(self, cloudDes, cloudDims, cloudSpeed = None):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(gameSettings.cloudChart[cloudDes]).convert_alpha()
         self.image = pygame.transform.scale(self.image, (cloudDims[cloudDes][0], cloudDims[cloudDes][1]))
@@ -112,6 +113,7 @@ class Cloud(pygame.sprite.Sprite):
 
         self.posX = 0
 
+        self.moveSpeed = cloudSpeed
         self.moveInt = 0
         self.lastMove = 0
     

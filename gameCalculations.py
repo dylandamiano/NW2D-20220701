@@ -8,6 +8,7 @@
 import pygame
 import warshipClonkses
 import playerClasses
+import logHandler
 
 from pygame.locals import *
 

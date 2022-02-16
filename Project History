@@ -1,0 +1,2 @@
+2/16/2022 - Discovered that I am an idiot and cannot use a global variable in a
+function without declaring 'Global' within the local scope first! :(

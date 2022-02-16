@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+import logHandler
 
 playerOneKeys = {
     "W_Hold": False,
@@ -82,7 +83,7 @@ def setKeyStatus(regKey = None, eventType = None):
     print(getKeyStatus())
 
 '''
-
+a
     The list below will contain clouds
     that are currently present in memory.
     

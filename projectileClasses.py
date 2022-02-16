@@ -2,8 +2,10 @@ import playerClasses
 import warshipClonkses
 
 import pygame
+import time
 
 import gameSettings
+import logHandler
 
 from pygame.locals import *
 
@@ -43,6 +45,11 @@ class projectile(pygame.sprite.Sprite):
 
     def findNearestTarget(self):
         pass
+
+    def.
+
+    def update(self, picture):
+        
 
     def countDown():
         TTL -= 1

@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Maps",
-    "\\Ships"
+    "\\Graphics",
+    "\\Maps"
   ],
-  "SelectedNode": "\\Ships\\lightRound.png",
+  "SelectedNode": "\\graphicInterface.py",
   "PreviewInSolutionExplorer": false
 }
