@@ -105,7 +105,7 @@ pause = True
 #pygame.mixer.music.play(-1)
 
 def drawLogs():
-    logHistory = logHandler.getDisplayLog()
+    logHistory = log.getDisplayLog()
 
 
 log.createLog("Finished initalizingw!")
@@ -166,7 +166,7 @@ while running == True:
 
             #if ((t - gameSettings.activeClouds[x].lastMove) >= gameSettings.activeClouds[x].moveInt):
                 #gameSettings.activeClouds[x].lastMove = t
-            gameSettings.activeClouds[x].rect.move_ip(1, 0)
+            gameSettings.activeClouds[x].rect.move_ip(gameSettings.activeClouds[x].moveSpeed, 0)
             gameSettings.activeClouds[x].posX += gameSettings.activeClouds[x].moveSpeed
             DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
                 #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
@@ -207,6 +207,9 @@ while running == True:
                     gameCalculations.key_held("Q", friendlyAI_1.ship)
                 elif k == "E_Hold":
                     gameCalculations.key_held("E", friendlyAI_1.ship)
+
+        gameSettings.checkClouds()
+
     font_game2 = pygame.font.SysFont('Segoe UI',18)
     DISPLAYSURF.blit(pygame.font.Font.render(font_game2, "Hello, World",1,(255,255,255)),(0,600))
 

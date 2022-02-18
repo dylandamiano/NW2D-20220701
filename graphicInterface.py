@@ -117,6 +117,7 @@ def checkMouseInput():
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0]))): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0] <= mousePosition[0]): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][1] <= mousePosition[1]):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][1]))):
                 print("Square one!")
+                logHandler.createLog("Game resumed!")
                 return "PLAY"
             elif (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["left-two"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["left-two"]["bottom-right"][1]))):
                 print("Square two!")
@@ -126,6 +127,7 @@ def checkMouseInput():
                 mainMenu.originalMenu = mainMenu.images["debugMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+                logHandler.createLog("Opened Debug Menu!")
         elif (mousePosition[0] >= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["bottom-right"][1]))):
                 print("Square one!")
@@ -133,6 +135,7 @@ def checkMouseInput():
                 mainMenu.originalMenu = mainMenu.images["aboutMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+                logHandler.createLog("Opened about menu!")
             elif (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["right-two"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["right-two"]["bottom-right"][1]))):
                 print("Square two!")
             elif (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["right-three"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["right-three"]["bottom-right"][1]))):
@@ -149,9 +152,13 @@ def checkMouseInput():
                 mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+                logHandler.createLog("Returning to menu!")
 
     elif mainMenu.currentSelection == "Debug":
         mainMenu.currentSelection = "Main"
         mainMenu.originalMenu = mainMenu.images["homeMenu"]
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+        logHandler.createLog("Returning to menu!")
+
+logHandler.createLog("Initialized GUI handler...")

@@ -58,3 +58,5 @@ def createLog(content):
     newLog = logObject(currentTime, content)
 
     logHistory.append(newLog)
+
+createLog("Initialized Log handler...")

@@ -102,8 +102,11 @@ class islandMap(pygame.sprite.Sprite):
 
 '''
 
+cloudCount = 0
 class Cloud(pygame.sprite.Sprite):
     def __init__(self, cloudDes, cloudDims, cloudSpeed = None):
+        global cloudCount
+
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(gameSettings.cloudChart[cloudDes]).convert_alpha()
         self.image = pygame.transform.scale(self.image, (cloudDims[cloudDes][0], cloudDims[cloudDes][1]))
@@ -117,12 +120,15 @@ class Cloud(pygame.sprite.Sprite):
         self.moveInt = 0
         self.lastMove = 0
     
+        cloudCount += 1
     def __del__(self):
         print("Cloud removed!")
+        logHandler.createLog("Cloud removed! ID: #" + str(cloudCount))
+        del self
 
     def createLocation(self):
         randomY = math.floor(random.randrange(0, 900))
         self.rect.center = (-10, randomY)
 
-        self.moveInt = random.randrange(0, 5)
+        self.moveInt = random.randrange(2, 3)
         #print(self.moveInt)

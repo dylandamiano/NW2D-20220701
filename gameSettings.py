@@ -101,6 +101,17 @@ a
 activeEntities = []
 activeClouds = []
 
+def checkClouds():
+    toDelete = []
+
+    for i in range(0, len(activeClouds)):
+        if activeClouds[i].posX >= 1000:
+            toDelete.append(i)
+
+    for i in reversed(toDelete):
+        del activeClouds[i]
+
+
 # \\ IGNORE THE FUNCTIONS BELOW! THESE ARE FOR DEBUGGING! // #
 def test():
     print("new")
