@@ -44,7 +44,7 @@ terrainBorder = {
     },
 
     "ISLAND_Two": {
-        "LINE1": ["y", 5, 5 * -500 + 800],
+        "LINE1": ["y", 5, 5 * -500 + 800], # For "b" we're basically multiplying everything down to where it is not an "x"
         "LINE2": ["y", (2/3), (2/3) * -520 + 760],
         "LINE3": ["x", 520],
         "LINE4": ["y", -1, -1 * -520 + 720],
@@ -53,6 +53,13 @@ terrainBorder = {
         "LINE7": ["x", 760],
         "LINE8": ["y", (-1.5), (-1.5) * -760 + 580],
         "LINE9": ["y", (-1/5), (-1/5) * -800 + 520]
+    },
+
+    "ISLAND_Three": {
+        "LINE1": ["y", -(46/129), -(46/129) * -555 + 0],
+        "LINE2": ["y", (-14/11), -(14/11) * -129 + 601],
+        "LINE3": ["y", (-83/22), -(83/22) * -151 + 629],
+        
     },
     
 }
