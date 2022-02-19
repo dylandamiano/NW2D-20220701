@@ -48,6 +48,11 @@ DISPLAYSURF = pygame.display.set_mode(size=(900,900))
 FPSClock = pygame.time.Clock()
 FPS = 100
 
+icon = "Graphics\\NW2DLogo.png"
+icon_img = pygame.image.load(icon)
+
+pygame.display.set_icon(icon_img)   
+
 pygame.display.set_caption("NAVAL Warfare 2d")
 
 '''
@@ -84,7 +89,7 @@ def createCloud():
         sel = math.floor(random.randrange(0, len(gameSettings.cloudChart)))
 
         #print(sel)
-        cloudObj = playerClasses.Cloud(sel, gameSettings.cloudDims, math.ceil(random.randrange(0, 10)))
+        cloudObj = playerClasses.Cloud(sel, gameSettings.cloudDims, random.randrange(1, 4))
         cloudObj.createLocation()
 
         #DISPLAYSURF.blit(cloudObj.image, cloudObj.rect)

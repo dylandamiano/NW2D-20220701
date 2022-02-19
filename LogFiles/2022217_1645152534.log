@@ -1,0 +1,23 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-02-17 21:48:54.745971 >> Initialized Log handler...
+(ENTRY #2) 2022-02-17 21:48:55.523970 >> Initialized Warship handler...
+(ENTRY #3) 2022-02-17 21:48:55.540975 >> Initialized GUI handler...
+(ENTRY #4) 2022-02-17 21:48:55.541959 >> Starting Naval Warfare 2D...
+(ENTRY #5) 2022-02-17 21:48:55.752971 >> Created Sprite for Player!
+(ENTRY #6) 2022-02-17 21:48:55.752971 >> Finished initalizingw!
+(ENTRY #7) 2022-02-17 21:48:57.393394 >> Game resumed!
+(ENTRY #8) 2022-02-17 21:48:57.406382 >> Cloud created! ID: #1
+(ENTRY #9) 2022-02-17 21:48:58.465882 >> Cloud created! ID: #2
+(ENTRY #10) 2022-02-17 21:48:59.493462 >> Cloud created! ID: #3
+(ENTRY #11) 2022-02-17 21:49:00.514007 >> Cloud created! ID: #4
+(ENTRY #12) 2022-02-17 21:49:01.598378 >> Cloud created! ID: #5
+(ENTRY #13) 2022-02-17 21:49:02.692382 >> Cloud created! ID: #6
+(ENTRY #14) 2022-02-17 21:49:03.723005 >> Cloud removed! ID: #6
+(ENTRY #15) 2022-02-17 21:49:03.736005 >> Cloud created! ID: #7
+(ENTRY #16) 2022-02-17 21:49:04.749267 >> Cloud removed! ID: #7
+(ENTRY #17) 2022-02-17 21:49:04.763366 >> Cloud created! ID: #8
+(ENTRY #18) 2022-02-17 21:49:05.848643 >> Cloud created! ID: #9
+(ENTRY #19) 2022-02-17 21:49:05.920535 >> Cloud removed! ID: #9
+(ENTRY #20) 2022-02-17 21:49:06.864007 >> Cloud created! ID: #10
+(ENTRY #21) 2022-02-17 21:49:08.072452 >> Naval Warfare 2D Closed...

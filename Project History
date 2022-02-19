@@ -1,5 +1,9 @@
+2/??/2022 - Work began on projectiles
+
 2/16/2022 - Discovered that I am an idiot and cannot use a global variable in a
 function without declaring 'Global' within the local scope first! :(
 
 2/17/2022 - Tracking issue on why clouds wont delete: "List Index out of Range" -- ignored since January (6:14 PM EST)
 			Fixed @ 7:29 PM EST
+
+			- Continued work on projectiles

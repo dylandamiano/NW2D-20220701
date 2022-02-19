@@ -121,6 +121,8 @@ class Cloud(pygame.sprite.Sprite):
         self.lastMove = 0
     
         cloudCount += 1
+        logHandler.createLog("Cloud created! ID: #" + str(cloudCount))
+
     def __del__(self):
         print("Cloud removed!")
         logHandler.createLog("Cloud removed! ID: #" + str(cloudCount))
