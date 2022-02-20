@@ -1,0 +1,48 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-02-20 18:12:46.586231 >> Initialized Log handler...
+(ENTRY #2) 2022-02-20 18:12:46.841235 >> Initialized Warship handler...
+(ENTRY #3) 2022-02-20 18:12:46.853231 >> Initialized GUI handler...
+(ENTRY #4) 2022-02-20 18:12:46.853231 >> Starting Naval Warfare 2D...
+(ENTRY #5) 2022-02-20 18:12:47.066232 >> Created Sprite for Player!
+(ENTRY #6) 2022-02-20 18:12:47.066232 >> Finished initalizingw!
+(ENTRY #7) 2022-02-20 18:12:47.661356 >> Game resumed!
+(ENTRY #8) 2022-02-20 18:12:47.672858 >> Cloud created! ID: #1
+(ENTRY #9) 2022-02-20 18:12:48.749487 >> Cloud created! ID: #2
+(ENTRY #10) 2022-02-20 18:12:49.776318 >> Cloud created! ID: #3
+(ENTRY #11) 2022-02-20 18:12:50.896264 >> Cloud created! ID: #4
+(ENTRY #12) 2022-02-20 18:12:51.978163 >> Cloud created! ID: #5
+(ENTRY #13) 2022-02-20 18:12:52.071055 >> Cloud removed! ID: #5
+(ENTRY #14) 2022-02-20 18:12:53.060055 >> Cloud created! ID: #6
+(ENTRY #15) 2022-02-20 18:12:54.111217 >> Cloud created! ID: #7
+(ENTRY #16) 2022-02-20 18:12:54.180060 >> Cloud removed! ID: #7
+(ENTRY #17) 2022-02-20 18:12:55.165504 >> Cloud created! ID: #8
+(ENTRY #18) 2022-02-20 18:12:55.341152 >> Cloud removed! ID: #8
+(ENTRY #19) 2022-02-20 18:12:56.259153 >> Cloud created! ID: #9
+(ENTRY #20) 2022-02-20 18:12:57.297366 >> Cloud created! ID: #10
+(ENTRY #21) 2022-02-20 18:12:58.380194 >> Cloud created! ID: #11
+(ENTRY #22) 2022-02-20 18:12:58.542375 >> Cloud removed! ID: #11
+(ENTRY #23) 2022-02-20 18:12:59.420866 >> Cloud created! ID: #12
+(ENTRY #24) 2022-02-20 18:12:59.620392 >> Cloud removed! ID: #12
+(ENTRY #25) 2022-02-20 18:13:00.579894 >> Cloud created! ID: #13
+(ENTRY #26) 2022-02-20 18:13:00.659764 >> Cloud removed! ID: #13
+(ENTRY #27) 2022-02-20 18:13:00.702303 >> Cloud removed! ID: #13
+(ENTRY #28) 2022-02-20 18:13:01.607115 >> Cloud created! ID: #14
+(ENTRY #29) 2022-02-20 18:13:02.621376 >> Cloud created! ID: #15
+(ENTRY #30) 2022-02-20 18:13:02.796888 >> Cloud removed! ID: #15
+(ENTRY #31) 2022-02-20 18:13:03.634438 >> Cloud created! ID: #16
+(ENTRY #32) 2022-02-20 18:13:03.902626 >> Cloud removed! ID: #16
+(ENTRY #33) 2022-02-20 18:13:04.103886 >> Cloud removed! ID: #16
+(ENTRY #34) 2022-02-20 18:13:04.648380 >> Cloud created! ID: #17
+(ENTRY #35) 2022-02-20 18:13:05.689678 >> Cloud created! ID: #18
+(ENTRY #36) 2022-02-20 18:13:06.052658 >> Cloud removed! ID: #18
+(ENTRY #37) 2022-02-20 18:13:06.755358 >> Cloud created! ID: #19
+(ENTRY #38) 2022-02-20 18:13:07.196891 >> Cloud removed! ID: #19
+(ENTRY #39) 2022-02-20 18:13:07.944512 >> Cloud created! ID: #20
+(ENTRY #40) 2022-02-20 18:13:08.024651 >> Cloud removed! ID: #20
+(ENTRY #41) 2022-02-20 18:13:08.385385 >> Cloud removed! ID: #20
+(ENTRY #42) 2022-02-20 18:13:09.171130 >> Cloud created! ID: #21
+(ENTRY #43) 2022-02-20 18:13:10.184699 >> Cloud created! ID: #22
+(ENTRY #44) 2022-02-20 18:13:11.208406 >> Cloud created! ID: #23
+(ENTRY #45) 2022-02-20 18:13:12.262548 >> Cloud created! ID: #24
+(ENTRY #46) 2022-02-20 18:13:12.630336 >> Naval Warfare 2D Closed...
