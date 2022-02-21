@@ -24,6 +24,8 @@ import graphicInterface
 import pygame, sys
 from pygame.locals import *
 
+import projectileClasses
+
 import warshipClonkses
 import playerClasses
 
@@ -196,6 +198,9 @@ while running == True:
 
             elif event.type == pygame.KEYUP:
                 gameSettings.setKeyStatus(event, "UP")
+
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                projectileClasses.mouseFired()
     
         for k in gameSettings.playerOneKeys:
             if (gameSettings.playerOneKeys[k] == True):

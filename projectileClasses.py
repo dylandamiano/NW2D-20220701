@@ -33,7 +33,7 @@ lightRound = "Graphics\\HeavyRound.png"
 heavyRound = "Graphics\\LightRound.png"
 
 lightDimensions = (3, 7)
-heavyDimensions (3, 10)
+heavyDimensions = (3, 10)
 
 projectileCount = 0
 
@@ -71,7 +71,7 @@ class projectile(pygame.sprite.Sprite):
 
     def update(self, picture):
 
-        if (self.v2Pos.x <= 900) and (self.v2Pos.x >= 0) and (self.v2Pos.y <= 900) and self.v2Pos.y >= 0):
+        if (self.v2Pos.x <= 900) and (self.v2Pos.x >= 0) and (self.v2Pos.y <= 900) and (self.v2Pos.y >= 0):
             self.v2Pos += self.v2Vel
             self.image = self.imageRestore
             self.image = pygame.transform.scale(self.image, (20, 41))
@@ -92,9 +92,7 @@ class lightRound(projectile):
         self.image = "Graphics\\LightRound.png"
         self.damage = 2.5
 
-        super().__init__(orientation, owner, lightDimensions, self.iamge, self.damage)
-
-test = lightRound(0, None, )
+        super().__init__(orientation, owner, lightDimensions, self.image, self.damage)
 
 class heavyRound(projectile):
     pass
@@ -118,3 +116,10 @@ def createProjectile(type, orientation, owner):
         logHandler.createLog("Protectile #" + projectileCount + " has been created! Type: Light")
 
 logHandler.createLog("Initialized Projectile handler...")
+
+def mouseFired():
+    global projectileCount
+    projectileCount += 1
+
+    print("Mouse clicked, firing projectile!")
+    logHandler.createLog("Projectile created! ID: #" + str(projectileCount))
