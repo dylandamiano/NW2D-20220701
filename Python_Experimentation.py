@@ -200,6 +200,8 @@ while running == True:
                 gameSettings.setKeyStatus(event, "UP")
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
                 projectileClasses.mouseFired()
     
         for k in gameSettings.playerOneKeys:

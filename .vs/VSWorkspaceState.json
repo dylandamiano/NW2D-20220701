@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Maps"
+    "\\Graphics",
+    "\\LogFiles",
+    "\\Ships"
   ],
-  "SelectedNode": "\\LogFiles",
+  "SelectedNode": "\\LogFiles\\2022222_1645552299.log",
   "PreviewInSolutionExplorer": false
 }
