@@ -29,8 +29,8 @@ pygame.init()
     Projectile sizes are divisible by five! (or simply size / (1/5))
 '''
 
-lightRound = "Graphics\\HeavyRound.png"
-heavyRound = "Graphics\\LightRound.png"
+lightImg = "Graphics\\HeavyRound.png"
+heavyImg = "Graphics\\LightRound.png"
 
 lightDimensions = (3, 7)
 heavyDimensions = (3, 10)
@@ -38,6 +38,7 @@ heavyDimensions = (3, 10)
 projectileCount = 0
 
 activeProjectiles = []
+toDelete = []
 
 class projectile(pygame.sprite.Sprite):
     def __init__(self, orientation, owner, dimensions, imageRestore, damage):
@@ -47,10 +48,11 @@ class projectile(pygame.sprite.Sprite):
 
         self.localOrientation = orientation
         self.lastMove = 0
+        self.owner = owner
 
         self.damage = damage
 
-        self.v2Pos = pygame.Vector2(owner.v2Pos.x, owner.v2Pos.y)
+        self.v2Pos = pygame.Vector2(owner.ship.v2Pos.x, owner.ship.v2Pos.y)
         self.v2Vel = pygame.Vector2(0, 1)
 
         self.v2Vel.rotate_ip(orientation)
@@ -63,26 +65,34 @@ class projectile(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (20, 41))
         self.image = pygame.transform.rotate(self.image, self.localOrientation)
 
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
     def __del__(self):
         logHandler.createLog("Projectile has been removed!")
 
     def findNearestTarget(self):
         pass
 
-    def update(self, picture):
+    def update(self):
 
         if (self.v2Pos.x <= 900) and (self.v2Pos.x >= 0) and (self.v2Pos.y <= 900) and (self.v2Pos.y >= 0):
             self.v2Pos += self.v2Vel
-            self.image = self.imageRestore
+            self.image = pygame.image.load(self.imageRestore)
             self.image = pygame.transform.scale(self.image, (20, 41))
             self.image = pygame.transform.rotate(self.image, self.localOrientation)
+
+            self.rect.center = self.v2Pos
+
+            self.rect = self.image.get_rect()
+            self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def countDown(self):
         if self.TTL > 0:
             self.TTL -= 1
 
-    def __del__(self, entityName):
-        print("Projectile has been removed! Originating entity: " + entityName)
+    def __del__(self,):
+        print("Projectile has been removed!")
         logHandler.createLog("Projectile removed!")        
 
 class lightRound(projectile):
@@ -105,21 +115,24 @@ def createProjectile(type, orientation, owner):
     projectileCount += 1
     tempObj = None
 
-    if type == "heavy":
-        tempObj = projectile(heavyDimensions, orientation, owner)
+    if type == "light":
+        tempObj = lightRound(orientation, owner)
         activeProjectiles.append(tempObj)
-        logHandler.createLog("Protectile #" + projectileCount + " has been created! Type: Heavy")
-        
-    elif type == "light":
-        tempObj = projectile(lightDimensions, orientation, owner)
-        activeProjectiles.append(tempObj)
-        logHandler.createLog("Protectile #" + projectileCount + " has been created! Type: Light")
+        logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
 
 logHandler.createLog("Initialized Projectile handler...")
 
-def mouseFired():
+def mouseFired(orientation, owner):
     global projectileCount
     projectileCount += 1
 
+    createProjectile("light", orientation, owner)
+
     print("Mouse clicked, firing projectile!")
     logHandler.createLog("Projectile created! ID: #" + str(projectileCount))
+
+def updateProjectiles():
+    global activeProjectiles
+
+    for projectile in activeProjectiles:
+        projectile.update()

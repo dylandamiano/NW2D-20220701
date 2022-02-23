@@ -117,6 +117,12 @@ def drawLogs():
 
 log.createLog("Finished initalizingw!")
 
+def updateProjectiles():
+    projectileClasses.updateProjectiles()
+
+    for projectile in projectileClasses.activeProjectiles:
+        DISPLAYSURF.blit(projectile.image, projectile.rect)
+
 while running == True:
 
     if (pause == True):
@@ -125,35 +131,35 @@ while running == True:
         
         DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
-    #print(pause)
-    for event in pygame.event.get():
-        if (event.type == pygame.KEYDOWN):
-            if (event.key == pygame.K_m):
-                if (pause == True):
-                    pause = False
+        #print(pause)
+        for event in pygame.event.get():
+            if (event.type == pygame.KEYDOWN):
+                if (event.key == pygame.K_m):
+                    if (pause == True):
+                        pause = False
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-                gui_return = graphicInterface.checkMouseInput()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                    gui_return = graphicInterface.checkMouseInput()
 
-                if gui_return == "PLAY":
-                    pause = False
-                if gui_return == "STOP":
+                    if gui_return == "PLAY":
+                        pause = False
+                    if gui_return == "STOP":
+                        running = False
+                        pygame.display.quit()
+
+                        log.createLog("Naval Warfare 2D Closed...")
+                        log.writeFile()
+
+            if event.type == pygame.QUIT:
+                    pause = True
                     running = False
                     pygame.display.quit()
 
-                    log.createLog("Naval Warfare 2D Closed...")
-                    log.writeFile()
+            if event.type == pygame.KEYUP:
+                    gameSettings.setKeyStatus(event, "UP")
 
-        if event.type == pygame.QUIT:
-                pause = True
-                running = False
-                pygame.display.quit()
-
-        if event.type == pygame.KEYUP:
-                gameSettings.setKeyStatus(event, "UP")
-
-                #pygame.mouse.get_pos()
-                #pygame.draw.line(DISPLAYSURF,(0,0,255),(450,450),(0,0),5)
+                    #pygame.mouse.get_pos()
+                    #pygame.draw.line(DISPLAYSURF,(0,0,255),(450,450),(0,0),5)
 
     if (pause == False):
         pygame.display.update()
@@ -162,6 +168,8 @@ while running == True:
         DISPLAYSURF.blit(mapInit.image, mapInit.rect)
         DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
         #pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
+
+        updateProjectiles()
        
 
         for i in range (0, math.floor(random.randrange(0, 5))):
@@ -201,8 +209,12 @@ while running == True:
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
+                angleGiven = gameCalculations.get_angle(friendlyAI_1.ship.v2Pos, mouse_pos)
+                print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
+                print(friendlyAI_1.ship.localOrientation)
+
                 pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
-                projectileClasses.mouseFired()
+                projectileClasses.mouseFired(angleGiven, friendlyAI_1)
     
         for k in gameSettings.playerOneKeys:
             if (gameSettings.playerOneKeys[k] == True):
@@ -221,6 +233,13 @@ while running == True:
                     gameCalculations.key_held("E", friendlyAI_1.ship)
 
         gameSettings.checkClouds()
+
+        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y + 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x - 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+
+        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
 
     font_game2 = pygame.font.SysFont('Segoe UI',18)
     DISPLAYSURF.blit(pygame.font.Font.render(font_game2, "Hello, World",1,(255,255,255)),(0,600))

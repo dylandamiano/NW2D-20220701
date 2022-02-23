@@ -52,11 +52,14 @@ class logObject():
 
 def createLog(content):
     global currentCount
+    global logHistory
+
     currentCount += 1
 
     currentTime = dt.datetime.now()
     newLog = logObject(currentTime, content)
 
     logHistory.append(newLog)
+    print(logHistory[currentCount-1].formatOutput())
 
 createLog("Initialized Log handler...")

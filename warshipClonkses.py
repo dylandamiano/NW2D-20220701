@@ -229,8 +229,6 @@ class Fighter(Aircraft):
         self.rect = self.image.get_rect()
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
-        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
-
     def setLocation(self, moveDir):
         if (moveDir == "Forward"):
             self.v2Pos += self.v2Vel

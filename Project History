@@ -10,3 +10,18 @@ function without declaring 'Global' within the local scope first! :(
 
 2/20/2022 - Started work on Island 3, but began with the wrong point slope values. Corrected later on.
 			Just learn how to read :') @ Boundary 10 (Human computational error)
+
+2/22/2022 - So here's the deal. When I originally made the function in 'gameCalculations.py', that was mainly
+			intended to reflect the python coordinate system into one compatible for the pygame framework. In order to
+			revert that back to pygame, it took me four hours to discover that I had to recovert it back to one compatible
+			for pygame again. Why? Because when I was using pygame's coordinate system, that was practically reading it
+			relative to one similar to desmos meaning that we have to do the inverse operation once more by doing 900-y.
+
+			Remember how you cannot divide by zero in math class?
+			Yes, well that happened to me too...  Smh.
+
+			Determination has been made that the projectile casting system for the player will be broken up into 4 quadrants. In addition to this, each quadrant will have
+			two sub-quadrants totallying the sub-quadrant count to 8. While such need currently does not exist, the capability for this will exist for if such determination is made in
+			the future.
+
+			Starting to actually get the system to display the projectiles in place. Will be done 2/23/2022

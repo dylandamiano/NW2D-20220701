@@ -6,6 +6,7 @@
 '''
 
 import pygame
+import math
 import warshipClonkses
 import playerClasses
 import logHandler
@@ -73,7 +74,7 @@ terrainBorder = {
     
 }
 
-def linearEquation(m, b, x):
+def linearEquation(m, b, x): # DESMOS -> PYGAME, TO MAKE IT RELATIVE TO PYGAME, SUBTRACT 900 - (RETURN VAL)
     return 900 - ( (m * x) + b )
 
 # Will handle the movement of the Ship/Sprite itself, needs some minor touch up
@@ -357,3 +358,88 @@ def key_held(keyHeld, character):
         rotateChar(character, "Left")
     if (keyHeld == "E"):
         rotateChar(character, "Right")
+
+'''
+
+    The player's coordinate system for projectile casting will be broken into
+    four primary quadrants.
+
+    However, while the need for 8 sub-quadrants currently does not exist, I am going to
+    make room for it incase there is a need for it in the future, that way the work is already done.
+
+'''
+def get_angle(origin, mousePos):
+    logHandler.createLog("MOUSEPOS: " + str(mousePos))
+    slope = None
+    theta_rad = None
+    theta_deg = None
+
+    try:
+        change_y =  origin[1] - mousePos[1]
+        change_x = origin[0] - mousePos[0]
+
+        theta_rad = math.atan(change_y / change_x)
+        theta_deg = math.degrees(theta_rad) # Or (theta_rad) * (180/pi)
+    except ZeroDivisionError:
+        print("Cannot divide by zero!")
+
+        # RETURN TO!
+        pass
+
+    logHandler.createLog("SLOPE CALC:" + str(slope))
+    # referenceY = linearEquation(1, (origin[0] + origin[1]), mousePos[0]) -- SOMETHING LIKE THIS!
+
+    if (mousePos[0] > origin[0]) and (mousePos[1] < origin[1]): # If the player is aiming mouse RIGHT of CENTER, QUADRANT 1
+        if mousePos[1] < 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
+            return 270 - theta_deg
+        elif mousePos[1] > 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
+            return 270 - theta_deg
+    elif (mousePos[0] < origin[0]) and (mousePos[1] < origin[1]): # If the player is aiming mouse LEFT of CENTER, QUADRANT 2
+        if mousePos[1] < 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
+            return 90 - theta_deg
+        elif mousePos[1] > 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
+            return 90 - theta_deg
+
+    elif (mousePos[0] < origin[0]) and (mousePos[1] > origin[1]): # If the player is aiming mouse LEFT of CENTER, QUADRANT 3
+        if mousePos[1] < 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
+            return 90 + abs(theta_deg)
+        elif mousePos[1] > 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
+            return 90 + abs(theta_deg)
+    elif (mousePos[0] > origin[0]) and (mousePos[1] > origin[1]): # If the player is aiming mouse RIGHT of CENTER, QUADRANT 4
+        if mousePos[1] < 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
+            return 270 - theta_deg
+        elif mousePos[1] > 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
+            return 270 - theta_deg
+
+    elif (mousePos[0] == origin[0]) and (mousePos[1] < origin[1]):
+        return 0
+    elif (mousePos[0] == origin[0]) and (mousePos[1] > origin[1]):
+        return 180
+    elif (mousePos[0] <= origin[0]) and (mousePos[1] == origin[1]):
+        return 90
+    elif (mousePos[0] >= origin[0]) and (mousePos[1] == origin[1]):
+        return 270
