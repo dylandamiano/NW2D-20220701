@@ -10,6 +10,9 @@ fileName = timeAsString + ".log"
 
 currentCount = 0
 
+maxDisplay = 44
+fontSize = 18
+
 logHistory = [];
 logDisplay = [];
 
@@ -22,6 +25,24 @@ elif os.path.exists(os.path.join(logPath, fileName)) == False:
         f.write("Log for Naval Warfare 2D, intended for debugging purposes only! \n\n")
 
 print(os.listdir(logPath))
+
+log_to_dist_index = 0
+
+def update_display_log() -> None:
+    global logHistory
+    global logDisplay
+    global log_to_dist_index
+
+    if len(logDisplay) == 44:
+        if logDisplay[len(logDisplay)-1].formatOutput() != logHistory[len(logHistory)-1].formatOutput():
+            logDisplay.pop(0)
+            logDisplay.append(logHistory[len(logHistory)-1])
+    elif len(logDisplay) < 44:
+        for i in range(log_to_dist_index, len(logHistory)):
+            if len(logDisplay) < 44:
+                logDisplay.append(logHistory[log_to_dist_index])
+                log_to_dist_index += 1
+
 
 def getDisplayLog() -> list:
     return logDisplay
@@ -61,5 +82,7 @@ def createLog(content):
 
     logHistory.append(newLog)
     print(logHistory[currentCount-1].formatOutput())
+
+    update_display_log()
 
 createLog("Initialized Log handler...")

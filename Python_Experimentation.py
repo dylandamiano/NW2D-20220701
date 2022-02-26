@@ -10,9 +10,9 @@
 # Basic Module Initialization
 import datetime
 import math, random
-import threading
+#import threading
 
-import cairo
+#import cairo
 import logHandler as log
 
 import time
@@ -47,6 +47,11 @@ log.createLog("Starting Naval Warfare 2D...")
 pygame.init()
 
 DISPLAYSURF = pygame.display.set_mode(size=(900,900))
+
+#size_x = 0
+#size_y = 0
+
+#DISPLAYSURF_PRI = pygame.Surface((size_x, size_y))
 FPSClock = pygame.time.Clock()
 FPS = 100
 
@@ -77,9 +82,9 @@ log.createLog("Created Sprite for Player!")
         - Set a movement interval for clouds after an "x" period of time
         - Randomize the location of said cloud in question
 '''
-# 937-776-9122
-# 23hallg@gmail.com
+
 a = 5
+
 def createCloud():
     t = time.time()
     randBreak = math.floor(random.randrange(1, 10))
@@ -114,8 +119,7 @@ pause = True
 def drawLogs():
     logHistory = log.getDisplayLog()
 
-
-log.createLog("Finished initalizingw!")
+log.createLog("Finished initalizing!")
 
 def updateProjectiles():
     projectileClasses.updateProjectiles()
@@ -123,45 +127,105 @@ def updateProjectiles():
     for projectile in projectileClasses.activeProjectiles:
         DISPLAYSURF.blit(projectile.image, projectile.rect)
 
+pregame = True
+
+def checkInput():
+    global pause
+    global running
+    global pregame
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pause = True
+            running = False
+
+            log.createLog("Naval Warfare 2D Closed...")
+            log.writeFile()
+
+            pygame.display.quit()
+        elif (event.type == pygame.KEYDOWN) and (pregame == False) and (pause == False):
+            if (pause == False):
+                gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
+                gameSettings.setKeyStatus(event, "DOWN")
+
+            if (event.key == pygame.K_m):
+                if (pause == False):
+                    pause = True
+                    gameSettings.resetKeyStatus()
+                elif (pause == True):
+                    pause = False
+                    gameSettings.resetKeyStatus()
+
+        elif (event.type == pygame.KEYUP) and (pause == False) and (pregame == False):
+            gameSettings.setKeyStatus(event, "UP")
+
+            #pygame.mouse.get_pos()
+            #pygame.draw.line(DISPLAYSURF,(0,0,255),(450,450),(0,0),5)
+
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+        
+            if (pause == False) and (pregame == False):
+                mouse_pos = pygame.mouse.get_pos()
+                angleGiven = gameCalculations.get_angle(friendlyAI_1.ship.v2Pos, mouse_pos)
+                print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
+                print(friendlyAI_1.ship.localOrientation)
+
+                pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+                projectileClasses.mouseFired(angleGiven, friendlyAI_1)
+            elif (pause == True) or (pregame == True):
+                gui_return = graphicInterface.checkMouseInput()
+
+                if gui_return == "PLAY":
+                    pause = False
+                    pregame = False
+                if gui_return == "STOP":
+                    running = False
+                    pygame.display.quit()
+
+                    log.createLog("Naval Warfare 2D Closed...")
+                    log.writeFile()
+
+def showLogs():
+    if graphicInterface.mainMenu.currentMenu() == "Debug":
+        font = pygame.font.SysFont("Segoe UI Light", log.fontSize)
+        log.update_display_log()
+
+        log_iteration = 0
+
+        y_start = 60.7
+
+
+        for log_entry in log.logDisplay:
+            y_add = 18 * log_iteration
+
+            text = pygame.font.Font.render(font, log_entry.formatOutput(), 1, (255,255,255))
+            DISPLAYSURF.blit(text, (18, y_start + y_add))
+
+            log_iteration += 1
+
 while running == True:
 
-    if (pause == True):
+    if (pause == True) and (pregame == True):
         pygame.display.update()
         pygame.time.Clock().tick(FPS)
         
         DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
         #print(pause)
-        for event in pygame.event.get():
-            if (event.type == pygame.KEYDOWN):
-                if (event.key == pygame.K_m):
-                    if (pause == True):
-                        pause = False
+        checkInput()
+        showLogs()
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                    gui_return = graphicInterface.checkMouseInput()
+    if (pause == True) and (pregame == False):
+        pygame.display.update()
+        pygame.time.Clock().tick(FPS)
+        
+        DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
-                    if gui_return == "PLAY":
-                        pause = False
-                    if gui_return == "STOP":
-                        running = False
-                        pygame.display.quit()
+        #print(pause)
+        checkInput()
+        showLogs()
 
-                        log.createLog("Naval Warfare 2D Closed...")
-                        log.writeFile()
-
-            if event.type == pygame.QUIT:
-                    pause = True
-                    running = False
-                    pygame.display.quit()
-
-            if event.type == pygame.KEYUP:
-                    gameSettings.setKeyStatus(event, "UP")
-
-                    #pygame.mouse.get_pos()
-                    #pygame.draw.line(DISPLAYSURF,(0,0,255),(450,450),(0,0),5)
-
-    if (pause == False):
+    if (pause == False) and (pregame == False):
         pygame.display.update()
         pygame.time.Clock().tick(FPS)
 
@@ -186,35 +250,7 @@ while running == True:
             DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
                 #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
     
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pause = True
-                running = False
-
-                log.createLog("Naval Warfare 2D Closed...")
-                log.writeFile()
-
-                pygame.display.quit()
-            elif event.type == pygame.KEYDOWN:
-                gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
-                gameSettings.setKeyStatus(event, "DOWN")
-
-                if (event.key == pygame.K_m):
-                    if (pause == False):
-                        pause = True
-                        gameSettings.resetKeyStatus()
-
-            elif event.type == pygame.KEYUP:
-                gameSettings.setKeyStatus(event, "UP")
-
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_pos = pygame.mouse.get_pos()
-                angleGiven = gameCalculations.get_angle(friendlyAI_1.ship.v2Pos, mouse_pos)
-                print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
-                print(friendlyAI_1.ship.localOrientation)
-
-                pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
-                projectileClasses.mouseFired(angleGiven, friendlyAI_1)
+        checkInput()
     
         for k in gameSettings.playerOneKeys:
             if (gameSettings.playerOneKeys[k] == True):
@@ -240,8 +276,5 @@ while running == True:
         pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x - 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
 
         pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
-
-    font_game2 = pygame.font.SysFont('Segoe UI',18)
-    DISPLAYSURF.blit(pygame.font.Font.render(font_game2, "Hello, World",1,(255,255,255)),(0,600))
 
 log.createLog("Cleaning up for close...")

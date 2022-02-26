@@ -1,0 +1,49 @@
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        pause = True
+        running = False
+
+        log.createLog("Naval Warfare 2D Closed...")
+        log.writeFile()
+
+        pygame.display.quit()
+    elif event.type == pygame.KEYDOWN:
+        if (pause == False):
+            gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
+            gameSettings.setKeyStatus(event, "DOWN")
+
+        if (event.key == pygame.K_m):
+            if (pause == False):
+                pause = True
+                gameSettings.resetKeyStatus()
+            elif (pause == True):
+                pause = False
+                gameSettings.resetKeyStatus()
+
+    elif (event.type == pygame.KEYUP) and (pause == False):
+        gameSettings.setKeyStatus(event, "UP")
+
+        #pygame.mouse.get_pos()
+        #pygame.draw.line(DISPLAYSURF,(0,0,255),(450,450),(0,0),5)
+
+    elif event.type == pygame.MOUSEBUTTONDOWN:
+        
+        if pause == False:
+            mouse_pos = pygame.mouse.get_pos()
+            angleGiven = gameCalculations.get_angle(friendlyAI_1.ship.v2Pos, mouse_pos)
+            print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
+            print(friendlyAI_1.ship.localOrientation)
+
+            pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+            projectileClasses.mouseFired(angleGiven, friendlyAI_1)
+        elif pause == True:
+            gui_return = graphicInterface.checkMouseInput()
+
+            if gui_return == "PLAY":
+                pause = False
+            if gui_return == "STOP":
+                running = False
+                pygame.display.quit()
+
+                log.createLog("Naval Warfare 2D Closed...")
+                log.writeFile()

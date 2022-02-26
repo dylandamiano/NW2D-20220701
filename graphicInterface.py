@@ -30,13 +30,13 @@ class menuInterface(pygame.sprite.Sprite):
         self.images = {
             "homeMenu": "Graphics/graphicalMenu.png",    
             "aboutMenu": "Graphics/aboutMenu.png",
-            "shipMenu": None,
+            "shipMenu": "Graphics/shipSelection.png",
             "debugMenu": "Graphics/debugMenuNW2D.png" # Top Min = 60.7 || BOTTOM Min = 839.3
         }
-        self.originalMenu = self.images["homeMenu"]
+        self.originalMenu = self.images["shipMenu"]
         self.active = False
 
-        self.currentSelection = "Main"
+        self.currentSelection = "shipMenu"
 
         self.image = pygame.image.load(self.originalMenu)
         self.image = pygame.transform.scale(self.image, (900, 900))
@@ -90,10 +90,35 @@ class menuInterface(pygame.sprite.Sprite):
                     "center": (450, 791.9)
                  }
             },
+
+            "SHIP_SELECT": {
+                "arrow-left": {
+                    "top-left": (108, 309),
+                    "bottom-right": (191.4, 450),
+                 },
+
+                "arrow-right": {
+                    "top-left": (708.4, 309),
+                    "bottom-right": (792, 450),
+                },
+
+                "select": {
+                    "top-left": (124, 755.4),
+                    "bottom-right": (434.1, 839.2),
+                },
+
+                "return": {
+                    "top-left": (465.9, 755.4),
+                    "bottom-right": (776, 839.2),
+                },
+            },
         }
 
-        def changeMenu(self):
-            pass
+    def changeMenu(self):
+        pass
+
+    def currentMenu(self):
+        return self.currentSelection
 
          # Values will be as tuple x,y) within a multidimensional array
 
@@ -160,5 +185,38 @@ def checkMouseInput():
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
         logHandler.createLog("Returning to menu!")
+
+    elif mainMenu.currentSelection == "shipMenu":
+        if (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["bottom-right"][0]))):
+            if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["bottom-right"][1]))):
+                print("Going to main menu!")
+                mainMenu.currentSelection = "Main"
+                mainMenu.originalMenu = mainMenu.images["homeMenu"]
+                mainMenu.image = pygame.image.load(mainMenu.originalMenu)
+                mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+                logHandler.createLog("Returning to menu!")
+
+                return "Menu"
+
+        elif (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["bottom-right"][0]))):
+            if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["bottom-right"][1]))):
+                print("Ship changed!")
+                pass # Will be determined later!
+        elif (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["bottom-right"][0]))):
+            if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["bottom-right"][1]))):
+                print("Ship changed!")
+                pass # Will be determined later!
+
+        elif (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][0]))):
+            if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][1]))):
+                print("Going to main menu!")
+                mainMenu.currentSelection = "Main"
+                mainMenu.originalMenu = mainMenu.images["homeMenu"]
+                mainMenu.image = pygame.image.load(mainMenu.originalMenu)
+                mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+                logHandler.createLog("Returning to menu!")
+
+                return "Menu"
+
 
 logHandler.createLog("Initialized GUI handler...")

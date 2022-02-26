@@ -400,6 +400,7 @@ def get_angle(origin, mousePos):
             logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
             logHandler.createLog("Below!")
             return 270 - theta_deg
+
     elif (mousePos[0] < origin[0]) and (mousePos[1] < origin[1]): # If the player is aiming mouse LEFT of CENTER, QUADRANT 2
         if mousePos[1] < 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
             logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
@@ -423,6 +424,7 @@ def get_angle(origin, mousePos):
             logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
             logHandler.createLog("Below!")
             return 90 + abs(theta_deg)
+
     elif (mousePos[0] > origin[0]) and (mousePos[1] > origin[1]): # If the player is aiming mouse RIGHT of CENTER, QUADRANT 4
         if mousePos[1] < 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
             logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
