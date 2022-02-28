@@ -203,6 +203,15 @@ def showLogs():
 
             log_iteration += 1
 
+def ship_selection():
+    if graphicInterface.mainMenu.currentSelection == "shipMenu":
+        ship_img = pygame.image.load(graphicInterface.checkShip())
+
+        rect = ship_img.get_rect()
+        rect = (275, 250)
+
+        DISPLAYSURF.blit(ship_img, rect)
+
 while running == True:
 
     if (pause == True) and (pregame == True):
@@ -210,6 +219,8 @@ while running == True:
         pygame.time.Clock().tick(FPS)
         
         DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
+
+        ship_selection()
 
         #print(pause)
         checkInput()
@@ -270,11 +281,11 @@ while running == True:
 
         gameSettings.checkClouds()
 
-        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
-        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y + 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
-        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
-        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x - 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y + 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x - 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
 
-        pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+        #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
 
 log.createLog("Cleaning up for close...")

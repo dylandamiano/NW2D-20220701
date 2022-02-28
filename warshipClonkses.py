@@ -42,7 +42,7 @@ class Ship(pygame.sprite.Sprite):
         self.vec2 = pygame.math.Vector2
 
         self.v2Pos = self.vec2(450, 450)
-        self.v2Vel = self.vec2(0, -1)
+        self.v2Vel = self.vec2(0, -.25)
 
         self.v2Rot = 0
 
@@ -72,6 +72,8 @@ class Battleship(Ship):
         super().__init__(player)
         self.shipName == "Battleship"
 
+        self.round_type = "heavy"
+
     def fireCannons():
         print("Firing cannons!")
 
@@ -86,6 +88,8 @@ class Frigate(Ship):
     def __init__(self, player):
         super().__init__(player)
 
+        self.round_type = "heavy"
+
     def fireCannons():
         print("Firing cannons!")
 
@@ -95,6 +99,8 @@ class Frigate(Ship):
 class Destroyer(Ship):
     def __init__(self, player):
         super().__init__(player)
+
+        self.round_type = "heavy"
 
     def fireCannons():
         print("Firing cannons!")
@@ -112,6 +118,8 @@ class Carrier(Ship):
         self.image = pygame.image.load(self.imageRestore)
         self.image = pygame.transform.scale(self.image, (20, 41)) # (self.image, (20, 41))
 
+        self.round_type = "light"
+
         self.rect = self.image.get_rect()
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
@@ -126,11 +134,11 @@ class Carrier(Ship):
             self.localOrientation = 0
 
         if (rotDir == "Left"):
-            self.v2Vel.rotate_ip(-1)
-            self.localOrientation += 1
+            self.v2Vel.rotate_ip(-.25)
+            self.localOrientation += .25
         elif (rotDir == "Right"):
-            self.v2Vel.rotate_ip(1)
-            self.localOrientation -= 1
+            self.v2Vel.rotate_ip(.25)
+            self.localOrientation -= .25
 
         #print(self.localOrientation)
 
@@ -197,6 +205,8 @@ class Fighter(Aircraft):
 
         self.imageRestore = "Ships\\Fighter.png"
 
+        self.round_type = "light"
+
         self.image = pygame.image.load(self.imageRestore)
         self.image = pygame.transform.scale(self.image, (25, 26))
 
@@ -214,11 +224,11 @@ class Fighter(Aircraft):
             self.localOrientation = 0
 
         if (rotDir == "Left"):
-            self.v2Vel.rotate_ip(-2)
-            self.localOrientation += 2
+            self.v2Vel.rotate_ip(-1)
+            self.localOrientation += 1
         elif (rotDir == "Right"):
-            self.v2Vel.rotate_ip(2)
-            self.localOrientation -= 2
+            self.v2Vel.rotate_ip(1)
+            self.localOrientation -= 1
 
         #print(self.localOrientation)
 

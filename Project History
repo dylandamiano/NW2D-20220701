@@ -42,3 +42,6 @@ function without declaring 'Global' within the local scope first! :(
 			Also in the process of making it to where the display log only shows 44 elements rather than every element at a time to conserve memory usage.
 				As far as updating the display log list went, it was also a human clerical error as I had to update the display log history while the game was running
 				otherwise, some of the log entries would be missing since it would only update if you opened the menu.
+
+2/27/22 - Added capability to show what you are going to playing as before the game actually starts.
+		  Still has to be worked on somewhat that way you can actually play as the right entity. Will be done tomorrow.

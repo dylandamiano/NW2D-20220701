@@ -33,6 +33,9 @@ class menuInterface(pygame.sprite.Sprite):
             "shipMenu": "Graphics/shipSelection.png",
             "debugMenu": "Graphics/debugMenuNW2D.png" # Top Min = 60.7 || BOTTOM Min = 839.3
         }
+
+        self.selection = 0
+
         self.originalMenu = self.images["shipMenu"]
         self.active = False
 
@@ -133,6 +136,16 @@ class headsUpDisplay(pygame.sprite.Sprite):
 
 mainMenu = menuInterface()
 
+def checkShip():
+    if mainMenu.selection == 0:
+        return "Graphics/ship_select_icons/CARRIER.png"
+    elif mainMenu.selection == 1:
+        return "Graphics/ship_select_icons/Destroyer.png"
+    elif mainMenu.selection == 2:
+        return "Graphics/ship_select_icons/jet.png"
+    
+
+
 def checkMouseInput():
     mousePosition = pygame.mouse.get_pos() # Returns as tuple (x, y)
     print(mousePosition[0])
@@ -189,7 +202,7 @@ def checkMouseInput():
     elif mainMenu.currentSelection == "shipMenu":
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["bottom-right"][1]))):
-                print("Going to main menu!")
+                print("L!") # RETURNS TO MENU
                 mainMenu.currentSelection = "Main"
                 mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
@@ -202,14 +215,25 @@ def checkMouseInput():
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["bottom-right"][1]))):
                 print("Ship changed!")
                 pass # Will be determined later!
+
+            if mainMenu.selection > 0:
+                    mainMenu.selection -= 1
+            elif mainMenu.selection == 0:
+                mainMenu.selection = 2
+
         elif (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["bottom-right"][1]))):
                 print("Ship changed!")
                 pass # Will be determined later!
 
+                if mainMenu.selection < 2:
+                    mainMenu.selection += 1
+                elif mainMenu.selection == 2:
+                    mainMenu.selection = 0
+
         elif (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][1]))):
-                print("Going to main menu!")
+                print("R!") # SELECTS SHIP
                 mainMenu.currentSelection = "Main"
                 mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)

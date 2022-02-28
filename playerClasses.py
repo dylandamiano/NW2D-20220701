@@ -112,9 +112,9 @@ class Cloud(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (cloudDims[cloudDes][0], cloudDims[cloudDes][1]))
 
         self.rect = self.image.get_rect()
-        self.rect.center = (-10, 450)
+        self.rect.center = (-100, 450)
 
-        self.posX = 0
+        self.posX = -100
 
         self.moveSpeed = cloudSpeed
         self.moveInt = 0
@@ -130,7 +130,7 @@ class Cloud(pygame.sprite.Sprite):
 
     def createLocation(self):
         randomY = math.floor(random.randrange(0, 900))
-        self.rect.center = (-10, randomY)
+        self.rect.center = (-100, randomY)
 
         self.moveInt = random.randrange(2, 3)
         #print(self.moveInt)

@@ -52,7 +52,7 @@ class projectile(pygame.sprite.Sprite):
         self.damage = damage
 
         self.v2Pos = pygame.Vector2(owner.ship.v2Pos.x, owner.ship.v2Pos.y)
-        self.v2Vel = pygame.Vector2(0, -10)
+        self.v2Vel = pygame.Vector2(0, -2.5)
 
         self.v2Vel.rotate_ip(-orientation)
 
@@ -114,10 +114,10 @@ class heavyRound(projectile):
 
         self.image = heavyImg
         self.damage = 5
-
+         
         super().__init__(orientation, owner, heavyDimensions, self.image, self.damage)
 
-def createProjectile(type, orientation, owner):
+def createProjectile(orientation, owner):
     global projectileCount
     global heavyDimensions
     global lightDimensions
@@ -125,7 +125,11 @@ def createProjectile(type, orientation, owner):
     projectileCount += 1
     tempObj = None
 
-    if type == "light":
+    if owner.ship.round_type == "light":
+        tempObj = lightRound(orientation, owner)
+        activeProjectiles.append(tempObj)
+        logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
+    elif owner.ship.round_type == "heavy":
         tempObj = heavyRound(orientation, owner)
         activeProjectiles.append(tempObj)
         logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
@@ -136,7 +140,7 @@ def mouseFired(orientation, owner):
     global projectileCount
     projectileCount += 1
 
-    createProjectile("light", orientation, owner)
+    createProjectile(orientation, owner)
 
     print("Mouse clicked, firing projectile!")
     logHandler.createLog("Projectile created! ID: #" + str(projectileCount))

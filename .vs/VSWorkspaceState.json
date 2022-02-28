@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Graphics",
-    "\\LogFiles",
-    "\\Maps",
-    "\\Module Backup"
+    "\\Module Backup",
+    "\\Ships"
   ],
-  "SelectedNode": "\\LogFiles",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
