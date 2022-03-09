@@ -35,6 +35,7 @@ class menuInterface(pygame.sprite.Sprite):
         }
 
         self.selection = 0
+        self.chosen = 0
 
         self.originalMenu = self.images["shipMenu"]
         self.active = False
@@ -234,13 +235,15 @@ def checkMouseInput():
         elif (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][1]))):
                 print("R!") # SELECTS SHIP
-                mainMenu.currentSelection = "Main"
-                mainMenu.originalMenu = mainMenu.images["homeMenu"]
-                mainMenu.image = pygame.image.load(mainMenu.originalMenu)
-                mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Returning to menu!")
+                #mainMenu.currentSelection = "Main"
+                #mainMenu.originalMenu = mainMenu.images["homeMenu"]
+                #mainMenu.image = pygame.image.load(mainMenu.originalMenu)
+                #mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+                #logHandler.createLog("Returning to menu!")
 
-                return "Menu"
+                mainMenu.chosen = mainMenu.selection
+
+                return "Select"
 
 
 logHandler.createLog("Initialized GUI handler...")

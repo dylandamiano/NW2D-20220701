@@ -11,8 +11,10 @@ playerOneKeys = {
     "E_Hold": False
 }
 
-maxPlayers = 2
+maxPlayers = 1
 playerCount = 0
+
+activePlayers = []
 
 cloudLast = 0
 
@@ -52,7 +54,7 @@ def setKeyStatus(regKey = None, eventType = None):
     if (eventType == "UP"):
         if (regKey.key == pygame.K_w):
             playerOneKeys["W_Hold"] = False
-            print("W lifted")
+            #print("W lifted")
         elif (regKey.key == pygame.K_a):
             playerOneKeys["A_Hold"] = False
         elif (regKey.key == pygame.K_s):
@@ -66,7 +68,7 @@ def setKeyStatus(regKey = None, eventType = None):
     elif (eventType == "DOWN"):
         if (regKey.key == pygame.K_w): 
             playerOneKeys["W_Hold"] = True
-            print("W pressed")
+            #print("W pressed")
         elif (regKey.key == pygame.K_a):
             playerOneKeys["A_Hold"] = True
         elif (regKey.key == pygame.K_s):
@@ -80,7 +82,7 @@ def setKeyStatus(regKey = None, eventType = None):
     elif (regKey == None and eventType == None):
         pass
 
-    print(getKeyStatus())
+    #print(getKeyStatus())
 
 '''
 a
@@ -98,7 +100,6 @@ a
 
 '''
 
-activeEntities = []
 activeClouds = []
 
 def checkClouds():

@@ -1,0 +1,76 @@
+THIS ONLY INCLUDES MAJOR ADDITIONS OR CHANGES, NOT MINOR ADDITIONS OR CHANGES
+
+12/2/2021 - Project conceived, name for project not determined
+
+2/??/2022 - Work began on projectiles
+
+1/07/22 - Project uploaded to Github for 'safe-keeping'
+
+2/16/2022 - Discovered that cannot use a global variable in a
+			function without declaring 'Global' within the local scope first! 
+			
+			How did this slide past me the whole time? I don't know, don't ask me.
+			All I do know is that stackoverflow is a wonderful resource!
+
+2/17/2022 - Tracking issue on why clouds wont delete: "List Index out of Range" -- ignored since January (6:14 PM EST)
+			Fixed @ 7:29 PM EST
+
+			- Continued work on projectiles
+
+2/20/2022 - Started work on Island 3, but began with the wrong point slope values. Corrected later on.
+			Just learn how to read @ Boundary 10
+
+2/22/2022 - So here's the deal. When I originally made the function in 'gameCalculations.py', that was mainly
+			intended to reflect the python coordinate system into one compatible for the pygame framework. In order to
+			revert that back to pygame, it took me four hours to discover that I had to recovert it back to one compatible
+			for pygame again. Why? Because when I was using pygame's coordinate system, that was practically reading it
+			relative to one similar to desmos meaning that we have to do the inverse operation once more by doing 900-y.
+
+			Remember how you cannot divide by zero in math class?
+			Yes, well that happened to me too...  Smh.
+
+			Determination has been made that the projectile casting system for the player will be broken up into 4 quadrants. In addition to this, each quadrant will have
+			two sub-quadrants totallying the sub-quadrant count to 8. While such need currently does not exist, the capability for this will exist for if such determination is made in
+			the future.
+
+			Starting to actually get the system to display the projectiles in place. Will be done 2/23/2022
+
+2/26/2022 - Was working with the log history system for the game and ran into an issue when it came to getting the text to separate at an y-interval of 18 pixels.
+			It was an error on my part because I was running the calculations before actually changing the values which kept giving me a value of 18.
+
+			Example:
+
+				log_iteration = 0
+			
+				y_start = 60.7
+				y_add = 18 * iteration
+
+				FOR LOOP:
+					y_final = y_start + y_add :::: RETURNS --> 60.7 RATHER THAN EXPECTED RESULT
+
+			Also in the process of making it to where the display log only shows 44 elements rather than every element at a time to conserve memory usage.
+				As far as updating the display log list went, it was also an error on my part as I had to update the display log history while the game was running
+				otherwise, some of the log entries would be missing since it would only update if you opened the menu.
+
+2/27/22 - Added capability to show what you are going to playing as before the game actually starts.
+		  Still has to be worked on somewhat that way you can actually play as the right entity. Will be done tomorrow.
+
+2/28/22 - Performance has been noticed to been heavily impacted when utilizing the Fighter. The size of the fighter has to be scaled down to its desirable size
+			that is fit for ingame use; otherwise, if the game scales it down, it sucks up processing power slowing down performance. I have tried to use multi-threading
+			at first but that has proven to be a fruitless attempt in which I just completely tossed it to the curb and just stomped on it.
+
+3/3/22 - Dumb-AI development started.
+			Just a bunch of conditional statements as expected,
+			nothing special to it. Really.
+			
+			Issue in hit boundaries at Island 2. Has to do something with Sub-Region 7 and or Box 3
+			
+3/4/22 - Boundary issue was actually at Sub-Region 3. It was just a mistake in regards to inequality comparison operators.
+
+3/7/22 - Began work for AI to bounce-back from walls when too close.
+		
+			Also added "Splash" screen
+
+			Adding 'player cooldown' for firing sequences
+				- Originally did not work because of order of operations when comparing operators
+				- Mistyped variable as well and that had something to do with it not working

@@ -25,6 +25,10 @@ class Player(pygame.sprite.Sprite):
         self.username = name
         self.ship = None
         self.type = ""
+
+        self.last_fired = 0
+
+        self.AI = False
         
         self.health = 100
           
@@ -57,10 +61,22 @@ class Player(pygame.sprite.Sprite):
             else:
                 print("No ship was found...")
 
-class computerEntity(pygame.sprite.Sprite):
-    def __init__(self):
-        super().__init__(self)
-        pass
+class computerEntity(Player):
+    def __init__(self, name):
+        pygame.sprite.Sprite.__init__(self)
+        Player.__init__(self, name)
+
+        self.AI = True
+        self.reverse = False
+
+        self.last_move = 0
+        self.last_rotate = 0
+        
+        self.rotate_direction = 0
+        self.move_direction = 1
+
+        print("New class initialized...")
+        logHandler.createLog("Dumb-AI Entity created!")
 
 '''
 
@@ -124,7 +140,7 @@ class Cloud(pygame.sprite.Sprite):
         logHandler.createLog("Cloud created! ID: #" + str(cloudCount))
 
     def __del__(self):
-        print("Cloud removed!")
+        #print("Cloud removed!")
         logHandler.createLog("Cloud removed! ID: #" + str(cloudCount))
         del self
 

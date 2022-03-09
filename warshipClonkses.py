@@ -4,6 +4,8 @@ import pygame
 import gameSettings
 import logHandler
 
+import threading
+
 from pygame.locals import *
 
 pygame.init()
@@ -173,7 +175,7 @@ class Aircraft(pygame.sprite.Sprite):
         self.vec2 = pygame.math.Vector2
 
         self.v2Pos = self.vec2(450, 450)
-        self.v2Vel = self.vec2(0, -2)
+        self.v2Vel = self.vec2(0, -1)
 
         self.v2Rot = 0
 
@@ -224,11 +226,11 @@ class Fighter(Aircraft):
             self.localOrientation = 0
 
         if (rotDir == "Left"):
-            self.v2Vel.rotate_ip(-1)
-            self.localOrientation += 1
+            self.v2Vel.rotate_ip(-.5)
+            self.localOrientation += .5
         elif (rotDir == "Right"):
-            self.v2Vel.rotate_ip(1)
-            self.localOrientation -= 1
+            self.v2Vel.rotate_ip(.5)
+            self.localOrientation -= .5
 
         #print(self.localOrientation)
 

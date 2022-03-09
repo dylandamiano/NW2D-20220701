@@ -1,0 +1,25 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-03-08 12:46:19.835785 >> Initialized Log handler...
+(ENTRY #2) 2022-03-08 12:46:20.772026 >> Initialized Warship handler...
+(ENTRY #3) 2022-03-08 12:46:20.772571 >> Dumb-AI Entity created!
+(ENTRY #4) 2022-03-08 12:46:20.773553 >> Dumb-AI Entity created!
+(ENTRY #5) 2022-03-08 12:46:20.774551 >> Dumb-AI Entity created!
+(ENTRY #6) 2022-03-08 12:46:20.775551 >> Dumb-AI Entity created!
+(ENTRY #7) 2022-03-08 12:46:20.776552 >> Dumb-AI Entity created!
+(ENTRY #8) 2022-03-08 12:46:20.777570 >> Dumb-AI Entity created!
+(ENTRY #9) 2022-03-08 12:46:20.779554 >> Dumb-AI Entity created!
+(ENTRY #10) 2022-03-08 12:46:20.783555 >> Dumb-AI Entity created!
+(ENTRY #11) 2022-03-08 12:46:20.785553 >> Dumb-AI Entity created!
+(ENTRY #12) 2022-03-08 12:46:20.788553 >> Dumb-AI Entity created!
+(ENTRY #13) 2022-03-08 12:46:20.830573 >> Initialized GUI handler...
+(ENTRY #14) 2022-03-08 12:46:20.832554 >> Initialized Projectile handler...
+(ENTRY #15) 2022-03-08 12:46:20.832554 >> Starting Naval Warfare 2D...
+(ENTRY #16) 2022-03-08 12:46:26.121036 >> Created Sprite for Player!
+(ENTRY #17) 2022-03-08 12:46:26.121036 >> Finished initalizing!
+(ENTRY #18) 2022-03-08 12:46:28.452600 >> Returning to menu!
+(ENTRY #19) 2022-03-08 12:46:30.571216 >> Opened Debug Menu!
+(ENTRY #20) 2022-03-08 12:46:39.673686 >> Returning to menu!
+(ENTRY #21) 2022-03-08 12:46:40.563062 >> Opened about menu!
+(ENTRY #22) 2022-03-08 12:46:42.318867 >> Returning to menu!
+(ENTRY #23) 2022-03-08 12:46:46.142750 >> Naval Warfare 2D Closed...

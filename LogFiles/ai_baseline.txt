@@ -1,0 +1,22 @@
+The AI for the gameplay will be based upon a dumb-AI system...
+
+An DUMB AI is an AI that has pre-determined output based on what it is given.
+It will be utilizing a bunch of IF statements to help determine which path it will go on towards the player.
+
+So far, I have thought of the following...
+The movement for the AI will be based upon chance. HOWEVER,
+the AI will determine a differnet spot to move to when the following happens:
+- There are weapons being fired at any position on the map
+- It is being fired at directly
+
+The weapons system for the AI will be as follows:
+- Fires at player when it is being fired at back
+- Will consist of pre-programmed discrepencies, that way the player does not get annihilated at the start of the game.
+	It also helps to ensure that the shots can actually hit rather than just firing at the players originating position
+
+The player will determine how many AIs there are at the start of the game?
+While this is a tentative idea, there will be a maximum of 4-6 AIs in the game at a given time considering that I
+have the time to actually let the player choose how many they want.
+
+If time is running short, then the AI system will be strictly based upon target-practice until
+the AI combat system itself can actually be implemented.

@@ -6,32 +6,27 @@
 
 '''
 
-
 # Basic Module Initialization
 import datetime
 import math, random
-#import threading
 
+from pygame import display
+#import threading
 #import cairo
 import logHandler as log
-
 import time
-
+import threading
+import computer_movement
 import gameCalculations
 import gameSettings
 import graphicInterface
-
 import pygame, sys
 from pygame.locals import *
-
 import projectileClasses
-
 import warshipClonkses
 import playerClasses
-
 import os
 from os import path
-
 
 '''
     As you see below,
@@ -62,6 +57,15 @@ pygame.display.set_icon(icon_img)
 
 pygame.display.set_caption("NAVAL Warfare 2d")
 
+splash = "Graphics\\splashScreen.png"
+splash_load = pygame.image.load(splash)
+splash_rect = splash_load.get_rect()
+
+DISPLAYSURF.blit(splash_load, splash_rect)
+pygame.display.update()
+
+time.sleep(5)
+
 '''
     Going on below:
         - The image for the map is being PLACED upon the screen at the scale defined in the previous commentary above.
@@ -70,9 +74,7 @@ pygame.display.set_caption("NAVAL Warfare 2d")
 
 mapInit = playerClasses.islandMap()
 
-friendlyAI_1 = playerClasses.Player("AI Entity #1")
-friendlyAI_1.createShip("Carrier")
-friendlyAI_1.type = "sea"
+friendlyAI_1 = None
 
 log.createLog("Created Sprite for Player!")
 
@@ -84,6 +86,28 @@ log.createLog("Created Sprite for Player!")
 '''
 
 a = 5
+
+def createEntity():
+    global friendlyAI_1
+
+    if graphicInterface.mainMenu.chosen == 0:
+        friendlyAI_1 = playerClasses.Player("AI Entity #1")
+        friendlyAI_1.createShip("Carrier")
+        friendlyAI_1.type = "sea"
+
+        gameSettings.activePlayers.append(friendlyAI_1)
+    elif graphicInterface.mainMenu.chosen == None:
+        friendlyAI_1 = playerClasses.Player("AI Entity #1")
+        friendlyAI_1.createShip("Destroyer")
+        friendlyAI_1.type = "sea"
+
+        gameSettings.activePlayers.append(friendlyAI_1)
+    elif graphicInterface.mainMenu.chosen == 2:
+        friendlyAI_1 = playerClasses.Player("AI Entity #1")
+        friendlyAI_1.createShip("Fighter")
+        friendlyAI_1.type = "air"
+
+        gameSettings.activePlayers.append(friendlyAI_1)
 
 def createCloud():
     t = time.time()
@@ -112,7 +136,6 @@ running = True
 pause = True
 
 # pygame.display.toggle_fullscreen()
-
 #pygame.mixer.music.load('HaloMjolnirMix.mp3')
 #pygame.mixer.music.play(-1)
 
@@ -167,23 +190,35 @@ def checkInput():
             if (pause == False) and (pregame == False):
                 mouse_pos = pygame.mouse.get_pos()
                 angleGiven = gameCalculations.get_angle(friendlyAI_1.ship.v2Pos, mouse_pos)
-                print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
-                print(friendlyAI_1.ship.localOrientation)
 
-                pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
-                projectileClasses.mouseFired(angleGiven, friendlyAI_1)
+                recent_attempt = time.time()
+
+                #print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
+                #print(friendlyAI_1.ship.localOrientation)
+
+                #pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
+
+                if friendlyAI_1.last_fired == 0:
+                    projectileClasses.mouseFired(angleGiven, friendlyAI_1)
+                    friendlyAI_1.last_fired = recent_attempt
+                elif (recent_attempt - friendlyAI_1.last_fired) > 1:
+                    projectileClasses.mouseFired(angleGiven, friendlyAI_1)
+                    friendlyAI_1.last_fired = recent_attempt
+
             elif (pause == True) or (pregame == True):
                 gui_return = graphicInterface.checkMouseInput()
 
                 if gui_return == "PLAY":
                     pause = False
                     pregame = False
-                if gui_return == "STOP":
+                elif gui_return == "STOP":
                     running = False
                     pygame.display.quit()
 
                     log.createLog("Naval Warfare 2D Closed...")
                     log.writeFile()
+                elif gui_return == "Select":
+                    createEntity()
 
 def showLogs():
     if graphicInterface.mainMenu.currentMenu() == "Debug":
@@ -244,8 +279,11 @@ while running == True:
         DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
         #pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
 
+        computer_movement.draw_entities(DISPLAYSURF)
+        computer_movement.move_entities(playerFired = True)
+        computer_movement.rotate_entities()
+
         updateProjectiles()
-       
 
         for i in range (0, math.floor(random.randrange(0, 5))):
             createCloud()
@@ -280,6 +318,7 @@ while running == True:
                     gameCalculations.key_held("E", friendlyAI_1.ship)
 
         gameSettings.checkClouds()
+        computer_movement.simulate_mouse(friendlyAI_1)
 
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y + 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)

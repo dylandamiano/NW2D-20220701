@@ -53,7 +53,8 @@ def writeFile():
             for i in range(0, len(logHistory)):
                 f.write(logHistory[i].formatOutput() + "\n")
     else:
-        print("File does not exist!")
+        #print("File does not exist!")
+        pass
 
 def getTime() -> dt.datetime:
     return dt.datetime.now()
@@ -66,7 +67,8 @@ class logObject():
         self.Position = [0, 0]
 
     def __del__(self):
-        print("Log #" + str(self.logNumber) + " has been removed from debug console!")
+        #print("Log #" + str(self.logNumber) + " has been removed from debug console!")
+        pass
 
     def formatOutput(self):
         return self.logEntry
@@ -81,7 +83,7 @@ def createLog(content):
     newLog = logObject(currentTime, content)
 
     logHistory.append(newLog)
-    print(logHistory[currentCount-1].formatOutput())
+    #print(logHistory[currentCount-1].formatOutput())
 
     update_display_log()
 
