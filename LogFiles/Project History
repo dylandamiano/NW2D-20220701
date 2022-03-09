@@ -74,3 +74,12 @@ THIS ONLY INCLUDES MAJOR ADDITIONS OR CHANGES, NOT MINOR ADDITIONS OR CHANGES
 			Adding 'player cooldown' for firing sequences
 				- Originally did not work because of order of operations when comparing operators
 				- Mistyped variable as well and that had something to do with it not working
+
+3/8/22 - Fixed AI traversing through land while moving backwards
+			- misplaced else statement allowed for this to happen
+
+		- AI can now fire at other entities that are travelling on the map.
+			- Will make it to where the firing interval is more randomized so not every AI is firing concurrently at the same time. This will
+			help save performance as-well.
+
+			- The computer will find the closest entity to fire at relative to the AI that is currently selected.
