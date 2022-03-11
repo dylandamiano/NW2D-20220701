@@ -34,17 +34,17 @@ class Player(pygame.sprite.Sprite):
           
         print("New class initialized...")
 
-    def createShip(self, type):
+    def createShip(self, ship_type, x = 450, y = 450):
         print("Creating ship...")
-        if (type == "Fighter"):
-            self.ship = warshipClonkses.Fighter(self)
+        if (ship_type == "Fighter"):
+            self.ship = warshipClonkses.Fighter(self, x, y)
             #self.ship.owner = self.username
-        elif (type == "Carrier"):
-            self.ship = warshipClonkses.Carrier(self)
+        elif (ship_type == "Carrier"):
+            self.ship = warshipClonkses.Carrier(self, x, y)
             print(self.ship.owner)
-        elif (type == "Frigate"):
+        elif (ship_type == "Frigate"):
             pass
-        elif (type == "Destroyer"):
+        elif (ship_type == "Destroyer"):
             pass
 
     def destroy(self):

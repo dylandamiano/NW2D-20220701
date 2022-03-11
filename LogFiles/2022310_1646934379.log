@@ -1,0 +1,126 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-03-10 12:46:19.356017 >> Initialized Log handler...
+(ENTRY #2) 2022-03-10 12:46:20.016260 >> Initialized Warship handler...
+(ENTRY #3) 2022-03-10 12:46:20.016848 >> Initialized Projectile handler...
+(ENTRY #4) 2022-03-10 12:46:20.016848 >> Dumb-AI Entity created!
+(ENTRY #5) 2022-03-10 12:46:20.017850 >> Dumb-AI Entity created!
+(ENTRY #6) 2022-03-10 12:46:20.017850 >> Dumb-AI Entity created!
+(ENTRY #7) 2022-03-10 12:46:20.017850 >> Dumb-AI Entity created!
+(ENTRY #8) 2022-03-10 12:46:20.018853 >> Dumb-AI Entity created!
+(ENTRY #9) 2022-03-10 12:46:20.019850 >> Dumb-AI Entity created!
+(ENTRY #10) 2022-03-10 12:46:20.020850 >> Dumb-AI Entity created!
+(ENTRY #11) 2022-03-10 12:46:20.020850 >> Dumb-AI Entity created!
+(ENTRY #12) 2022-03-10 12:46:20.021849 >> Dumb-AI Entity created!
+(ENTRY #13) 2022-03-10 12:46:20.022851 >> Dumb-AI Entity created!
+(ENTRY #14) 2022-03-10 12:46:20.036848 >> Initialized GUI handler...
+(ENTRY #15) 2022-03-10 12:46:20.036848 >> Starting Naval Warfare 2D...
+(ENTRY #16) 2022-03-10 12:46:25.165920 >> Created Sprite for Player!
+(ENTRY #17) 2022-03-10 12:46:25.165920 >> Finished initalizing!
+(ENTRY #18) 2022-03-10 12:46:26.236723 >> Returning to menu!
+(ENTRY #19) 2022-03-10 12:46:26.825600 >> Game resumed!
+(ENTRY #20) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #21) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #22) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #23) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #24) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #25) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #26) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #27) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #28) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #29) 2022-03-10 12:46:26.837599 >> None
+(ENTRY #30) 2022-03-10 12:46:26.839599 >> Cloud created! ID: #1
+(ENTRY #31) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_1_1 have collided!
+(ENTRY #32) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_1_2 have collided!
+(ENTRY #33) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_1_3 have collided!
+(ENTRY #34) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_1_4 have collided!
+(ENTRY #35) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_2_0 have collided!
+(ENTRY #36) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_2_1 have collided!
+(ENTRY #37) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_2_2 have collided!
+(ENTRY #38) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_2_3 have collided!
+(ENTRY #39) 2022-03-10 12:46:26.839599 >> entity_1_0 and entity_2_4 have collided!
+(ENTRY #40) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_1_0 have collided!
+(ENTRY #41) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_1_2 have collided!
+(ENTRY #42) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_1_3 have collided!
+(ENTRY #43) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_1_4 have collided!
+(ENTRY #44) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_2_0 have collided!
+(ENTRY #45) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_2_1 have collided!
+(ENTRY #46) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_2_2 have collided!
+(ENTRY #47) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_2_3 have collided!
+(ENTRY #48) 2022-03-10 12:46:26.839599 >> entity_1_1 and entity_2_4 have collided!
+(ENTRY #49) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_1_0 have collided!
+(ENTRY #50) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_1_1 have collided!
+(ENTRY #51) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_1_3 have collided!
+(ENTRY #52) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_1_4 have collided!
+(ENTRY #53) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_2_0 have collided!
+(ENTRY #54) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_2_1 have collided!
+(ENTRY #55) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_2_2 have collided!
+(ENTRY #56) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_2_3 have collided!
+(ENTRY #57) 2022-03-10 12:46:26.839599 >> entity_1_2 and entity_2_4 have collided!
+(ENTRY #58) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_1_0 have collided!
+(ENTRY #59) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_1_1 have collided!
+(ENTRY #60) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_1_2 have collided!
+(ENTRY #61) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_1_4 have collided!
+(ENTRY #62) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_2_0 have collided!
+(ENTRY #63) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_2_1 have collided!
+(ENTRY #64) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_2_2 have collided!
+(ENTRY #65) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_2_3 have collided!
+(ENTRY #66) 2022-03-10 12:46:26.839599 >> entity_1_3 and entity_2_4 have collided!
+(ENTRY #67) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_1_0 have collided!
+(ENTRY #68) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_1_1 have collided!
+(ENTRY #69) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_1_2 have collided!
+(ENTRY #70) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_1_3 have collided!
+(ENTRY #71) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_2_0 have collided!
+(ENTRY #72) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_2_1 have collided!
+(ENTRY #73) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_2_2 have collided!
+(ENTRY #74) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_2_3 have collided!
+(ENTRY #75) 2022-03-10 12:46:26.839599 >> entity_1_4 and entity_2_4 have collided!
+(ENTRY #76) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_1_0 have collided!
+(ENTRY #77) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_1_1 have collided!
+(ENTRY #78) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_1_2 have collided!
+(ENTRY #79) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_1_3 have collided!
+(ENTRY #80) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_1_4 have collided!
+(ENTRY #81) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_2_1 have collided!
+(ENTRY #82) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_2_2 have collided!
+(ENTRY #83) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_2_3 have collided!
+(ENTRY #84) 2022-03-10 12:46:26.839599 >> entity_2_0 and entity_2_4 have collided!
+(ENTRY #85) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_1_0 have collided!
+(ENTRY #86) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_1_1 have collided!
+(ENTRY #87) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_1_2 have collided!
+(ENTRY #88) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_1_3 have collided!
+(ENTRY #89) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_1_4 have collided!
+(ENTRY #90) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_2_0 have collided!
+(ENTRY #91) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_2_2 have collided!
+(ENTRY #92) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_2_3 have collided!
+(ENTRY #93) 2022-03-10 12:46:26.839599 >> entity_2_1 and entity_2_4 have collided!
+(ENTRY #94) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_1_0 have collided!
+(ENTRY #95) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_1_1 have collided!
+(ENTRY #96) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_1_2 have collided!
+(ENTRY #97) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_1_3 have collided!
+(ENTRY #98) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_1_4 have collided!
+(ENTRY #99) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_2_0 have collided!
+(ENTRY #100) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_2_1 have collided!
+(ENTRY #101) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_2_3 have collided!
+(ENTRY #102) 2022-03-10 12:46:26.839599 >> entity_2_2 and entity_2_4 have collided!
+(ENTRY #103) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_1_0 have collided!
+(ENTRY #104) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_1_1 have collided!
+(ENTRY #105) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_1_2 have collided!
+(ENTRY #106) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_1_3 have collided!
+(ENTRY #107) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_1_4 have collided!
+(ENTRY #108) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_2_0 have collided!
+(ENTRY #109) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_2_1 have collided!
+(ENTRY #110) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_2_2 have collided!
+(ENTRY #111) 2022-03-10 12:46:26.839599 >> entity_2_3 and entity_2_4 have collided!
+(ENTRY #112) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_1_0 have collided!
+(ENTRY #113) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_1_1 have collided!
+(ENTRY #114) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_1_2 have collided!
+(ENTRY #115) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_1_3 have collided!
+(ENTRY #116) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_1_4 have collided!
+(ENTRY #117) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_2_0 have collided!
+(ENTRY #118) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_2_1 have collided!
+(ENTRY #119) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_2_2 have collided!
+(ENTRY #120) 2022-03-10 12:46:26.839599 >> entity_2_4 and entity_2_3 have collided!
+(ENTRY #121) 2022-03-10 12:46:27.878588 >> Cloud created! ID: #2
+(ENTRY #122) 2022-03-10 12:46:28.883104 >> Cloud created! ID: #3
+(ENTRY #123) 2022-03-10 12:46:29.025135 >> Game resumed!
+(ENTRY #124) 2022-03-10 12:46:29.938171 >> Naval Warfare 2D Closed...

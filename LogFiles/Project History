@@ -83,3 +83,26 @@ THIS ONLY INCLUDES MAJOR ADDITIONS OR CHANGES, NOT MINOR ADDITIONS OR CHANGES
 			help save performance as-well.
 
 			- The computer will find the closest entity to fire at relative to the AI that is currently selected.
+
+3/9/22 - Beginning work on collision detection. Should be easy as cake.
+		- There is now a menu for when the player dies
+
+		- Have to work on a system for when the AI dies
+
+		- Players and projectiles can now collide
+			- Utilizes pygame's rectangle class and the collision detection method
+
+		- Started work on health bar, which was long overdue, system is yet to be decided on this
+
+3/10/22 - Finished health bar
+			Instead of having one only for the player, I decided to make each entity have one that appears right underneath it.
+
+			I am also planning on changing the max health for all aircrafts that way they are not harder to destroy than what ships are since these
+			fighters are faster than ships for having weaker armor.
+
+			Also a system to where entities can spread out once they spawn so they are not destroyed upon spawning
+
+			Logs is still showing an object type of 'None' originating from somewhere, this should not be happening
+				(It was found in the computer_movement module under the move_entities() function)
+
+		Game NPCs will have an inaccurate weapons fire of 0-50 pixels, chosen at random.

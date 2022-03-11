@@ -75,6 +75,7 @@ time.sleep(5)
 mapInit = playerClasses.islandMap()
 
 friendlyAI_1 = None
+player_died = False
 
 log.createLog("Created Sprite for Player!")
 
@@ -109,6 +110,9 @@ def createEntity():
 
         gameSettings.activePlayers.append(friendlyAI_1)
 
+    friendlyAI_1.ship.v2Pos = pygame.math.Vector2(100, 450)
+    friendlyAI_1.ship.rect.center = (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y) 
+
 def createCloud():
     t = time.time()
     randBreak = math.floor(random.randrange(1, 10))
@@ -120,7 +124,7 @@ def createCloud():
         sel = math.floor(random.randrange(0, len(gameSettings.cloudChart)))
 
         #print(sel)
-        cloudObj = playerClasses.Cloud(sel, gameSettings.cloudDims, random.randrange(1, 4))
+        cloudObj = playerClasses.Cloud(sel, gameSettings.cloudDims, random.randrange(1, 2))
         cloudObj.createLocation()
 
         #DISPLAYSURF.blit(cloudObj.image, cloudObj.rect)
@@ -156,6 +160,7 @@ def checkInput():
     global pause
     global running
     global pregame
+    global player_died
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -178,6 +183,8 @@ def checkInput():
                 elif (pause == True):
                     pause = False
                     gameSettings.resetKeyStatus()
+
+            gui_return = graphicInterface.checkMouseInput()
 
         elif (event.type == pygame.KEYUP) and (pause == False) and (pregame == False):
             gameSettings.setKeyStatus(event, "UP")
@@ -271,7 +278,7 @@ while running == True:
         checkInput()
         showLogs()
 
-    if (pause == False) and (pregame == False):
+    if (pause == False) and (pregame == False) and (player_died == False):
         pygame.display.update()
         pygame.time.Clock().tick(FPS)
 
@@ -282,6 +289,8 @@ while running == True:
         computer_movement.draw_entities(DISPLAYSURF)
         computer_movement.move_entities(playerFired = True)
         computer_movement.rotate_entities()
+
+        gameCalculations.render_health(DISPLAYSURF, friendlyAI_1)
 
         updateProjectiles()
 
@@ -316,9 +325,20 @@ while running == True:
                     gameCalculations.key_held("Q", friendlyAI_1.ship)
                 elif k == "E_Hold":
                     gameCalculations.key_held("E", friendlyAI_1.ship)
+                    
+        gameCalculations.checkCollisions(computer_movement.active_entities, friendlyAI_1, projectileClasses.activeProjectiles)
+        gameCalculations.garbage_collect(projectileClasses.activeProjectiles, computer_movement.active_entities)
 
         gameSettings.checkClouds()
         computer_movement.simulate_mouse(friendlyAI_1)
+
+        if friendlyAI_1.ship.health <= 0:
+            player_died = True
+            graphicInterface.mainMenu.setDeath()
+
+            pause = True
+    elif (pause == False) and (player_died == True):
+        pause = True
 
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y + 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)

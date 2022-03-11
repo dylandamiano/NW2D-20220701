@@ -31,7 +31,8 @@ class menuInterface(pygame.sprite.Sprite):
             "homeMenu": "Graphics/graphicalMenu.png",    
             "aboutMenu": "Graphics/aboutMenu.png",
             "shipMenu": "Graphics/shipSelection.png",
-            "debugMenu": "Graphics/debugMenuNW2D.png" # Top Min = 60.7 || BOTTOM Min = 839.3
+            "debugMenu": "Graphics/debugMenuNW2D.png", # Top Min = 60.7 || BOTTOM Min = 839.3
+            "deathMenu": "Graphics/game_over.png"
         }
 
         self.selection = 0
@@ -124,7 +125,13 @@ class menuInterface(pygame.sprite.Sprite):
     def currentMenu(self):
         return self.currentSelection
 
-         # Values will be as tuple x,y) within a multidimensional array
+    def setDeath(self):
+        self.originalMenu = self.images["deathMenu"]
+        self.currentSelection = "Death"
+
+        mainMenu.image = pygame.image.load(mainMenu.originalMenu)
+        mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+        logHandler.createLog("Death menu active!")
 
 class headsUpDisplay(pygame.sprite.Sprite):
     def __init__(self):
@@ -244,6 +251,15 @@ def checkMouseInput():
                 mainMenu.chosen = mainMenu.selection
 
                 return "Select"
+
+    elif mainMenu.currentSelection == "Death":
+        mainMenu.currentSelection = "shipMenu"
+        mainMenu.originalMenu = mainMenu.images["shipMenu"]
+        mainMenu.image = pygame.image.load(mainMenu.originalMenu)
+        mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
+        logHandler.createLog("Returning to menu!")
+
+        return "fix_death"
 
 
 logHandler.createLog("Initialized GUI handler...")

@@ -1,0 +1,79 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-03-10 18:32:47.118410 >> Initialized Log handler...
+(ENTRY #2) 2022-03-10 18:32:48.313731 >> Initialized Warship handler...
+(ENTRY #3) 2022-03-10 18:32:48.317727 >> Initialized Projectile handler...
+(ENTRY #4) 2022-03-10 18:32:48.318726 >> Dumb-AI Entity created!
+(ENTRY #5) 2022-03-10 18:32:48.320729 >> Dumb-AI Entity created!
+(ENTRY #6) 2022-03-10 18:32:48.321727 >> Dumb-AI Entity created!
+(ENTRY #7) 2022-03-10 18:32:48.322723 >> Dumb-AI Entity created!
+(ENTRY #8) 2022-03-10 18:32:48.328732 >> Dumb-AI Entity created!
+(ENTRY #9) 2022-03-10 18:32:48.334728 >> Dumb-AI Entity created!
+(ENTRY #10) 2022-03-10 18:32:48.342730 >> Dumb-AI Entity created!
+(ENTRY #11) 2022-03-10 18:32:48.348729 >> Dumb-AI Entity created!
+(ENTRY #12) 2022-03-10 18:32:48.354730 >> Dumb-AI Entity created!
+(ENTRY #13) 2022-03-10 18:32:48.359730 >> Dumb-AI Entity created!
+(ENTRY #14) 2022-03-10 18:32:48.423757 >> Initialized GUI handler...
+(ENTRY #15) 2022-03-10 18:32:48.423757 >> Starting Naval Warfare 2D...
+(ENTRY #16) 2022-03-10 18:32:53.983733 >> Created Sprite for Player!
+(ENTRY #17) 2022-03-10 18:32:53.983733 >> Finished initalizing!
+(ENTRY #18) 2022-03-10 18:32:55.745060 >> Returning to menu!
+(ENTRY #19) 2022-03-10 18:32:56.529941 >> Game resumed!
+(ENTRY #20) 2022-03-10 18:32:56.548130 >> AI Entity #1 and entity_1_3 have collided!
+(ENTRY #21) 2022-03-10 18:32:56.549171 >> entity_1_3 and AI Entity #1 have collided!
+(ENTRY #22) 2022-03-10 18:32:56.549171 >> MOUSEPOS: (350.0, 449.75)
+(ENTRY #23) 2022-03-10 18:32:56.549171 >> SLOPE CALC:None
+(ENTRY #24) 2022-03-10 18:32:56.549171 >> Object lightRound has been created!
+(ENTRY #25) 2022-03-10 18:32:56.549171 >> Protectile #2 has been created! Type: Light
+(ENTRY #26) 2022-03-10 18:32:56.549171 >> Projectile created! ID: #2
+(ENTRY #27) 2022-03-10 18:32:56.550132 >> MOUSEPOS: (300.0, 449.75)
+(ENTRY #28) 2022-03-10 18:32:56.550132 >> SLOPE CALC:None
+(ENTRY #29) 2022-03-10 18:32:56.550132 >> Object lightRound has been created!
+(ENTRY #30) 2022-03-10 18:32:56.550132 >> Protectile #4 has been created! Type: Light
+(ENTRY #31) 2022-03-10 18:32:56.550132 >> Projectile created! ID: #4
+(ENTRY #32) 2022-03-10 18:32:56.550132 >> MOUSEPOS: (350.0, 449.75)
+(ENTRY #33) 2022-03-10 18:32:56.550132 >> SLOPE CALC:None
+(ENTRY #34) 2022-03-10 18:32:56.550132 >> Object lightRound has been created!
+(ENTRY #35) 2022-03-10 18:32:56.551135 >> Protectile #6 has been created! Type: Light
+(ENTRY #36) 2022-03-10 18:32:56.551135 >> Projectile created! ID: #6
+(ENTRY #37) 2022-03-10 18:32:56.551135 >> MOUSEPOS: (450.0, 450.0)
+(ENTRY #38) 2022-03-10 18:32:56.551135 >> SLOPE CALC:None
+(ENTRY #39) 2022-03-10 18:32:56.551135 >> LIN CALC FIN: 499.75
+(ENTRY #40) 2022-03-10 18:32:56.551135 >> LIN CALC RAW: 400.25
+(ENTRY #41) 2022-03-10 18:32:56.551135 >> Above!
+(ENTRY #42) 2022-03-10 18:32:56.551135 >> Object lightRound has been created!
+(ENTRY #43) 2022-03-10 18:32:56.552161 >> Protectile #8 has been created! Type: Light
+(ENTRY #44) 2022-03-10 18:32:56.552161 >> Projectile created! ID: #8
+(ENTRY #45) 2022-03-10 18:32:56.552161 >> MOUSEPOS: (600.0, 449.0)
+(ENTRY #46) 2022-03-10 18:32:56.552161 >> SLOPE CALC:None
+(ENTRY #47) 2022-03-10 18:32:56.552161 >> Object lightRound has been created!
+(ENTRY #48) 2022-03-10 18:32:56.552161 >> Protectile #10 has been created! Type: Light
+(ENTRY #49) 2022-03-10 18:32:56.552161 >> Projectile created! ID: #10
+(ENTRY #50) 2022-03-10 18:32:56.552161 >> MOUSEPOS: (550.0, 449.0)
+(ENTRY #51) 2022-03-10 18:32:56.552161 >> SLOPE CALC:None
+(ENTRY #52) 2022-03-10 18:32:56.552161 >> Object lightRound has been created!
+(ENTRY #53) 2022-03-10 18:32:56.553161 >> Protectile #12 has been created! Type: Light
+(ENTRY #54) 2022-03-10 18:32:56.553161 >> Projectile created! ID: #12
+(ENTRY #55) 2022-03-10 18:32:56.553161 >> MOUSEPOS: (600.0, 449.0)
+(ENTRY #56) 2022-03-10 18:32:56.553161 >> SLOPE CALC:None
+(ENTRY #57) 2022-03-10 18:32:56.553161 >> Object lightRound has been created!
+(ENTRY #58) 2022-03-10 18:32:56.553161 >> Protectile #14 has been created! Type: Light
+(ENTRY #59) 2022-03-10 18:32:56.553161 >> Projectile created! ID: #14
+(ENTRY #60) 2022-03-10 18:32:56.553161 >> MOUSEPOS: (650.0, 449.0)
+(ENTRY #61) 2022-03-10 18:32:56.553161 >> SLOPE CALC:None
+(ENTRY #62) 2022-03-10 18:32:56.553161 >> Object lightRound has been created!
+(ENTRY #63) 2022-03-10 18:32:56.554161 >> Protectile #16 has been created! Type: Light
+(ENTRY #64) 2022-03-10 18:32:56.554161 >> Projectile created! ID: #16
+(ENTRY #65) 2022-03-10 18:32:56.554161 >> MOUSEPOS: (700.0, 449.0)
+(ENTRY #66) 2022-03-10 18:32:56.554161 >> SLOPE CALC:None
+(ENTRY #67) 2022-03-10 18:32:56.554161 >> Object lightRound has been created!
+(ENTRY #68) 2022-03-10 18:32:56.555161 >> Protectile #18 has been created! Type: Light
+(ENTRY #69) 2022-03-10 18:32:56.555161 >> Projectile created! ID: #18
+(ENTRY #70) 2022-03-10 18:32:56.586161 >> Death menu active!
+(ENTRY #71) 2022-03-10 18:32:57.431114 >> Returning to menu!
+(ENTRY #72) 2022-03-10 18:33:01.178972 >> Returning to menu!
+(ENTRY #73) 2022-03-10 18:33:01.990087 >> Game resumed!
+(ENTRY #74) 2022-03-10 18:33:02.359420 >> Game resumed!
+(ENTRY #75) 2022-03-10 18:33:02.526150 >> Game resumed!
+(ENTRY #76) 2022-03-10 18:33:02.689844 >> Game resumed!
+(ENTRY #77) 2022-03-10 18:33:03.647881 >> Naval Warfare 2D Closed...

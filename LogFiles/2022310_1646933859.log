@@ -1,0 +1,687 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-03-10 12:37:39.019721 >> Initialized Log handler...
+(ENTRY #2) 2022-03-10 12:37:39.923416 >> Initialized Warship handler...
+(ENTRY #3) 2022-03-10 12:37:39.926417 >> Initialized Projectile handler...
+(ENTRY #4) 2022-03-10 12:37:39.927415 >> Dumb-AI Entity created!
+(ENTRY #5) 2022-03-10 12:37:39.929419 >> Dumb-AI Entity created!
+(ENTRY #6) 2022-03-10 12:37:39.930418 >> Dumb-AI Entity created!
+(ENTRY #7) 2022-03-10 12:37:39.931417 >> Dumb-AI Entity created!
+(ENTRY #8) 2022-03-10 12:37:39.932418 >> Dumb-AI Entity created!
+(ENTRY #9) 2022-03-10 12:37:39.936449 >> Dumb-AI Entity created!
+(ENTRY #10) 2022-03-10 12:37:39.945108 >> Dumb-AI Entity created!
+(ENTRY #11) 2022-03-10 12:37:39.951142 >> Dumb-AI Entity created!
+(ENTRY #12) 2022-03-10 12:37:39.961123 >> Dumb-AI Entity created!
+(ENTRY #13) 2022-03-10 12:37:39.965108 >> Dumb-AI Entity created!
+(ENTRY #14) 2022-03-10 12:37:40.027141 >> Initialized GUI handler...
+(ENTRY #15) 2022-03-10 12:37:40.027141 >> Starting Naval Warfare 2D...
+(ENTRY #16) 2022-03-10 12:37:45.630543 >> Created Sprite for Player!
+(ENTRY #17) 2022-03-10 12:37:45.630543 >> Finished initalizing!
+(ENTRY #18) 2022-03-10 12:37:47.438052 >> Returning to menu!
+(ENTRY #19) 2022-03-10 12:37:48.273525 >> Game resumed!
+(ENTRY #20) 2022-03-10 12:37:48.286299 >> None
+(ENTRY #21) 2022-03-10 12:37:48.286299 >> None
+(ENTRY #22) 2022-03-10 12:37:48.286299 >> None
+(ENTRY #23) 2022-03-10 12:37:48.287294 >> None
+(ENTRY #24) 2022-03-10 12:37:48.287294 >> None
+(ENTRY #25) 2022-03-10 12:37:48.287294 >> None
+(ENTRY #26) 2022-03-10 12:37:48.287294 >> None
+(ENTRY #27) 2022-03-10 12:37:48.287294 >> None
+(ENTRY #28) 2022-03-10 12:37:48.287294 >> None
+(ENTRY #29) 2022-03-10 12:37:48.287294 >> None
+(ENTRY #30) 2022-03-10 12:37:48.292299 >> MOUSEPOS: (450.0, 449.75)
+(ENTRY #31) 2022-03-10 12:37:48.292299 >> SLOPE CALC:None
+(ENTRY #32) 2022-03-10 12:37:48.292299 >> Object lightRound has been created!
+(ENTRY #33) 2022-03-10 12:37:48.293311 >> Protectile #2 has been created! Type: Light
+(ENTRY #34) 2022-03-10 12:37:48.293311 >> Projectile created! ID: #2
+(ENTRY #35) 2022-03-10 12:37:48.293311 >> MOUSEPOS: (450.0, 449.75)
+(ENTRY #36) 2022-03-10 12:37:48.293311 >> SLOPE CALC:None
+(ENTRY #37) 2022-03-10 12:37:48.293311 >> Object lightRound has been created!
+(ENTRY #38) 2022-03-10 12:37:48.294299 >> Protectile #4 has been created! Type: Light
+(ENTRY #39) 2022-03-10 12:37:48.294299 >> Projectile created! ID: #4
+(ENTRY #40) 2022-03-10 12:37:48.294299 >> MOUSEPOS: (450.0, 449.75)
+(ENTRY #41) 2022-03-10 12:37:48.294299 >> SLOPE CALC:None
+(ENTRY #42) 2022-03-10 12:37:48.294299 >> Object lightRound has been created!
+(ENTRY #43) 2022-03-10 12:37:48.294299 >> Protectile #6 has been created! Type: Light
+(ENTRY #44) 2022-03-10 12:37:48.294299 >> Projectile created! ID: #6
+(ENTRY #45) 2022-03-10 12:37:48.294299 >> MOUSEPOS: (450.0, 449.75)
+(ENTRY #46) 2022-03-10 12:37:48.294299 >> SLOPE CALC:None
+(ENTRY #47) 2022-03-10 12:37:48.294299 >> Object lightRound has been created!
+(ENTRY #48) 2022-03-10 12:37:48.295300 >> Protectile #8 has been created! Type: Light
+(ENTRY #49) 2022-03-10 12:37:48.295300 >> Projectile created! ID: #8
+(ENTRY #50) 2022-03-10 12:37:48.295300 >> MOUSEPOS: (450.0, 449.75)
+(ENTRY #51) 2022-03-10 12:37:48.295300 >> SLOPE CALC:None
+(ENTRY #52) 2022-03-10 12:37:48.295300 >> Object lightRound has been created!
+(ENTRY #53) 2022-03-10 12:37:48.295300 >> Protectile #10 has been created! Type: Light
+(ENTRY #54) 2022-03-10 12:37:48.295300 >> Projectile created! ID: #10
+(ENTRY #55) 2022-03-10 12:37:48.295300 >> MOUSEPOS: (450.0, 449.0)
+(ENTRY #56) 2022-03-10 12:37:48.295300 >> SLOPE CALC:None
+(ENTRY #57) 2022-03-10 12:37:48.295300 >> Object lightRound has been created!
+(ENTRY #58) 2022-03-10 12:37:48.296298 >> Protectile #12 has been created! Type: Light
+(ENTRY #59) 2022-03-10 12:37:48.296298 >> Projectile created! ID: #12
+(ENTRY #60) 2022-03-10 12:37:48.296298 >> MOUSEPOS: (450.0, 449.0)
+(ENTRY #61) 2022-03-10 12:37:48.296298 >> SLOPE CALC:None
+(ENTRY #62) 2022-03-10 12:37:48.296298 >> Object lightRound has been created!
+(ENTRY #63) 2022-03-10 12:37:48.296298 >> Protectile #14 has been created! Type: Light
+(ENTRY #64) 2022-03-10 12:37:48.297299 >> Projectile created! ID: #14
+(ENTRY #65) 2022-03-10 12:37:48.297299 >> MOUSEPOS: (450.0, 449.0)
+(ENTRY #66) 2022-03-10 12:37:48.297299 >> SLOPE CALC:None
+(ENTRY #67) 2022-03-10 12:37:48.297299 >> Object lightRound has been created!
+(ENTRY #68) 2022-03-10 12:37:48.297299 >> Protectile #16 has been created! Type: Light
+(ENTRY #69) 2022-03-10 12:37:48.297299 >> Projectile created! ID: #16
+(ENTRY #70) 2022-03-10 12:37:48.297299 >> MOUSEPOS: (450.0, 449.0)
+(ENTRY #71) 2022-03-10 12:37:48.297299 >> SLOPE CALC:None
+(ENTRY #72) 2022-03-10 12:37:48.297299 >> Object lightRound has been created!
+(ENTRY #73) 2022-03-10 12:37:48.298298 >> Protectile #18 has been created! Type: Light
+(ENTRY #74) 2022-03-10 12:37:48.298298 >> Projectile created! ID: #18
+(ENTRY #75) 2022-03-10 12:37:48.298298 >> MOUSEPOS: (450.0, 449.0)
+(ENTRY #76) 2022-03-10 12:37:48.298298 >> SLOPE CALC:None
+(ENTRY #77) 2022-03-10 12:37:48.298298 >> Object lightRound has been created!
+(ENTRY #78) 2022-03-10 12:37:48.298298 >> Protectile #20 has been created! Type: Light
+(ENTRY #79) 2022-03-10 12:37:48.298298 >> Projectile created! ID: #20
+(ENTRY #80) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_1_1 have collided!
+(ENTRY #81) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_1_2 have collided!
+(ENTRY #82) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_1_3 have collided!
+(ENTRY #83) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_1_4 have collided!
+(ENTRY #84) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_2_0 have collided!
+(ENTRY #85) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_2_1 have collided!
+(ENTRY #86) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_2_2 have collided!
+(ENTRY #87) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_2_3 have collided!
+(ENTRY #88) 2022-03-10 12:37:48.298298 >> entity_1_0 and entity_2_4 have collided!
+(ENTRY #89) 2022-03-10 12:37:48.298298 >> entity_1_1 and entity_1_0 have collided!
+(ENTRY #90) 2022-03-10 12:37:48.298298 >> entity_1_1 and entity_1_2 have collided!
+(ENTRY #91) 2022-03-10 12:37:48.298298 >> entity_1_1 and entity_1_3 have collided!
+(ENTRY #92) 2022-03-10 12:37:48.298298 >> entity_1_1 and entity_1_4 have collided!
+(ENTRY #93) 2022-03-10 12:37:48.299330 >> entity_1_1 and entity_2_0 have collided!
+(ENTRY #94) 2022-03-10 12:37:48.299330 >> entity_1_1 and entity_2_1 have collided!
+(ENTRY #95) 2022-03-10 12:37:48.299330 >> entity_1_1 and entity_2_2 have collided!
+(ENTRY #96) 2022-03-10 12:37:48.299330 >> entity_1_1 and entity_2_3 have collided!
+(ENTRY #97) 2022-03-10 12:37:48.299330 >> entity_1_1 and entity_2_4 have collided!
+(ENTRY #98) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_1_0 have collided!
+(ENTRY #99) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_1_1 have collided!
+(ENTRY #100) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_1_3 have collided!
+(ENTRY #101) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_1_4 have collided!
+(ENTRY #102) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_2_0 have collided!
+(ENTRY #103) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_2_1 have collided!
+(ENTRY #104) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_2_2 have collided!
+(ENTRY #105) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_2_3 have collided!
+(ENTRY #106) 2022-03-10 12:37:48.299330 >> entity_1_2 and entity_2_4 have collided!
+(ENTRY #107) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_1_0 have collided!
+(ENTRY #108) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_1_1 have collided!
+(ENTRY #109) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_1_2 have collided!
+(ENTRY #110) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_1_4 have collided!
+(ENTRY #111) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_2_0 have collided!
+(ENTRY #112) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_2_1 have collided!
+(ENTRY #113) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_2_2 have collided!
+(ENTRY #114) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_2_3 have collided!
+(ENTRY #115) 2022-03-10 12:37:48.299330 >> entity_1_3 and entity_2_4 have collided!
+(ENTRY #116) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_1_0 have collided!
+(ENTRY #117) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_1_1 have collided!
+(ENTRY #118) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_1_2 have collided!
+(ENTRY #119) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_1_3 have collided!
+(ENTRY #120) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_2_0 have collided!
+(ENTRY #121) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_2_1 have collided!
+(ENTRY #122) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_2_2 have collided!
+(ENTRY #123) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_2_3 have collided!
+(ENTRY #124) 2022-03-10 12:37:48.299330 >> entity_1_4 and entity_2_4 have collided!
+(ENTRY #125) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_1_0 have collided!
+(ENTRY #126) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_1_1 have collided!
+(ENTRY #127) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_1_2 have collided!
+(ENTRY #128) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_1_3 have collided!
+(ENTRY #129) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_1_4 have collided!
+(ENTRY #130) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_2_1 have collided!
+(ENTRY #131) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_2_2 have collided!
+(ENTRY #132) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_2_3 have collided!
+(ENTRY #133) 2022-03-10 12:37:48.299330 >> entity_2_0 and entity_2_4 have collided!
+(ENTRY #134) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_1_0 have collided!
+(ENTRY #135) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_1_1 have collided!
+(ENTRY #136) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_1_2 have collided!
+(ENTRY #137) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_1_3 have collided!
+(ENTRY #138) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_1_4 have collided!
+(ENTRY #139) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_2_0 have collided!
+(ENTRY #140) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_2_2 have collided!
+(ENTRY #141) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_2_3 have collided!
+(ENTRY #142) 2022-03-10 12:37:48.299330 >> entity_2_1 and entity_2_4 have collided!
+(ENTRY #143) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_1_0 have collided!
+(ENTRY #144) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_1_1 have collided!
+(ENTRY #145) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_1_2 have collided!
+(ENTRY #146) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_1_3 have collided!
+(ENTRY #147) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_1_4 have collided!
+(ENTRY #148) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_2_0 have collided!
+(ENTRY #149) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_2_1 have collided!
+(ENTRY #150) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_2_3 have collided!
+(ENTRY #151) 2022-03-10 12:37:48.299330 >> entity_2_2 and entity_2_4 have collided!
+(ENTRY #152) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_1_0 have collided!
+(ENTRY #153) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_1_1 have collided!
+(ENTRY #154) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_1_2 have collided!
+(ENTRY #155) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_1_3 have collided!
+(ENTRY #156) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_1_4 have collided!
+(ENTRY #157) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_2_0 have collided!
+(ENTRY #158) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_2_1 have collided!
+(ENTRY #159) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_2_2 have collided!
+(ENTRY #160) 2022-03-10 12:37:48.299330 >> entity_2_3 and entity_2_4 have collided!
+(ENTRY #161) 2022-03-10 12:37:48.299330 >> entity_2_4 and entity_1_0 have collided!
+(ENTRY #162) 2022-03-10 12:37:48.299330 >> entity_2_4 and entity_1_1 have collided!
+(ENTRY #163) 2022-03-10 12:37:48.299330 >> entity_2_4 and entity_1_2 have collided!
+(ENTRY #164) 2022-03-10 12:37:48.299330 >> entity_2_4 and entity_1_3 have collided!
+(ENTRY #165) 2022-03-10 12:37:48.300293 >> entity_2_4 and entity_1_4 have collided!
+(ENTRY #166) 2022-03-10 12:37:48.300293 >> entity_2_4 and entity_2_0 have collided!
+(ENTRY #167) 2022-03-10 12:37:48.300293 >> entity_2_4 and entity_2_1 have collided!
+(ENTRY #168) 2022-03-10 12:37:48.300293 >> entity_2_4 and entity_2_2 have collided!
+(ENTRY #169) 2022-03-10 12:37:48.300293 >> entity_2_4 and entity_2_3 have collided!
+(ENTRY #170) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #171) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #172) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #173) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #174) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #175) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #176) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #177) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #178) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #179) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #180) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #181) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #182) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #183) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #184) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #185) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #186) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #187) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #188) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #189) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #190) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #191) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #192) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #193) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #194) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #195) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #196) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #197) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #198) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #199) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #200) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #201) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #202) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #203) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #204) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #205) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #206) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #207) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #208) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #209) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #210) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #211) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #212) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #213) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #214) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #215) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #216) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #217) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #218) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #219) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #220) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #221) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #222) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #223) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #224) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #225) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #226) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #227) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #228) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #229) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #230) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #231) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #232) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #233) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #234) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #235) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #236) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #237) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #238) 2022-03-10 12:37:48.300293 >> Projectile has hit!
+(ENTRY #239) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #240) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #241) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #242) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #243) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #244) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #245) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #246) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #247) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #248) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #249) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #250) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #251) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #252) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #253) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #254) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #255) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #256) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #257) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #258) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #259) 2022-03-10 12:37:48.301292 >> Projectile has hit!
+(ENTRY #260) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #261) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #262) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #263) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #264) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #265) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #266) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #267) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #268) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #269) 2022-03-10 12:37:48.301292 >> Projectile removed!
+(ENTRY #270) 2022-03-10 12:37:48.316230 >> Cloud created! ID: #1
+(ENTRY #271) 2022-03-10 12:37:49.070962 >> MOUSEPOS: (282, 270)
+(ENTRY #272) 2022-03-10 12:37:49.070962 >> SLOPE CALC:None
+(ENTRY #273) 2022-03-10 12:37:49.070962 >> LIN CALC FIN: 268.0
+(ENTRY #274) 2022-03-10 12:37:49.070962 >> LIN CALC RAW: 632.0
+(ENTRY #275) 2022-03-10 12:37:49.070962 >> Below!
+(ENTRY #276) 2022-03-10 12:37:49.070962 >> Object lightRound has been created!
+(ENTRY #277) 2022-03-10 12:37:49.072010 >> Protectile #22 has been created! Type: Light
+(ENTRY #278) 2022-03-10 12:37:49.072010 >> Projectile created! ID: #22
+(ENTRY #279) 2022-03-10 12:37:49.323660 >> Cloud created! ID: #2
+(ENTRY #280) 2022-03-10 12:37:49.411146 >> Game resumed!
+(ENTRY #281) 2022-03-10 12:37:49.460060 >> Game resumed!
+(ENTRY #282) 2022-03-10 12:37:50.356878 >> Cloud created! ID: #3
+(ENTRY #283) 2022-03-10 12:37:51.389432 >> Cloud created! ID: #4
+(ENTRY #284) 2022-03-10 12:37:52.570724 >> Cloud created! ID: #5
+(ENTRY #285) 2022-03-10 12:37:53.454821 >> Projectile removed!
+(ENTRY #286) 2022-03-10 12:37:53.642026 >> Cloud created! ID: #6
+(ENTRY #287) 2022-03-10 12:37:54.859898 >> Cloud created! ID: #7
+(ENTRY #288) 2022-03-10 12:37:55.897444 >> Cloud created! ID: #8
+(ENTRY #289) 2022-03-10 12:37:56.914020 >> Cloud created! ID: #9
+(ENTRY #290) 2022-03-10 12:37:57.923336 >> Cloud created! ID: #10
+(ENTRY #291) 2022-03-10 12:37:58.934089 >> Cloud created! ID: #11
+(ENTRY #292) 2022-03-10 12:38:00.054393 >> Cloud created! ID: #12
+(ENTRY #293) 2022-03-10 12:38:01.080141 >> Cloud created! ID: #13
+(ENTRY #294) 2022-03-10 12:38:02.098286 >> Cloud created! ID: #14
+(ENTRY #295) 2022-03-10 12:38:03.118030 >> Cloud created! ID: #15
+(ENTRY #296) 2022-03-10 12:38:03.257112 >> Cloud removed! ID: #15
+(ENTRY #297) 2022-03-10 12:38:04.270931 >> Cloud removed! ID: #15
+(ENTRY #298) 2022-03-10 12:38:04.298488 >> Cloud created! ID: #16
+(ENTRY #299) 2022-03-10 12:38:05.261214 >> Cloud removed! ID: #16
+(ENTRY #300) 2022-03-10 12:38:05.386901 >> Cloud created! ID: #17
+(ENTRY #301) 2022-03-10 12:38:06.267944 >> Cloud removed! ID: #17
+(ENTRY #302) 2022-03-10 12:38:06.586252 >> Cloud created! ID: #18
+(ENTRY #303) 2022-03-10 12:38:07.439511 >> Cloud removed! ID: #18
+(ENTRY #304) 2022-03-10 12:38:07.602643 >> Cloud created! ID: #19
+(ENTRY #305) 2022-03-10 12:38:08.488782 >> Cloud removed! ID: #19
+(ENTRY #306) 2022-03-10 12:38:08.640139 >> Cloud created! ID: #20
+(ENTRY #307) 2022-03-10 12:38:09.652606 >> Cloud created! ID: #21
+(ENTRY #308) 2022-03-10 12:38:09.754486 >> Cloud removed! ID: #21
+(ENTRY #309) 2022-03-10 12:38:10.781539 >> Cloud created! ID: #22
+(ENTRY #310) 2022-03-10 12:38:10.808541 >> Cloud removed! ID: #22
+(ENTRY #311) 2022-03-10 12:38:11.819464 >> Cloud created! ID: #23
+(ENTRY #312) 2022-03-10 12:38:11.834429 >> Cloud removed! ID: #23
+(ENTRY #313) 2022-03-10 12:38:12.835501 >> Cloud created! ID: #24
+(ENTRY #314) 2022-03-10 12:38:12.836499 >> Cloud removed! ID: #24
+(ENTRY #315) 2022-03-10 12:38:13.848238 >> Cloud created! ID: #25
+(ENTRY #316) 2022-03-10 12:38:13.849236 >> Cloud removed! ID: #25
+(ENTRY #317) 2022-03-10 12:38:14.962785 >> Cloud created! ID: #26
+(ENTRY #318) 2022-03-10 12:38:14.963785 >> Cloud removed! ID: #26
+(ENTRY #319) 2022-03-10 12:38:15.987934 >> Cloud removed! ID: #26
+(ENTRY #320) 2022-03-10 12:38:16.001297 >> Cloud created! ID: #27
+(ENTRY #321) 2022-03-10 12:38:16.996838 >> Cloud removed! ID: #27
+(ENTRY #322) 2022-03-10 12:38:17.094013 >> Cloud created! ID: #28
+(ENTRY #323) 2022-03-10 12:38:18.010417 >> Cloud removed! ID: #28
+(ENTRY #324) 2022-03-10 12:38:18.171582 >> Cloud created! ID: #29
+(ENTRY #325) 2022-03-10 12:38:19.198196 >> Cloud removed! ID: #29
+(ENTRY #326) 2022-03-10 12:38:19.211493 >> Cloud created! ID: #30
+(ENTRY #327) 2022-03-10 12:38:20.213823 >> Cloud created! ID: #31
+(ENTRY #328) 2022-03-10 12:38:20.284832 >> Cloud removed! ID: #31
+(ENTRY #329) 2022-03-10 12:38:21.229876 >> Cloud created! ID: #32
+(ENTRY #330) 2022-03-10 12:38:21.475176 >> Cloud removed! ID: #32
+(ENTRY #331) 2022-03-10 12:38:22.249300 >> Cloud created! ID: #33
+(ENTRY #332) 2022-03-10 12:38:22.465291 >> Cloud removed! ID: #33
+(ENTRY #333) 2022-03-10 12:38:23.262962 >> Cloud created! ID: #34
+(ENTRY #334) 2022-03-10 12:38:23.507386 >> Cloud removed! ID: #34
+(ENTRY #335) 2022-03-10 12:38:24.301474 >> Cloud created! ID: #35
+(ENTRY #336) 2022-03-10 12:38:24.504238 >> Cloud removed! ID: #35
+(ENTRY #337) 2022-03-10 12:38:25.494808 >> Cloud created! ID: #36
+(ENTRY #338) 2022-03-10 12:38:25.630199 >> Cloud removed! ID: #36
+(ENTRY #339) 2022-03-10 12:38:26.541587 >> Cloud created! ID: #37
+(ENTRY #340) 2022-03-10 12:38:26.662139 >> Cloud removed! ID: #37
+(ENTRY #341) 2022-03-10 12:38:27.594793 >> Cloud created! ID: #38
+(ENTRY #342) 2022-03-10 12:38:27.714792 >> Cloud removed! ID: #38
+(ENTRY #343) 2022-03-10 12:38:28.606458 >> Cloud created! ID: #39
+(ENTRY #344) 2022-03-10 12:38:28.727502 >> Cloud removed! ID: #39
+(ENTRY #345) 2022-03-10 12:38:29.689707 >> Cloud created! ID: #40
+(ENTRY #346) 2022-03-10 12:38:29.853329 >> Cloud removed! ID: #40
+(ENTRY #347) 2022-03-10 12:38:30.695095 >> Cloud created! ID: #41
+(ENTRY #348) 2022-03-10 12:38:30.905833 >> Cloud removed! ID: #41
+(ENTRY #349) 2022-03-10 12:38:31.732048 >> Cloud created! ID: #42
+(ENTRY #350) 2022-03-10 12:38:31.998493 >> Cloud removed! ID: #42
+(ENTRY #351) 2022-03-10 12:38:32.740223 >> Cloud created! ID: #43
+(ENTRY #352) 2022-03-10 12:38:33.091991 >> Cloud removed! ID: #43
+(ENTRY #353) 2022-03-10 12:38:33.764189 >> Cloud created! ID: #44
+(ENTRY #354) 2022-03-10 12:38:34.119094 >> Cloud removed! ID: #44
+(ENTRY #355) 2022-03-10 12:38:34.832034 >> Cloud created! ID: #45
+(ENTRY #356) 2022-03-10 12:38:35.139571 >> Cloud removed! ID: #45
+(ENTRY #357) 2022-03-10 12:38:35.849729 >> Cloud created! ID: #46
+(ENTRY #358) 2022-03-10 12:38:36.163774 >> Cloud removed! ID: #46
+(ENTRY #359) 2022-03-10 12:38:36.875191 >> Cloud created! ID: #47
+(ENTRY #360) 2022-03-10 12:38:37.203315 >> Cloud removed! ID: #47
+(ENTRY #361) 2022-03-10 12:38:37.950603 >> Cloud created! ID: #48
+(ENTRY #362) 2022-03-10 12:38:38.204793 >> Cloud removed! ID: #48
+(ENTRY #363) 2022-03-10 12:38:39.027413 >> Cloud created! ID: #49
+(ENTRY #364) 2022-03-10 12:38:39.248697 >> Cloud removed! ID: #49
+(ENTRY #365) 2022-03-10 12:38:40.036526 >> Cloud created! ID: #50
+(ENTRY #366) 2022-03-10 12:38:40.450191 >> Cloud removed! ID: #50
+(ENTRY #367) 2022-03-10 12:38:41.046709 >> Cloud created! ID: #51
+(ENTRY #368) 2022-03-10 12:38:41.515303 >> Cloud removed! ID: #51
+(ENTRY #369) 2022-03-10 12:38:42.292110 >> Cloud created! ID: #52
+(ENTRY #370) 2022-03-10 12:38:42.569675 >> Cloud removed! ID: #52
+(ENTRY #371) 2022-03-10 12:38:43.344098 >> Cloud created! ID: #53
+(ENTRY #372) 2022-03-10 12:38:43.575255 >> Cloud removed! ID: #53
+(ENTRY #373) 2022-03-10 12:38:44.344571 >> Cloud created! ID: #54
+(ENTRY #374) 2022-03-10 12:38:44.669756 >> Cloud removed! ID: #54
+(ENTRY #375) 2022-03-10 12:38:45.452739 >> Cloud created! ID: #55
+(ENTRY #376) 2022-03-10 12:38:45.693316 >> Cloud removed! ID: #55
+(ENTRY #377) 2022-03-10 12:38:46.533373 >> Cloud created! ID: #56
+(ENTRY #378) 2022-03-10 12:38:46.723116 >> Cloud removed! ID: #56
+(ENTRY #379) 2022-03-10 12:38:47.686551 >> Cloud created! ID: #57
+(ENTRY #380) 2022-03-10 12:38:47.742115 >> Cloud removed! ID: #57
+(ENTRY #381) 2022-03-10 12:38:48.723332 >> Cloud created! ID: #58
+(ENTRY #382) 2022-03-10 12:38:48.765333 >> Cloud removed! ID: #58
+(ENTRY #383) 2022-03-10 12:38:49.732518 >> Cloud created! ID: #59
+(ENTRY #384) 2022-03-10 12:38:49.840531 >> Cloud removed! ID: #59
+(ENTRY #385) 2022-03-10 12:38:50.740070 >> Cloud created! ID: #60
+(ENTRY #386) 2022-03-10 12:38:50.848012 >> Cloud removed! ID: #60
+(ENTRY #387) 2022-03-10 12:38:51.757851 >> Cloud created! ID: #61
+(ENTRY #388) 2022-03-10 12:38:51.866240 >> Cloud removed! ID: #61
+(ENTRY #389) 2022-03-10 12:38:52.832975 >> Cloud created! ID: #62
+(ENTRY #390) 2022-03-10 12:38:52.929965 >> Cloud removed! ID: #62
+(ENTRY #391) 2022-03-10 12:38:53.844669 >> Cloud created! ID: #63
+(ENTRY #392) 2022-03-10 12:38:54.007503 >> Cloud removed! ID: #63
+(ENTRY #393) 2022-03-10 12:38:54.911597 >> Cloud created! ID: #64
+(ENTRY #394) 2022-03-10 12:38:55.018594 >> Cloud removed! ID: #64
+(ENTRY #395) 2022-03-10 12:38:55.951662 >> Cloud created! ID: #65
+(ENTRY #396) 2022-03-10 12:38:56.031054 >> Cloud removed! ID: #65
+(ENTRY #397) 2022-03-10 12:38:56.987256 >> Cloud created! ID: #66
+(ENTRY #398) 2022-03-10 12:38:57.271010 >> Cloud removed! ID: #66
+(ENTRY #399) 2022-03-10 12:38:57.987867 >> Cloud created! ID: #67
+(ENTRY #400) 2022-03-10 12:38:58.329411 >> Cloud removed! ID: #67
+(ENTRY #401) 2022-03-10 12:38:59.031813 >> Cloud created! ID: #68
+(ENTRY #402) 2022-03-10 12:38:59.338763 >> Cloud removed! ID: #68
+(ENTRY #403) 2022-03-10 12:39:00.032983 >> Cloud created! ID: #69
+(ENTRY #404) 2022-03-10 12:39:00.453893 >> Cloud removed! ID: #69
+(ENTRY #405) 2022-03-10 12:39:01.068436 >> Cloud created! ID: #70
+(ENTRY #406) 2022-03-10 12:39:01.527748 >> Cloud removed! ID: #70
+(ENTRY #407) 2022-03-10 12:39:02.086415 >> Cloud created! ID: #71
+(ENTRY #408) 2022-03-10 12:39:02.682375 >> Cloud removed! ID: #71
+(ENTRY #409) 2022-03-10 12:39:03.268269 >> Cloud created! ID: #72
+(ENTRY #410) 2022-03-10 12:39:03.730269 >> Cloud removed! ID: #72
+(ENTRY #411) 2022-03-10 12:39:04.270667 >> Cloud created! ID: #73
+(ENTRY #412) 2022-03-10 12:39:04.722040 >> Cloud removed! ID: #73
+(ENTRY #413) 2022-03-10 12:39:05.371628 >> Cloud created! ID: #74
+(ENTRY #414) 2022-03-10 12:39:05.734910 >> Cloud removed! ID: #74
+(ENTRY #415) 2022-03-10 12:39:06.422366 >> Cloud created! ID: #75
+(ENTRY #416) 2022-03-10 12:39:06.748487 >> Cloud removed! ID: #75
+(ENTRY #417) 2022-03-10 12:39:07.427034 >> Cloud created! ID: #76
+(ENTRY #418) 2022-03-10 12:39:07.836076 >> Cloud removed! ID: #76
+(ENTRY #419) 2022-03-10 12:39:08.508035 >> Cloud created! ID: #77
+(ENTRY #420) 2022-03-10 12:39:08.857540 >> Cloud removed! ID: #77
+(ENTRY #421) 2022-03-10 12:39:09.515070 >> Cloud created! ID: #78
+(ENTRY #422) 2022-03-10 12:39:09.925298 >> Cloud removed! ID: #78
+(ENTRY #423) 2022-03-10 12:39:10.523612 >> Cloud created! ID: #79
+(ENTRY #424) 2022-03-10 12:39:10.958988 >> Cloud removed! ID: #79
+(ENTRY #425) 2022-03-10 12:39:11.557286 >> Cloud created! ID: #80
+(ENTRY #426) 2022-03-10 12:39:11.996894 >> Cloud removed! ID: #80
+(ENTRY #427) 2022-03-10 12:39:12.655041 >> Cloud created! ID: #81
+(ENTRY #428) 2022-03-10 12:39:12.980056 >> Cloud removed! ID: #81
+(ENTRY #429) 2022-03-10 12:39:13.779284 >> Cloud created! ID: #82
+(ENTRY #430) 2022-03-10 12:39:14.011412 >> Cloud removed! ID: #82
+(ENTRY #431) 2022-03-10 12:39:14.792021 >> Cloud created! ID: #83
+(ENTRY #432) 2022-03-10 12:39:14.983583 >> Cloud removed! ID: #83
+(ENTRY #433) 2022-03-10 12:39:15.976068 >> Cloud created! ID: #84
+(ENTRY #434) 2022-03-10 12:39:16.016858 >> Cloud removed! ID: #84
+(ENTRY #435) 2022-03-10 12:39:17.001331 >> Cloud created! ID: #85
+(ENTRY #436) 2022-03-10 12:39:17.030330 >> Cloud removed! ID: #85
+(ENTRY #437) 2022-03-10 12:39:18.079122 >> Cloud created! ID: #86
+(ENTRY #438) 2022-03-10 12:39:18.187899 >> Cloud removed! ID: #86
+(ENTRY #439) 2022-03-10 12:39:19.098625 >> Cloud created! ID: #87
+(ENTRY #440) 2022-03-10 12:39:19.194821 >> Cloud removed! ID: #87
+(ENTRY #441) 2022-03-10 12:39:20.194929 >> Cloud created! ID: #88
+(ENTRY #442) 2022-03-10 12:39:20.288807 >> Cloud removed! ID: #88
+(ENTRY #443) 2022-03-10 12:39:21.261923 >> Cloud created! ID: #89
+(ENTRY #444) 2022-03-10 12:39:21.344694 >> Cloud removed! ID: #89
+(ENTRY #445) 2022-03-10 12:39:22.273296 >> Cloud created! ID: #90
+(ENTRY #446) 2022-03-10 12:39:22.341146 >> Cloud removed! ID: #90
+(ENTRY #447) 2022-03-10 12:39:23.359871 >> Cloud created! ID: #91
+(ENTRY #448) 2022-03-10 12:39:23.429722 >> Cloud removed! ID: #91
+(ENTRY #449) 2022-03-10 12:39:24.401851 >> Cloud created! ID: #92
+(ENTRY #450) 2022-03-10 12:39:24.431593 >> Cloud removed! ID: #92
+(ENTRY #451) 2022-03-10 12:39:25.454728 >> Cloud removed! ID: #92
+(ENTRY #452) 2022-03-10 12:39:25.565822 >> Cloud created! ID: #93
+(ENTRY #453) 2022-03-10 12:39:26.480821 >> Cloud removed! ID: #93
+(ENTRY #454) 2022-03-10 12:39:26.737198 >> Cloud created! ID: #94
+(ENTRY #455) 2022-03-10 12:39:27.570169 >> Cloud removed! ID: #94
+(ENTRY #456) 2022-03-10 12:39:27.747334 >> Cloud created! ID: #95
+(ENTRY #457) 2022-03-10 12:39:28.707822 >> Cloud removed! ID: #95
+(ENTRY #458) 2022-03-10 12:39:28.749419 >> Cloud created! ID: #96
+(ENTRY #459) 2022-03-10 12:39:29.722695 >> Cloud removed! ID: #96
+(ENTRY #460) 2022-03-10 12:39:29.848293 >> Cloud created! ID: #97
+(ENTRY #461) 2022-03-10 12:39:30.866091 >> Cloud created! ID: #98
+(ENTRY #462) 2022-03-10 12:39:30.921578 >> Cloud removed! ID: #98
+(ENTRY #463) 2022-03-10 12:39:31.908931 >> Cloud created! ID: #99
+(ENTRY #464) 2022-03-10 12:39:31.965469 >> Cloud removed! ID: #99
+(ENTRY #465) 2022-03-10 12:39:32.970861 >> Cloud created! ID: #100
+(ENTRY #466) 2022-03-10 12:39:33.055247 >> Cloud removed! ID: #100
+(ENTRY #467) 2022-03-10 12:39:34.016831 >> Cloud created! ID: #101
+(ENTRY #468) 2022-03-10 12:39:34.087643 >> Cloud removed! ID: #101
+(ENTRY #469) 2022-03-10 12:39:35.032138 >> Cloud created! ID: #102
+(ENTRY #470) 2022-03-10 12:39:35.197128 >> Cloud removed! ID: #102
+(ENTRY #471) 2022-03-10 12:39:36.042415 >> Cloud created! ID: #103
+(ENTRY #472) 2022-03-10 12:39:36.258589 >> Cloud removed! ID: #103
+(ENTRY #473) 2022-03-10 12:39:37.105826 >> Cloud created! ID: #104
+(ENTRY #474) 2022-03-10 12:39:37.283952 >> Cloud removed! ID: #104
+(ENTRY #475) 2022-03-10 12:39:38.232850 >> Cloud created! ID: #105
+(ENTRY #476) 2022-03-10 12:39:38.368157 >> Cloud removed! ID: #105
+(ENTRY #477) 2022-03-10 12:39:39.233228 >> Cloud created! ID: #106
+(ENTRY #478) 2022-03-10 12:39:39.426042 >> Cloud removed! ID: #106
+(ENTRY #479) 2022-03-10 12:39:40.291670 >> Cloud created! ID: #107
+(ENTRY #480) 2022-03-10 12:39:40.583088 >> Cloud removed! ID: #107
+(ENTRY #481) 2022-03-10 12:39:41.407580 >> Cloud created! ID: #108
+(ENTRY #482) 2022-03-10 12:39:41.773674 >> Cloud removed! ID: #108
+(ENTRY #483) 2022-03-10 12:39:42.425378 >> Cloud created! ID: #109
+(ENTRY #484) 2022-03-10 12:39:42.792472 >> Cloud removed! ID: #109
+(ENTRY #485) 2022-03-10 12:39:43.458493 >> Cloud created! ID: #110
+(ENTRY #486) 2022-03-10 12:39:43.781697 >> Cloud removed! ID: #110
+(ENTRY #487) 2022-03-10 12:39:44.461800 >> Cloud created! ID: #111
+(ENTRY #488) 2022-03-10 12:39:44.892512 >> Cloud removed! ID: #111
+(ENTRY #489) 2022-03-10 12:39:45.470275 >> Cloud created! ID: #112
+(ENTRY #490) 2022-03-10 12:39:45.944521 >> Cloud removed! ID: #112
+(ENTRY #491) 2022-03-10 12:39:46.473878 >> Cloud created! ID: #113
+(ENTRY #492) 2022-03-10 12:39:46.984158 >> Cloud removed! ID: #113
+(ENTRY #493) 2022-03-10 12:39:47.486925 >> Cloud created! ID: #114
+(ENTRY #494) 2022-03-10 12:39:48.071178 >> Cloud removed! ID: #114
+(ENTRY #495) 2022-03-10 12:39:48.588718 >> Cloud created! ID: #115
+(ENTRY #496) 2022-03-10 12:39:49.115809 >> Cloud removed! ID: #115
+(ENTRY #497) 2022-03-10 12:39:49.828882 >> Cloud created! ID: #116
+(ENTRY #498) 2022-03-10 12:39:50.126275 >> Cloud removed! ID: #116
+(ENTRY #499) 2022-03-10 12:39:50.894250 >> Cloud created! ID: #117
+(ENTRY #500) 2022-03-10 12:39:51.122825 >> Cloud removed! ID: #117
+(ENTRY #501) 2022-03-10 12:39:51.917341 >> Cloud created! ID: #118
+(ENTRY #502) 2022-03-10 12:39:52.187412 >> Cloud removed! ID: #118
+(ENTRY #503) 2022-03-10 12:39:52.973388 >> Cloud created! ID: #119
+(ENTRY #504) 2022-03-10 12:39:53.306115 >> Cloud removed! ID: #119
+(ENTRY #505) 2022-03-10 12:39:53.985723 >> Cloud created! ID: #120
+(ENTRY #506) 2022-03-10 12:39:54.296809 >> Cloud removed! ID: #120
+(ENTRY #507) 2022-03-10 12:39:55.011417 >> Cloud created! ID: #121
+(ENTRY #508) 2022-03-10 12:39:55.335000 >> Cloud removed! ID: #121
+(ENTRY #509) 2022-03-10 12:39:56.073654 >> Cloud created! ID: #122
+(ENTRY #510) 2022-03-10 12:39:56.421185 >> Cloud removed! ID: #122
+(ENTRY #511) 2022-03-10 12:39:57.098387 >> Cloud created! ID: #123
+(ENTRY #512) 2022-03-10 12:39:57.438424 >> Cloud removed! ID: #123
+(ENTRY #513) 2022-03-10 12:39:58.144350 >> Cloud created! ID: #124
+(ENTRY #514) 2022-03-10 12:39:58.485008 >> Cloud removed! ID: #124
+(ENTRY #515) 2022-03-10 12:39:59.189886 >> Cloud created! ID: #125
+(ENTRY #516) 2022-03-10 12:39:59.488501 >> Cloud removed! ID: #125
+(ENTRY #517) 2022-03-10 12:40:00.342844 >> Cloud created! ID: #126
+(ENTRY #518) 2022-03-10 12:40:00.465936 >> Cloud removed! ID: #126
+(ENTRY #519) 2022-03-10 12:40:01.356618 >> Cloud created! ID: #127
+(ENTRY #520) 2022-03-10 12:40:01.439601 >> Cloud removed! ID: #127
+(ENTRY #521) 2022-03-10 12:40:02.416590 >> Cloud created! ID: #128
+(ENTRY #522) 2022-03-10 12:40:02.431626 >> Cloud removed! ID: #128
+(ENTRY #523) 2022-03-10 12:40:03.451446 >> Cloud created! ID: #129
+(ENTRY #524) 2022-03-10 12:40:03.520781 >> Cloud removed! ID: #129
+(ENTRY #525) 2022-03-10 12:40:04.754193 >> Cloud removed! ID: #129
+(ENTRY #526) 2022-03-10 12:40:04.836945 >> Cloud created! ID: #130
+(ENTRY #527) 2022-03-10 12:40:05.818312 >> Cloud removed! ID: #130
+(ENTRY #528) 2022-03-10 12:40:05.844574 >> Cloud created! ID: #131
+(ENTRY #529) 2022-03-10 12:40:06.836617 >> Cloud removed! ID: #131
+(ENTRY #530) 2022-03-10 12:40:06.878673 >> Cloud created! ID: #132
+(ENTRY #531) 2022-03-10 12:40:07.902882 >> Cloud created! ID: #133
+(ENTRY #532) 2022-03-10 12:40:07.903886 >> Cloud removed! ID: #133
+(ENTRY #533) 2022-03-10 12:40:08.922121 >> Cloud removed! ID: #133
+(ENTRY #534) 2022-03-10 12:40:09.063914 >> Cloud created! ID: #134
+(ENTRY #535) 2022-03-10 12:40:09.991986 >> Cloud removed! ID: #134
+(ENTRY #536) 2022-03-10 12:40:10.075019 >> Cloud created! ID: #135
+(ENTRY #537) 2022-03-10 12:40:11.088135 >> Cloud removed! ID: #135
+(ENTRY #538) 2022-03-10 12:40:11.103604 >> Cloud created! ID: #136
+(ENTRY #539) 2022-03-10 12:40:12.125720 >> Cloud created! ID: #137
+(ENTRY #540) 2022-03-10 12:40:12.126723 >> Cloud removed! ID: #137
+(ENTRY #541) 2022-03-10 12:40:13.139358 >> Cloud created! ID: #138
+(ENTRY #542) 2022-03-10 12:40:13.154351 >> Cloud removed! ID: #138
+(ENTRY #543) 2022-03-10 12:40:14.161445 >> Cloud created! ID: #139
+(ENTRY #544) 2022-03-10 12:40:14.202305 >> Cloud removed! ID: #139
+(ENTRY #545) 2022-03-10 12:40:15.196482 >> Cloud created! ID: #140
+(ENTRY #546) 2022-03-10 12:40:15.361510 >> Cloud removed! ID: #140
+(ENTRY #547) 2022-03-10 12:40:16.312869 >> Cloud created! ID: #141
+(ENTRY #548) 2022-03-10 12:40:16.383770 >> Cloud removed! ID: #141
+(ENTRY #549) 2022-03-10 12:40:17.355696 >> Cloud created! ID: #142
+(ENTRY #550) 2022-03-10 12:40:17.434996 >> Cloud removed! ID: #142
+(ENTRY #551) 2022-03-10 12:40:18.423927 >> Cloud created! ID: #143
+(ENTRY #552) 2022-03-10 12:40:18.465597 >> Cloud removed! ID: #143
+(ENTRY #553) 2022-03-10 12:40:19.538445 >> Cloud created! ID: #144
+(ENTRY #554) 2022-03-10 12:40:19.841495 >> Cloud removed! ID: #144
+(ENTRY #555) 2022-03-10 12:40:20.824150 >> Cloud created! ID: #145
+(ENTRY #556) 2022-03-10 12:40:20.865195 >> Cloud removed! ID: #145
+(ENTRY #557) 2022-03-10 12:40:21.860351 >> Cloud created! ID: #146
+(ENTRY #558) 2022-03-10 12:40:21.901320 >> Cloud removed! ID: #146
+(ENTRY #559) 2022-03-10 12:40:22.927914 >> Cloud removed! ID: #146
+(ENTRY #560) 2022-03-10 12:40:22.994917 >> Cloud created! ID: #147
+(ENTRY #561) 2022-03-10 12:40:24.072411 >> Cloud removed! ID: #147
+(ENTRY #562) 2022-03-10 12:40:24.086411 >> Cloud created! ID: #148
+(ENTRY #563) 2022-03-10 12:40:25.062571 >> Cloud removed! ID: #148
+(ENTRY #564) 2022-03-10 12:40:25.104061 >> Cloud created! ID: #149
+(ENTRY #565) 2022-03-10 12:40:26.076189 >> Cloud removed! ID: #149
+(ENTRY #566) 2022-03-10 12:40:26.130197 >> Cloud created! ID: #150
+(ENTRY #567) 2022-03-10 12:40:27.115384 >> Cloud removed! ID: #150
+(ENTRY #568) 2022-03-10 12:40:27.171026 >> Cloud created! ID: #151
+(ENTRY #569) 2022-03-10 12:40:28.143120 >> Cloud removed! ID: #151
+(ENTRY #570) 2022-03-10 12:40:28.210409 >> Cloud created! ID: #152
+(ENTRY #571) 2022-03-10 12:40:29.151679 >> Cloud removed! ID: #152
+(ENTRY #572) 2022-03-10 12:40:29.288151 >> Cloud created! ID: #153
+(ENTRY #573) 2022-03-10 12:40:30.180395 >> Cloud removed! ID: #153
+(ENTRY #574) 2022-03-10 12:40:30.384246 >> Cloud created! ID: #154
+(ENTRY #575) 2022-03-10 12:40:31.294538 >> Cloud removed! ID: #154
+(ENTRY #576) 2022-03-10 12:40:31.430614 >> Cloud created! ID: #155
+(ENTRY #577) 2022-03-10 12:40:32.347653 >> Cloud removed! ID: #155
+(ENTRY #578) 2022-03-10 12:40:32.551114 >> Cloud created! ID: #156
+(ENTRY #579) 2022-03-10 12:40:33.414060 >> Cloud removed! ID: #156
+(ENTRY #580) 2022-03-10 12:40:33.561668 >> Cloud created! ID: #157
+(ENTRY #581) 2022-03-10 12:40:34.516482 >> Cloud removed! ID: #157
+(ENTRY #582) 2022-03-10 12:40:34.571360 >> Cloud created! ID: #158
+(ENTRY #583) 2022-03-10 12:40:35.635016 >> Cloud created! ID: #159
+(ENTRY #584) 2022-03-10 12:40:35.798584 >> Cloud removed! ID: #159
+(ENTRY #585) 2022-03-10 12:40:36.700773 >> Cloud created! ID: #160
+(ENTRY #586) 2022-03-10 12:40:36.823306 >> Cloud removed! ID: #160
+(ENTRY #587) 2022-03-10 12:40:37.705777 >> Cloud created! ID: #161
+(ENTRY #588) 2022-03-10 12:40:37.934950 >> Cloud removed! ID: #161
+(ENTRY #589) 2022-03-10 12:40:38.793824 >> Cloud created! ID: #162
+(ENTRY #590) 2022-03-10 12:40:39.007488 >> Cloud removed! ID: #162
+(ENTRY #591) 2022-03-10 12:40:39.810405 >> Cloud created! ID: #163
+(ENTRY #592) 2022-03-10 12:40:40.013640 >> Cloud removed! ID: #163
+(ENTRY #593) 2022-03-10 12:40:40.811471 >> Cloud created! ID: #164
+(ENTRY #594) 2022-03-10 12:40:41.026033 >> Cloud removed! ID: #164
+(ENTRY #595) 2022-03-10 12:40:41.844011 >> Cloud created! ID: #165
+(ENTRY #596) 2022-03-10 12:40:42.033242 >> Cloud removed! ID: #165
+(ENTRY #597) 2022-03-10 12:40:42.949180 >> Cloud created! ID: #166
+(ENTRY #598) 2022-03-10 12:40:43.058240 >> Cloud removed! ID: #166
+(ENTRY #599) 2022-03-10 12:40:43.969622 >> Cloud created! ID: #167
+(ENTRY #600) 2022-03-10 12:40:44.134865 >> Cloud removed! ID: #167
+(ENTRY #601) 2022-03-10 12:40:44.976465 >> Cloud created! ID: #168
+(ENTRY #602) 2022-03-10 12:40:45.230301 >> Cloud removed! ID: #168
+(ENTRY #603) 2022-03-10 12:40:46.051265 >> Cloud created! ID: #169
+(ENTRY #604) 2022-03-10 12:40:46.268594 >> Cloud removed! ID: #169
+(ENTRY #605) 2022-03-10 12:40:47.085211 >> Cloud created! ID: #170
+(ENTRY #606) 2022-03-10 12:40:47.380187 >> Cloud removed! ID: #170
+(ENTRY #607) 2022-03-10 12:40:48.111304 >> Cloud created! ID: #171
+(ENTRY #608) 2022-03-10 12:40:48.395913 >> Cloud removed! ID: #171
+(ENTRY #609) 2022-03-10 12:40:49.129782 >> Cloud created! ID: #172
+(ENTRY #610) 2022-03-10 12:40:49.425547 >> Cloud removed! ID: #172
+(ENTRY #611) 2022-03-10 12:40:50.152852 >> Cloud created! ID: #173
+(ENTRY #612) 2022-03-10 12:40:50.478449 >> Cloud removed! ID: #173
+(ENTRY #613) 2022-03-10 12:40:51.208968 >> Cloud created! ID: #174
+(ENTRY #614) 2022-03-10 12:40:51.553001 >> Cloud removed! ID: #174
+(ENTRY #615) 2022-03-10 12:40:52.215966 >> Cloud created! ID: #175
+(ENTRY #616) 2022-03-10 12:40:52.569583 >> Cloud removed! ID: #175
+(ENTRY #617) 2022-03-10 12:40:53.377860 >> Cloud created! ID: #176
+(ENTRY #618) 2022-03-10 12:40:53.679407 >> Cloud removed! ID: #176
+(ENTRY #619) 2022-03-10 12:40:54.455673 >> Cloud created! ID: #177
+(ENTRY #620) 2022-03-10 12:40:54.701638 >> Cloud removed! ID: #177
+(ENTRY #621) 2022-03-10 12:40:55.463336 >> Cloud created! ID: #178
+(ENTRY #622) 2022-03-10 12:40:55.737102 >> Cloud removed! ID: #178
+(ENTRY #623) 2022-03-10 12:40:56.650766 >> Cloud created! ID: #179
+(ENTRY #624) 2022-03-10 12:40:56.787147 >> Cloud removed! ID: #179
+(ENTRY #625) 2022-03-10 12:40:57.675820 >> Cloud created! ID: #180
+(ENTRY #626) 2022-03-10 12:40:57.906107 >> Cloud removed! ID: #180
+(ENTRY #627) 2022-03-10 12:40:58.688526 >> Cloud created! ID: #181
+(ENTRY #628) 2022-03-10 12:40:58.945832 >> Cloud removed! ID: #181
+(ENTRY #629) 2022-03-10 12:40:59.726836 >> Cloud created! ID: #182
+(ENTRY #630) 2022-03-10 12:40:59.961379 >> Cloud removed! ID: #182
+(ENTRY #631) 2022-03-10 12:41:00.783578 >> Cloud created! ID: #183
+(ENTRY #632) 2022-03-10 12:41:01.082525 >> Cloud removed! ID: #183
+(ENTRY #633) 2022-03-10 12:41:01.795497 >> Cloud created! ID: #184
+(ENTRY #634) 2022-03-10 12:41:02.127066 >> Cloud removed! ID: #184
+(ENTRY #635) 2022-03-10 12:41:02.886652 >> Cloud created! ID: #185
+(ENTRY #636) 2022-03-10 12:41:03.175210 >> Cloud removed! ID: #185
+(ENTRY #637) 2022-03-10 12:41:04.036803 >> Cloud created! ID: #186
+(ENTRY #638) 2022-03-10 12:41:04.199356 >> Cloud removed! ID: #186
+(ENTRY #639) 2022-03-10 12:41:05.118650 >> Cloud created! ID: #187
+(ENTRY #640) 2022-03-10 12:41:05.214376 >> Cloud removed! ID: #187
+(ENTRY #641) 2022-03-10 12:41:06.138243 >> Cloud created! ID: #188
+(ENTRY #642) 2022-03-10 12:41:06.277085 >> Cloud removed! ID: #188
+(ENTRY #643) 2022-03-10 12:41:07.194389 >> Cloud created! ID: #189
+(ENTRY #644) 2022-03-10 12:41:07.275601 >> Cloud removed! ID: #189
+(ENTRY #645) 2022-03-10 12:41:08.411747 >> Cloud created! ID: #190
+(ENTRY #646) 2022-03-10 12:41:08.440442 >> Cloud removed! ID: #190
+(ENTRY #647) 2022-03-10 12:41:09.425797 >> Cloud created! ID: #191
+(ENTRY #648) 2022-03-10 12:41:09.507923 >> Cloud removed! ID: #191
+(ENTRY #649) 2022-03-10 12:41:10.453420 >> Cloud created! ID: #192
+(ENTRY #650) 2022-03-10 12:41:10.481292 >> Cloud removed! ID: #192
+(ENTRY #651) 2022-03-10 12:41:11.055291 >> MOUSEPOS: (281, 271)
+(ENTRY #652) 2022-03-10 12:41:11.055291 >> SLOPE CALC:None
+(ENTRY #653) 2022-03-10 12:41:11.055291 >> LIN CALC FIN: 266.5810099431934
+(ENTRY #654) 2022-03-10 12:41:11.055291 >> LIN CALC RAW: 633.4189900568066
+(ENTRY #655) 2022-03-10 12:41:11.055291 >> Below!
+(ENTRY #656) 2022-03-10 12:41:11.055291 >> Object lightRound has been created!
+(ENTRY #657) 2022-03-10 12:41:11.056289 >> Protectile #24 has been created! Type: Light
+(ENTRY #658) 2022-03-10 12:41:11.056289 >> Projectile created! ID: #24
+(ENTRY #659) 2022-03-10 12:41:11.244258 >> MOUSEPOS: (382, 289)
+(ENTRY #660) 2022-03-10 12:41:11.245259 >> SLOPE CALC:None
+(ENTRY #661) 2022-03-10 12:41:11.245259 >> LIN CALC FIN: 164.86557796159423
+(ENTRY #662) 2022-03-10 12:41:11.245259 >> LIN CALC RAW: 735.1344220384058
+(ENTRY #663) 2022-03-10 12:41:11.245259 >> Below!
+(ENTRY #664) 2022-03-10 12:41:11.507170 >> Cloud created! ID: #193
+(ENTRY #665) 2022-03-10 12:41:11.623741 >> MOUSEPOS: (382, 289)
+(ENTRY #666) 2022-03-10 12:41:11.623741 >> SLOPE CALC:None
+(ENTRY #667) 2022-03-10 12:41:11.623741 >> LIN CALC FIN: 159.7227450385144
+(ENTRY #668) 2022-03-10 12:41:11.623741 >> LIN CALC RAW: 740.2772549614856
+(ENTRY #669) 2022-03-10 12:41:11.623741 >> Below!
+(ENTRY #670) 2022-03-10 12:41:11.863310 >> MOUSEPOS: (382, 289)
+(ENTRY #671) 2022-03-10 12:41:11.863310 >> SLOPE CALC:None
+(ENTRY #672) 2022-03-10 12:41:11.863310 >> LIN CALC FIN: 157.1032784232675
+(ENTRY #673) 2022-03-10 12:41:11.863310 >> LIN CALC RAW: 742.8967215767325
+(ENTRY #674) 2022-03-10 12:41:11.863310 >> Below!
+(ENTRY #675) 2022-03-10 12:41:12.082312 >> MOUSEPOS: (382, 289)
+(ENTRY #676) 2022-03-10 12:41:12.082312 >> SLOPE CALC:None
+(ENTRY #677) 2022-03-10 12:41:12.082312 >> LIN CALC FIN: 154.70209365064943
+(ENTRY #678) 2022-03-10 12:41:12.082312 >> LIN CALC RAW: 745.2979063493506
+(ENTRY #679) 2022-03-10 12:41:12.082312 >> Below!
+(ENTRY #680) 2022-03-10 12:41:12.082312 >> Object lightRound has been created!
+(ENTRY #681) 2022-03-10 12:41:12.083313 >> Protectile #26 has been created! Type: Light
+(ENTRY #682) 2022-03-10 12:41:12.083313 >> Projectile created! ID: #26
+(ENTRY #683) 2022-03-10 12:41:12.138314 >> Cloud removed! ID: #193
+(ENTRY #684) 2022-03-10 12:41:12.520035 >> Cloud created! ID: #194
+(ENTRY #685) 2022-03-10 12:41:13.961189 >> Naval Warfare 2D Closed...

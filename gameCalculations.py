@@ -10,6 +10,8 @@ import math
 import warshipClonkses
 import playerClasses
 import logHandler
+import projectileClasses
+import computer_movement
 
 import random
 
@@ -539,3 +541,63 @@ def get_angle(origin, mousePos):
         return 90
     elif (mousePos[0] >= origin[0]) and (mousePos[1] == origin[1]):
         return 270
+
+def cleanup_projectiles(projectiles):
+    to_remove = []
+
+    for i in range(0, len(projectiles)):
+        if projectiles[i].remove == True:
+            to_remove.append(i)
+
+    for rm in reversed(to_remove):
+        del projectileClasses.activeProjectiles[rm]
+
+def cleanup_npc(entities):
+    to_remove = []
+
+    for i in range(0, len(entities)):
+        if entities[i].ship.health <= True:
+            to_remove.append(i)
+
+    for rm in reversed(to_remove):
+        del computer_movement.active_entities[rm]
+
+def garbage_collect(projectiles, entities):
+    cleanup_npc(entities)
+    cleanup_projectiles(projectiles)
+
+def checkCollisions(entity_list, player, projectiles): # Tends to degrade performance when all sprites are in one spot, we have to avoid this by spreading them out
+    combined_entities = [player]
+    toDelete = []
+
+    for entity in entity_list:
+        combined_entities.append(entity)
+
+    for entity in combined_entities:
+        for other in combined_entities:
+            if (entity.ship.rect.colliderect(other.ship.rect) == True) and (other.username != entity.username):
+                entity.ship.health = 0
+                other.ship.health = 0
+                logHandler.createLog(entity.username + " and " + other.username + " have collided!")
+
+    for projectile in projectiles:
+        for entity in combined_entities:
+            if (projectile.rect.colliderect(entity.ship.rect) == True) and (projectile.owner.username != entity.username):
+                entity.ship.health -= projectile.damage
+                projectile.remove = True
+                logHandler.createLog("Projectile has hit!")
+
+def render_health(surface, player):
+
+    player_pos = player.ship.v2Pos
+    player_health = player.ship.health / player.ship.max_health
+
+    pygame.draw.rect(surface, (255, 0, 0), (player_pos.x - 11, player_pos.y + 25, 25, 3))
+    pygame.draw.rect(surface, (0, 255, 0), (player_pos.x - 11, player_pos.y + 25, 25 * player_health, 3))
+
+    for entity in computer_movement.active_entities:
+        entity_pos = entity.ship.v2Pos
+        entity_health = entity.ship.health / entity.ship.max_health
+
+        pygame.draw.rect(surface, (255, 0, 0), (entity_pos.x - 11, entity_pos.y + 25, 25, 3))
+        pygame.draw.rect(surface, (0, 255, 0), (entity_pos.x - 11, entity_pos.y + 25, 25 * entity_health, 3))

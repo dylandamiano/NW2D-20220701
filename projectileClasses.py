@@ -49,6 +49,8 @@ class projectile(pygame.sprite.Sprite):
         self.lastMove = 0
         self.owner = owner
 
+        self.remove = False
+
         self.damage = damage
 
         self.v2Pos = pygame.Vector2(owner.ship.v2Pos.x, owner.ship.v2Pos.y)
@@ -104,7 +106,7 @@ class lightRound(projectile):
         logHandler.createLog("Object lightRound has been created!")
 
         self.image = lightImg
-        self.damage = 2.5
+        self.damage = 10
 
         super().__init__(orientation, owner, lightDimensions, self.image, self.damage)
 

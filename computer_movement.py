@@ -12,6 +12,9 @@ import logHandler
 groups_created = 0
 active_entities = []
 
+x_offset = 0
+y_offset = 0
+
 '''
     Function below creates the AI entity. The game will automatically determine if it is a jet or a boat.
     However, each AI will move at different times determined by the computer when the time for movement comes.
@@ -21,15 +24,23 @@ active_entities = []
 
 def createEntities(count, ent_type = "Carrier"):
     global groups_created
+    global x_offset
+    global y_offset
 
     if ent_type == "Carrier":
         groups_created += 1
 
+        x_offset += 0
+        y_offset += 0
+
         for i in range(0, count):
+            x_offset += 50
+            y_offset += 40
+
             entity_name = "entity_" + str(groups_created) + "_" + str(i)
 
             ship_local = playerClasses.computerEntity(name=str(entity_name))
-            ship_local.createShip("Carrier")
+            ship_local.createShip("Carrier", 250 + x_offset, 400 + y_offset)
             ship_local.type = "sea"
 
             ship_local.last_move = int(time.time())
@@ -40,11 +51,17 @@ def createEntities(count, ent_type = "Carrier"):
     if ent_type == "Fighter":
         groups_created += 1
 
+        x_offset += 0
+        y_offset += 0
+
         for i in range(0, count):
+            x_offset += 100
+            y_offset += 20
+
             entity_name = "entity_" + str(groups_created) + "_" + str(i)
 
             ship_local = playerClasses.computerEntity(name=str(entity_name))
-            ship_local.createShip("Fighter")
+            ship_local.createShip("Fighter", 100 + x_offset, 250 + y_offset)
             ship_local.type = "air"
 
             ship_local.last_move = int(time.time())
@@ -94,7 +111,7 @@ def move_entities(playerFired = False):
             elif entity.move_direction == -1:
                 gameCalculations.checkBorder(entity.ship, "Backwards")
 
-            logHandler.createLog(str(rtrn))
+            #logHandler.createLog(str(rtrn))
 
 def rotate_entities():
     for entity in active_entities:
@@ -133,6 +150,12 @@ def get_distance(entity_one, entity_two) -> float:
 
 last_fired = time.time()
 
+def random_x():
+    return random.randint(0, 50)
+
+def random_y():
+    return random.randint(0, 50)
+
 # Functions below simulate player input
 def simulate_mouse(player, random_path: bool = False) -> tuple:
     global last_fired
@@ -166,7 +189,7 @@ def simulate_mouse(player, random_path: bool = False) -> tuple:
 
             angle = gameCalculations.get_angle(
                     (entity.ship.v2Pos.x, entity.ship.v2Pos.y),
-                    (closest_entity.ship.v2Pos.x, closest_entity.ship.v2Pos.y)
+                    (closest_entity.ship.v2Pos.x + random_x(), closest_entity.ship.v2Pos.y + random_y())
                 )
 
             projectileClasses.mouseFired(angle, entity)
