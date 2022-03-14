@@ -62,12 +62,15 @@ class Player(pygame.sprite.Sprite):
                 print("No ship was found...")
 
 class computerEntity(Player):
-    def __init__(self, name):
+    def __init__(self, name, owner = None):
         pygame.sprite.Sprite.__init__(self)
         Player.__init__(self, name)
 
         self.AI = True
         self.reverse = False
+
+        self.player_owned = False
+        self.player_sel = None
 
         self.last_move = 0
         self.last_rotate = 0
