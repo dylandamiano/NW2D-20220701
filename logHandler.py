@@ -18,8 +18,11 @@ except OSError:
 
 logging.basicConfig(
     datefmt='%m/%d/%Y %I:%M:%S %p',
-    filename=f'{logPath}/{timeAsString}.log',
     format='%(asctime)s %(levelname)s %(message)s',
+    handlers=[
+        logging.FileHandler(f'{logPath}/{timeAsString}.log'),
+        logging.StreamHandler()
+    ],
     level=logging.DEBUG
 )
 
