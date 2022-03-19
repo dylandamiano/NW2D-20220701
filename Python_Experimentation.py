@@ -49,7 +49,7 @@ icon_img = pygame.image.load(icon)
 
 pygame.display.set_icon(icon_img)   
 
-pygame.display.set_caption("NAVAL Warfare 2d")
+pygame.display.set_caption("NAVAL Warfare 2D")
 
 splash = "Graphics\\splashScreen.png"
 splash_load = pygame.image.load(splash)
