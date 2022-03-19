@@ -7,25 +7,18 @@
 '''
 
 # Basic Module Initialization
-import datetime
 import math, random
 
-from pygame import display
-#import threading
-#import cairo
 import logHandler as log
 import time
-import threading
 import computer_movement
 import gameCalculations
 import gameSettings
 import graphicInterface
-import pygame, sys
+import pygame
 from pygame.locals import *
 import projectileClasses
-import warshipClonkses
 import playerClasses
-import os
 from os import path
 import spilled_oil
 
