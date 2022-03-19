@@ -2,7 +2,7 @@ import pygame
 import warshipClonkses
 
 import gameSettings
-
+import logging
 import math, random
 import logHandler
 
@@ -79,7 +79,7 @@ class computerEntity(Player):
         self.move_direction = 1
 
         print("New class initialized...")
-        logHandler.createLog("Dumb-AI Entity created!")
+        logging.debug("Dumb-AI Entity created!")
 
 '''
 
@@ -140,11 +140,11 @@ class Cloud(pygame.sprite.Sprite):
         self.lastMove = 0
     
         cloudCount += 1
-        logHandler.createLog("Cloud created! ID: #" + str(cloudCount))
+        logging.debug("Cloud created! ID: #" + str(cloudCount))
 
     def __del__(self):
         #print("Cloud removed!")
-        logHandler.createLog("Cloud removed! ID: #" + str(cloudCount))
+        logging.debug("Cloud removed! ID: #" + str(cloudCount))
         del self
 
     def createLocation(self):

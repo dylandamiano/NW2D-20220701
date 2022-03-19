@@ -111,8 +111,6 @@ def move_entities(playerFired = False):
             elif entity.move_direction == -1:
                 gameCalculations.checkBorder(entity.ship, "Backwards")
 
-            #logHandler.createLog(str(rtrn))
-
 def rotate_entities():
     for entity in active_entities:
         latest_attempt = time.time()

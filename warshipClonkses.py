@@ -1,6 +1,6 @@
 import playerClasses
 import pygame
-
+import logging
 import gameSettings
 import logHandler
 
@@ -263,4 +263,4 @@ class Fighter(Aircraft):
             self.rect = self.image.get_rect()
             self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
-logHandler.createLog("Initialized Warship handler...")
+logging.debug("Initialized Warship handler...")

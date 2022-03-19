@@ -8,7 +8,7 @@
 
 # Basic Module Initialization
 import math, random
-
+import logging
 import logHandler as log
 import time
 import computer_movement
@@ -31,7 +31,7 @@ import spilled_oil
         - Capping the framerate to 60 FPS to limit system resources
         - Setting the window title to inform the user on which one they have open
 '''
-log.createLog("Starting Naval Warfare 2D...")
+logging.info("Starting Naval Warfare 2D...")
 
 pygame.init()
 
@@ -82,7 +82,7 @@ friendlyAI_1 = playerClasses.Player("AI Entity #1")
 friendlyAI_1.createShip("Carrier")
 friendlyAI_1.type = "sea"
 
-log.createLog("Created Sprite for Player!")
+logging.debug("Created Sprite for Player!")
 
 '''
     The function below will do the following:
@@ -149,10 +149,7 @@ pause = True
 #pygame.mixer.music.load('HaloMjolnirMix.mp3')
 #pygame.mixer.music.play(-1)
 
-def drawLogs():
-    logHistory = log.getDisplayLog()
-
-log.createLog("Finished initalizing!")
+logging.debug("Finished initalizing!")
 
 def updateProjectiles():
     projectileClasses.updateProjectiles()
@@ -186,8 +183,7 @@ def checkInput():
             pause = True
             running = False
 
-            log.createLog("Naval Warfare 2D Closed...")
-            log.writeFile()
+            logging.debug("Naval Warfare 2D Closed...")
 
             pygame.display.quit()
         elif (event.type == pygame.KEYDOWN) and (pregame == False) and (pause == False):
@@ -245,8 +241,7 @@ def checkInput():
                     running = False
                     pygame.display.quit()
 
-                    log.createLog("Naval Warfare 2D Closed...")
-                    log.writeFile()
+                    logging.debug("Naval Warfare 2D Closed...")
                 elif gui_return == "Select":
                     createEntity()
 
@@ -409,4 +404,4 @@ while running == True:
 
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
 
-log.createLog("Cleaning up for close...")
+logging.debug("Cleaning up for close...")

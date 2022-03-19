@@ -1,6 +1,6 @@
 import playerClasses
 import warshipClonkses
-
+import logging
 import pygame
 import time
 
@@ -71,7 +71,7 @@ class projectile(pygame.sprite.Sprite):
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def __del__(self):
-        logHandler.createLog("Projectile has been removed!")
+        logging.debug("Projectile has been removed!")
 
     def findNearestTarget(self):
         pass
@@ -100,11 +100,11 @@ class projectile(pygame.sprite.Sprite):
 
     def __del__(self,):
         #print("Projectile has been removed!")
-        logHandler.createLog("Projectile removed!")        
+        logging.debug("Projectile removed!")        
 
 class lightRound(projectile):
     def __init__(self, orientation, owner):
-        logHandler.createLog("Object lightRound has been created!")
+        logging.debug("Object lightRound has been created!")
 
         self.image = lightImg
         self.damage = 10
@@ -113,7 +113,7 @@ class lightRound(projectile):
 
 class heavyRound(projectile):
     def __init__(self, orientation, owner):
-        logHandler.createLog("Object lightRound has been created!")
+        logging.debug("Object lightRound has been created!")
 
         self.image = heavyImg
         self.damage = 5
@@ -131,13 +131,13 @@ def createProjectile(orientation, owner):
     if owner.ship.round_type == "light":
         tempObj = lightRound(orientation, owner)
         activeProjectiles.append(tempObj)
-        logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
+        logging.debug("Protectile #" + str(projectileCount) + " has been created! Type: Light")
     elif owner.ship.round_type == "heavy":
         tempObj = heavyRound(orientation, owner)
         activeProjectiles.append(tempObj)
-        logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
+        logging.debug("Protectile #" + str(projectileCount) + " has been created! Type: Light")
 
-logHandler.createLog("Initialized Projectile handler...")
+logging.debug("Initialized Projectile handler...")
 
 def mouseFired(orientation, owner):
     global projectileCount
@@ -146,7 +146,7 @@ def mouseFired(orientation, owner):
     createProjectile(orientation, owner)
 
     #print("Mouse clicked, firing projectile!")
-    logHandler.createLog("Projectile created! ID: #" + str(projectileCount))
+    logging.debug("Projectile created! ID: #" + str(projectileCount))
 
 def updateProjectiles():
     global activeProjectiles
