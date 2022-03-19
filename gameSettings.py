@@ -53,7 +53,7 @@ def setKeyStatus(regKey = None, eventType = None):
     if (eventType == "UP"):
         if (regKey.key == pygame.K_w):
             playerOneKeys["W_Hold"] = False
-            #print("W lifted")
+            #logging.debug("W lifted")
         elif (regKey.key == pygame.K_a):
             playerOneKeys["A_Hold"] = False
         elif (regKey.key == pygame.K_s):
@@ -67,7 +67,7 @@ def setKeyStatus(regKey = None, eventType = None):
     elif (eventType == "DOWN"):
         if (regKey.key == pygame.K_w): 
             playerOneKeys["W_Hold"] = True
-            #print("W pressed")
+            #logging.debug("W pressed")
         elif (regKey.key == pygame.K_a):
             playerOneKeys["A_Hold"] = True
         elif (regKey.key == pygame.K_s):
@@ -81,7 +81,7 @@ def setKeyStatus(regKey = None, eventType = None):
     elif (regKey == None and eventType == None):
         pass
 
-    #print(getKeyStatus())
+    #logging.debug(getKeyStatus())
 
 '''
 a
@@ -114,7 +114,7 @@ def checkClouds():
 
 # \\ IGNORE THE FUNCTIONS BELOW! THESE ARE FOR DEBUGGING! // #
 def test():
-    print("new")
+    logging.debug("new")
 
 def playerCount():
     '''

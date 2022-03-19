@@ -92,7 +92,7 @@ class projectile(pygame.sprite.Sprite):
             self.TTL -= 1
 
     def __del__(self,):
-        #print("Projectile has been removed!")
+        #logging.debug("Projectile has been removed!")
         logging.debug("Projectile removed!")        
 
 class lightRound(projectile):
@@ -138,7 +138,7 @@ def mouseFired(orientation, owner):
 
     createProjectile(orientation, owner)
 
-    #print("Mouse clicked, firing projectile!")
+    #logging.debug("Mouse clicked, firing projectile!")
     logging.debug("Projectile created! ID: #" + str(projectileCount))
 
 def updateProjectiles():

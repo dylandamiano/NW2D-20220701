@@ -63,7 +63,7 @@ class Ship(pygame.sprite.Sprite):
            # }
            
     def shipStatus(self):
-        print(self.health)
+        logging.debug(self.health)
 
     def getLocation(self, req):
         if (req == "x"):
@@ -79,14 +79,14 @@ class Battleship(Ship):
         self.round_type = "heavy"
 
     def fireCannons():
-        print("Firing cannons!")
+        logging.debug("Firing cannons!")
 
     def takeDamage(self, attackingShip):
         
         pass # Will be defined in more detail later once I get the core program setup
 
     def getHealth(self):
-        print("Your health is at " + self.health + "%")
+        logging.debug("Your health is at " + self.health + "%")
 
 class Frigate(Ship):
     def __init__(self, player):
@@ -95,7 +95,7 @@ class Frigate(Ship):
         self.round_type = "heavy"
 
     def fireCannons():
-        print("Firing cannons!")
+        logging.debug("Firing cannons!")
 
     def takeDamage(self, attackingShip):
         pass # Will be defined in more detail later once I get the core program setup
@@ -107,7 +107,7 @@ class Destroyer(Ship):
         self.round_type = "heavy"
 
     def fireCannons():
-        print("Firing cannons!")
+        logging.debug("Firing cannons!")
 
     def takeDamage(self, attackingShip):
         pass # Will be defined in more detail later once I get the core program setup
@@ -128,7 +128,7 @@ class Carrier(Ship):
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def test(self):
-        print("Yes")
+        logging.debug("Yes")
 
 
     def setRotation(self, rotDir):
@@ -145,7 +145,7 @@ class Carrier(Ship):
                 self.v2Vel.rotate_ip(.25)
                 self.localOrientation -= .25
 
-            #print(self.localOrientation)
+            #logging.debug(self.localOrientation)
 
             self.image = pygame.image.load(self.imageRestore)
             self.image = pygame.transform.scale(self.image, (20, 41))
@@ -199,7 +199,7 @@ class Aircraft(pygame.sprite.Sprite):
            # }
            
     def shipStatus(self):
-        print(self.health)
+        logging.debug(self.health)
 
     def getLocation(self, req):
         if (req == "x"):
@@ -223,7 +223,7 @@ class Fighter(Aircraft):
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def test(self):
-        print("Yes")
+        logging.debug("Yes")
 
 
     def setRotation(self, rotDir):
@@ -240,7 +240,7 @@ class Fighter(Aircraft):
                 self.v2Vel.rotate_ip(.5)
                 self.localOrientation -= .5
 
-            #print(self.localOrientation)
+            #logging.debug(self.localOrientation)
 
             self.image = pygame.image.load(self.imageRestore)
             self.image = pygame.transform.scale(self.image, (25, 26))

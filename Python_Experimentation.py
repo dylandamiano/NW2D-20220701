@@ -121,14 +121,14 @@ def createEntity():
 def createCloud():
     t = time.time()
     randBreak = math.floor(random.randrange(1, 10))
-    #print(randBreak)
+    #logging.debug(randBreak)
 
     if ( (t - gameSettings.cloudLast) >= randBreak):
         gameSettings.cloudLast = t
 
         sel = math.floor(random.randrange(0, len(gameSettings.cloudChart)))
 
-        #print(sel)
+        #logging.debug(sel)
         cloudObj = playerClasses.Cloud(sel, gameSettings.cloudDims, random.randrange(1, 2))
         cloudObj.createLocation()
 
@@ -214,8 +214,8 @@ def checkInput():
 
                 recent_attempt = time.time()
 
-                #print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
-                #print(friendlyAI_1.ship.localOrientation)
+                #logging.debug("CALCULATED ANGLE OF THETA: " + str(angleGiven))
+                #logging.debug(friendlyAI_1.ship.localOrientation)
 
                 #pygame.draw.line(DISPLAYSURF,(0,0,255), mouse_pos, (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
 
@@ -273,8 +273,6 @@ def checkInput():
 def showLogs():
     if graphicInterface.mainMenu.currentMenu() == "Debug":
         font = pygame.font.SysFont("Segoe UI Light", log.fontSize)
-        log.update_display_log()
-
         log_iteration = 0
 
         y_start = 60.7
@@ -307,7 +305,7 @@ while running == True:
 
         ship_selection()
 
-        #print(pause)
+        #logging.debug(pause)
         checkInput()
         showLogs()
 
@@ -317,7 +315,7 @@ while running == True:
         
         DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
-        #print(pause)
+        #logging.debug(pause)
         checkInput()
         showLogs()
 

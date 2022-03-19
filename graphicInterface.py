@@ -156,19 +156,19 @@ def checkShip():
 
 def checkMouseInput():
     mousePosition = pygame.mouse.get_pos() # Returns as tuple (x, y)
-    print(mousePosition[0])
-    print(mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][0])
-    #print(mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0])
+    logging.debug(mousePosition[0])
+    logging.debug(mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][0])
+    #logging.debug(mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0])
     if mainMenu.currentSelection == "Main":
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0]))): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0] <= mousePosition[0]): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][1] <= mousePosition[1]):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][1]))):
-                print("Square one!")
+                logging.debug("Square one!")
                 logging.debug("Game resumed!")
                 return "PLAY"
             elif (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["left-two"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["left-two"]["bottom-right"][1]))):
-                print("Square two!")
+                logging.debug("Square two!")
             elif (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["left-three"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["left-three"]["bottom-right"][1]))):
-                print("Square three!")
+                logging.debug("Square three!")
                 mainMenu.currentSelection = "Debug"
                 mainMenu.originalMenu = mainMenu.images["debugMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
@@ -176,14 +176,14 @@ def checkMouseInput():
                 logging.debug("Opened Debug Menu!")
         elif (mousePosition[0] >= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["right-one"]["bottom-right"][1]))):
-                print("Square one!")
+                logging.debug("Square one!")
                 mainMenu.currentSelection = "About"
                 mainMenu.originalMenu = mainMenu.images["aboutMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
                 logging.debug("Opened about menu!")
             elif (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["right-two"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["right-two"]["bottom-right"][1]))):
-                print("Square two!")
+                logging.debug("Square two!")
 
                 mainMenu.currentSelection = "shipMenu"
 
@@ -194,15 +194,15 @@ def checkMouseInput():
 
                 return "RESTART"
             elif (mousePosition[1] >= abs(mainMenu.buttonRegions["MAIN"]["right-three"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["MAIN"]["right-three"]["bottom-right"][1]))):
-                print("Square three!")
+                logging.debug("Square three!")
                 return "STOP"
         else:
-            print("not quite...")
+            logging.debug("not quite...")
 
     elif mainMenu.currentSelection == "About":
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["ABOUT"]["Return"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["ABOUT"]["Return"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["ABOUT"]["Return"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["ABOUT"]["Return"]["bottom-right"][1]))):
-                print("Square one!")
+                logging.debug("Square one!")
                 mainMenu.currentSelection = "Main"
                 mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
@@ -219,7 +219,7 @@ def checkMouseInput():
     elif mainMenu.currentSelection == "shipMenu":
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["bottom-right"][1]))):
-                print("L!") # RETURNS TO MENU
+                logging.debug("L!") # RETURNS TO MENU
                 mainMenu.currentSelection = "Main"
                 mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
@@ -230,7 +230,7 @@ def checkMouseInput():
 
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-left"]["bottom-right"][1]))):
-                print("Ship changed!")
+                logging.debug("Ship changed!")
                 pass # Will be determined later!
 
                 if mainMenu.selection > 0:
@@ -240,7 +240,7 @@ def checkMouseInput():
 
         elif (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["arrow-right"]["bottom-right"][1]))):
-                print("Ship changed!")
+                logging.debug("Ship changed!")
                 pass # Will be determined later!
 
                 if mainMenu.selection < 2:
@@ -250,7 +250,7 @@ def checkMouseInput():
 
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][0]))):
             if (mousePosition[1] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["top-left"][1])) and ((mousePosition[1] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["return"]["bottom-right"][1]))):
-                print("R!") # SELECTS SHIP
+                logging.debug("R!") # SELECTS SHIP
                 #mainMenu.currentSelection = "Main"
                 #mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 #mainMenu.image = pygame.image.load(mainMenu.originalMenu)

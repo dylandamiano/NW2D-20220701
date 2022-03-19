@@ -3,6 +3,7 @@ import gameCalculations
 import time
 import playerClasses
 import projectileClasses
+import logging
 
 # will be determined later on, AI creation might have to be done in game
 
@@ -70,7 +71,7 @@ createEntities(5)
 createEntities(5, "Fighter")
 
 for entity in active_entities:
-    print(entity.AI)
+    logging.debug(entity.AI)
 
 '''
     Functions to manipulate when or where the AI will appear

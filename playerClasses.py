@@ -34,16 +34,16 @@ class Player(pygame.sprite.Sprite):
         
         self.health = 100
           
-        print("New class initialized...")
+        logging.debug("New class initialized...")
 
     def createShip(self, ship_type, x = 450, y = 450):
-        print("Creating ship...")
+        logging.debug("Creating ship...")
         if (ship_type == "Fighter"):
             self.ship = warshipClonkses.Fighter(self, x, y)
             #self.ship.owner = self.username
         elif (ship_type == "Carrier"):
             self.ship = warshipClonkses.Carrier(self, x, y)
-            print(self.ship.owner)
+            logging.debug(self.ship.owner)
         elif (ship_type == "Frigate"):
             pass
         elif (ship_type == "Destroyer"):
@@ -54,14 +54,14 @@ class Player(pygame.sprite.Sprite):
 
     def get_stats(self, stat):
         if (stat == "username"):
-            print(self.username)
+            logging.debug(self.username)
             return self.username
         elif (stat == "ship"):
             if (self.ship != None):
-                print(self.ship.shipName)
+                logging.debug(self.ship.shipName)
                 return self.ship.shipName
             else:
-                print("No ship was found...")
+                logging.debug("No ship was found...")
 
 class computerEntity(Player):
     def __init__(self, name, owner = None):
@@ -77,7 +77,7 @@ class computerEntity(Player):
         self.rotate_direction = 0
         self.move_direction = 1
 
-        print("New class initialized...")
+        logging.debug("New class initialized...")
         logging.debug("Dumb-AI Entity created!")
 
 '''
@@ -105,9 +105,9 @@ class islandMap(pygame.sprite.Sprite):
 
     def changeLighting(self):
         if (self.sun == True):
-            print("Day time!")
+            logging.debug("Day time!")
         else:
-            print("Night time!")
+            logging.debug("Night time!")
 
 
 '''
@@ -142,7 +142,7 @@ class Cloud(pygame.sprite.Sprite):
         logging.debug("Cloud created! ID: #" + str(cloudCount))
 
     def __del__(self):
-        #print("Cloud removed!")
+        #logging.debug("Cloud removed!")
         logging.debug("Cloud removed! ID: #" + str(cloudCount))
         del self
 
@@ -151,4 +151,4 @@ class Cloud(pygame.sprite.Sprite):
         self.rect.center = (-100, randomY)
 
         self.moveInt = random.randrange(2, 3)
-        #print(self.moveInt)
+        #logging.debug(self.moveInt)
