@@ -7,7 +7,7 @@ fullTime = dt.datetime.now()
 timeAsString = str(fullTime.year) + str(fullTime.month) + str(fullTime.day) + "_" + str(int(time.time()))
 
 fileName = timeAsString + ".log"
-
+fontSize = 18
 logPath = "LogFiles"
 
 # create log dir if it doesnt exist
