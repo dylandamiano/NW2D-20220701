@@ -23,10 +23,13 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, name):
         pygame.sprite.Sprite.__init__(self)
         self.username = name
-        self.ship = None
-        self.type = ""
+        self.ship = "Carrier" # Default selection
+        self.type = "sea" # Default selection
 
         self.last_fired = 0
+
+        self.player_owned = False
+        self.player_sel = None
 
         self.AI = False
         
@@ -68,9 +71,6 @@ class computerEntity(Player):
 
         self.AI = True
         self.reverse = False
-
-        self.player_owned = False
-        self.player_sel = None
 
         self.last_move = 0
         self.last_rotate = 0

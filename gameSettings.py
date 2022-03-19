@@ -127,3 +127,22 @@ def playerCount():
 
 def resetGame():
     pass
+
+def display_input(surface):
+    held = ""
+
+    for key in playerOneKeys:
+        if playerOneKeys[key] == True:
+            if key == "W_Hold":
+                held += "W"
+            elif key == "S_Hold":
+                held += "S"
+            elif key == "Q_Hold":
+                held += "Q"
+            elif key == "E_Hold":
+                held += "E"
+
+    font = pygame.font.SysFont("Segoe UI Bold", 32)
+
+    text = pygame.font.Font.render(font, held + " active", 1, (255,255,255))
+    surface.blit(text, (25, 850))

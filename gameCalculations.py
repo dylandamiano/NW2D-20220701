@@ -12,6 +12,7 @@ import playerClasses
 import logHandler
 import projectileClasses
 import computer_movement
+import spilled_oil
 
 import random
 
@@ -560,6 +561,7 @@ def cleanup_npc(entities):
             to_remove.append(i)
 
     for rm in reversed(to_remove):
+        spilled_oil.create_spill(computer_movement.active_entities[rm])
         del computer_movement.active_entities[rm]
 
 def garbage_collect(projectiles, entities):
@@ -576,16 +578,21 @@ def checkCollisions(entity_list, player, projectiles): # Tends to degrade perfor
     for entity in combined_entities:
         for other in combined_entities:
             if (entity.ship.rect.colliderect(other.ship.rect) == True) and (other.username != entity.username):
-                entity.ship.health = 0
-                other.ship.health = 0
-                logHandler.createLog(entity.username + " and " + other.username + " have collided!")
+                if (entity.type != "air"):
+                    if  (other.type != "air"):
+                        entity.ship.health = 0
+                        other.ship.health = 0
+                        logHandler.createLog(entity.username + " and " + other.username + " have collided!")
 
     for projectile in projectiles:
         for entity in combined_entities:
             if (projectile.rect.colliderect(entity.ship.rect) == True) and (projectile.owner.username != entity.username):
-                entity.ship.health -= projectile.damage
-                projectile.remove = True
-                logHandler.createLog("Projectile has hit!")
+                if (projectile.owner.player_owned == True) and (entity.player_owned == True):
+                    pass
+                else:
+                    entity.ship.health -= projectile.damage
+                    projectile.remove = True
+                    logHandler.createLog("Projectile has hit!")
 
 def render_health(surface, player):
 
@@ -601,3 +608,14 @@ def render_health(surface, player):
 
         pygame.draw.rect(surface, (255, 0, 0), (entity_pos.x - 11, entity_pos.y + 25, 25, 3))
         pygame.draw.rect(surface, (0, 255, 0), (entity_pos.x - 11, entity_pos.y + 25, 25 * entity_health, 3))
+
+def render_friendly(surface, player):
+    player_pos = player.ship.v2Pos
+
+    pygame.draw.rect(surface, (0, 0, 255), (player_pos.x - 11 + 25/3, player_pos.y - 25, 25/2, 3))
+
+    for entity in computer_movement.active_entities:
+        if entity.player_owned == True:
+            entity_pos = entity.ship.v2Pos
+
+            pygame.draw.rect(surface, (0, 0, 255), (entity_pos.x - 11 + 25/3, entity_pos.y - 25, 25/2, 3))

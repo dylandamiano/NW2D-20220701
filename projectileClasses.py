@@ -41,11 +41,12 @@ activeProjectiles = []
 
 class projectile(pygame.sprite.Sprite):
     def __init__(self, orientation, owner, dimensions, imageRestore, damage):
+
         pygame.sprite.Sprite.__init__(self)
 
         self.TTL = 5
 
-        self.localOrientation = orientation
+        self.localOrientation = orientation or 0
         self.lastMove = 0
         self.owner = owner
 
@@ -56,7 +57,7 @@ class projectile(pygame.sprite.Sprite):
         self.v2Pos = pygame.Vector2(owner.ship.v2Pos.x, owner.ship.v2Pos.y)
         self.v2Vel = pygame.Vector2(0, -2.5)
 
-        self.v2Vel.rotate_ip(-orientation)
+        self.v2Vel.rotate_ip(-self.localOrientation)
 
         self.imageRestore = imageRestore
         self.dimensions = dimensions

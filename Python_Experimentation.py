@@ -1,4 +1,4 @@
-'''
+'''q?                                                           
     NAVAL Warfare 2D
 
     Quick Overview:
@@ -27,6 +27,7 @@ import warshipClonkses
 import playerClasses
 import os
 from os import path
+import spilled_oil
 
 '''
     As you see below,
@@ -64,7 +65,13 @@ splash_rect = splash_load.get_rect()
 DISPLAYSURF.blit(splash_load, splash_rect)
 pygame.display.update()
 
-time.sleep(5)
+splash_start = time.time()
+
+while (time.time() - splash_start) < 5:
+    pygame.display.update()
+    refresh_time = time.time() - splash_start
+
+    pygame.draw.rect(DISPLAYSURF, (0, 255, 0), (0, 897, 900 * refresh_time/5, 3))
 
 '''
     Going on below:
@@ -76,6 +83,11 @@ mapInit = playerClasses.islandMap()
 
 friendlyAI_1 = None
 player_died = False
+
+# Default selection for player. This will be set even if they skip the selection menu. Can still be changed @ selection though
+friendlyAI_1 = playerClasses.Player("AI Entity #1")
+friendlyAI_1.createShip("Carrier")
+friendlyAI_1.type = "sea"
 
 log.createLog("Created Sprite for Player!")
 
@@ -110,6 +122,7 @@ def createEntity():
 
         gameSettings.activePlayers.append(friendlyAI_1)
 
+    friendlyAI_1.player_owned = True
     friendlyAI_1.ship.v2Pos = pygame.math.Vector2(100, 450)
     friendlyAI_1.ship.rect.center = (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y) 
 
@@ -156,10 +169,23 @@ def updateProjectiles():
 
 pregame = True
 
+def reset_defaults():
+    global friendlyAI_1
+
+    friendlyAI_1 = playerClasses.Player("AI Entity #1")
+    friendlyAI_1.createShip("Carrier")
+    friendlyAI_1.type = "sea"
+
+    friendlyAI_1.health = 100
+
+    computer_movement.active_entities = []
+    spilled_oil.active_spills = []
+
 def checkInput():
     global pause
     global running
     global pregame
+    global friendlyAI_1
     global player_died
 
     for event in pygame.event.get():
@@ -194,7 +220,7 @@ def checkInput():
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
         
-            if (pause == False) and (pregame == False):
+            if (pause == False) and (pregame == False) and (player_died == False):
                 mouse_pos = pygame.mouse.get_pos()
                 angleGiven = gameCalculations.get_angle(friendlyAI_1.ship.v2Pos, mouse_pos)
 
@@ -212,12 +238,16 @@ def checkInput():
                     projectileClasses.mouseFired(angleGiven, friendlyAI_1)
                     friendlyAI_1.last_fired = recent_attempt
 
-            elif (pause == True) or (pregame == True):
+            elif ((pause == True) or (pregame == True)) and (player_died == False):
                 gui_return = graphicInterface.checkMouseInput()
-
+                
                 if gui_return == "PLAY":
+                    if pregame == True:
+                        computer_movement.summon_player_entities(friendlyAI_1)
+
                     pause = False
                     pregame = False
+                    
                 elif gui_return == "STOP":
                     running = False
                     pygame.display.quit()
@@ -226,6 +256,32 @@ def checkInput():
                     log.writeFile()
                 elif gui_return == "Select":
                     createEntity()
+
+                elif gui_return == "RESTART":
+                    pause = True
+                    pregame = True
+                    player_died = False
+
+                    computer_movement.x_offset = 0
+                    computer_movement.y_offset = 0
+
+                    reset_defaults()
+
+                    computer_movement.createEntities(2)
+                    computer_movement.createEntities(5, "Fighter")
+
+            elif (pause == True) and (pregame == False) and (player_died == True):
+                gui_return = graphicInterface.checkMouseInput()
+                
+                if gui_return == "fix_death":
+                    pause = True
+                    pregame = True
+                    player_died = False
+
+                    # Resetting default variables
+                    reset_defaults()
+                    computer_movement.createEntities(2)
+                    computer_movement.createEntities(5, "Fighter")
 
 def showLogs():
     if graphicInterface.mainMenu.currentMenu() == "Debug":
@@ -268,7 +324,7 @@ while running == True:
         checkInput()
         showLogs()
 
-    if (pause == True) and (pregame == False):
+    elif (pause == True) and (pregame == False) and (player_died == False):
         pygame.display.update()
         pygame.time.Clock().tick(FPS)
         
@@ -278,11 +334,13 @@ while running == True:
         checkInput()
         showLogs()
 
-    if (pause == False) and (pregame == False) and (player_died == False):
+    elif (pause == False) and (pregame == False) and (player_died == False):
         pygame.display.update()
         pygame.time.Clock().tick(FPS)
 
         DISPLAYSURF.blit(mapInit.image, mapInit.rect)
+
+        spilled_oil.draw_spills(DISPLAYSURF)
         DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
         #pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
 
@@ -290,12 +348,13 @@ while running == True:
         computer_movement.move_entities(playerFired = True)
         computer_movement.rotate_entities()
 
+        gameCalculations.render_friendly(DISPLAYSURF, friendlyAI_1)
         gameCalculations.render_health(DISPLAYSURF, friendlyAI_1)
 
         updateProjectiles()
 
         for i in range (0, math.floor(random.randrange(0, 5))):
-            createCloud()
+            createCloud()                                                           
 
         #t = time.time()
 
@@ -319,7 +378,7 @@ while running == True:
                 elif k == "S_Hold":
                     gameCalculations.key_held("S", friendlyAI_1.ship)
                 elif k == "D_Hold":
-                    gameCalculations.key_held("D", friendlyAI_1.ship)
+                    gameCalculations.key_held("D", friendlyAI_1.ship) 
 
                 if k == "Q_Hold":
                     gameCalculations.key_held("Q", friendlyAI_1.ship)
@@ -334,11 +393,21 @@ while running == True:
 
         if friendlyAI_1.ship.health <= 0:
             player_died = True
+            pregame = False
+            pause = True
+
             graphicInterface.mainMenu.setDeath()
 
-            pause = True
-    elif (pause == False) and (player_died == True):
-        pause = True
+            computer_movement.x_offset = 0
+            computer_movement.y_offset = 0
+
+        gameSettings.display_input(DISPLAYSURF)
+
+    elif (pause == True) and (pregame == False) and (player_died == True):
+        pygame.display.update()
+        DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
+
+        checkInput()
 
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x,friendlyAI_1.ship.v2Pos.y + 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)

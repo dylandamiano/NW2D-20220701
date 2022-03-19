@@ -106,3 +106,55 @@ THIS ONLY INCLUDES MAJOR ADDITIONS OR CHANGES, NOT MINOR ADDITIONS OR CHANGES
 				(It was found in the computer_movement module under the move_entities() function)
 
 		Game NPCs will have an inaccurate weapons fire of 0-50 pixels, chosen at random.
+
+3/16/22 - Doing UI Revamps by changing design and color
+			- Oil is now opaque rather than not being transparent
+
+3/17/22 - 'The Sleepless Night'
+
+	- Episode 1: The Programmer Strikes Back
+		The Quality Assurance team has failed to provide useful information on
+		the collision system within Naval Warfare 2D. The Programmer was furious and decided
+		to take such action to fix such a mistake that he has overlooked! This programer aims to
+		be 100% accurate when writing code by misses critical details like every other! Will be be
+		successful in his attempt to fix the collision system or will he fail? Come back on 3/18/22 to find out!
+
+	- Quality Assurance COLLISION DETECTION:
+		- Aircraft can no longer collide with each other or Seacraft
+			We must know that Aircraft travel at varying altitudes and will not travel on the same plane
+			In addition, most pilots do not want to collide but rather want to survive their air-to-air battles.
+			This will create a more useful environment for an aircraft carrier owned by the player!
+
+		- Only Seacraft can collide with each other.+
+			IF you HAVE any questions, speak to your local U.S. Navy Recruiter! (/s)
+
+
+	- IT IS CURRENTLY ACKNOWLEDGED THAT FRIENDLY TARGETS DO FIRE AT EACHOTHER. HOWEVER, THEY DO NOT CAUSE DAMAGE. THIS IS *SORT OF* WORKING AS INTENDED
+	- IFF tags added (Meaning: Identify Friend or Foe)
+
+	- Episode 2: The Programmer Actually Gets Stuff Done
+		The programmer has successfully completed the long and dreadful night of having no sleep! The Quality Assurance Team is still 'asnoozing' their night away!
+		The programmer has managed to implement a way to determine whether the player is going to be firing at an hostile or a friendly which is a big +++ in the game's
+		gameplay! It has also managed to *ALMOST* work the first try but there were minor detail that had to be fine-tuned when it came to positioning, which is an overall success!
+		The programmer is still thinking about how to get the friendly units to stop firing at each other, check back in Episode 3 to see whether this happens or not!
+
+	- Cannon Fire:
+		Done by hitting my hand on my laptop while the mic was running, very clever!
+
+	- Game would not reset because of a misplaced and/or statement on line 217 of Python_Experimentation.py
+		In addition, this had to be enclosed within a set of parenthesis.
+
+3/18/22
+	Players can now restart the game no matter what the state of the game currently is.
+	
+	Carried out some minor improvements when it comes to clearing the screen after the death of the player or after
+	conducting a restart.
+
+	Added a loading bar to the loading screen; that way, players do not think that the game is currently broken.
+
+	Fixed an issue where you cannot arrow left @ the ship selection screen. This was because of conflicting if-else conditions at a
+	very specific X value pass-off
+
+	!! AND YES, I PAINTED MY MOUSE, OKAY?!?! IT'S ELECTRIC BLUE! !!
+
+	Menu interface practically 100% works with the exception of the player stats Menu

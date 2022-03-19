@@ -55,8 +55,8 @@ def createEntities(count, ent_type = "Carrier"):
         y_offset += 0
 
         for i in range(0, count):
-            x_offset += 100
-            y_offset += 20
+            x_offset += 20
+            y_offset += 50
 
             entity_name = "entity_" + str(groups_created) + "_" + str(i)
 
@@ -177,7 +177,7 @@ def simulate_mouse(player, random_path: bool = False) -> tuple:
             closest_distance = None
 
             for other in combined_entities:
-                if other.username != entity.username:
+                if (other.username != entity.username):
                     if closest_entity == None:
                         closest_entity = other
                         closest_distance = get_distance(entity, other)
@@ -204,3 +204,15 @@ def simulate_mouse(player, random_path: bool = False) -> tuple:
         pass
 
     return coordinate
+
+def summon_player_entities(player):
+    if (player.type == "sea") and (player.ship.imageRestore == "Ships\\CarrierConcept.png"):
+        index = len(active_entities)
+
+        createEntities(2, "Fighter")
+
+        active_entities[index - 1].player_owned = True
+        active_entities[index - 2].player_owned = True
+
+        active_entities[index - 1].player_sel = player
+        active_entities[index - 2].player_sel = player
