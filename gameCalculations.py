@@ -8,9 +8,6 @@
 import pygame
 import logging
 import math
-import warshipClonkses
-import playerClasses
-import logHandler
 import projectileClasses
 import computer_movement
 import spilled_oil

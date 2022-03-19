@@ -1,11 +1,8 @@
-import math
 import random
 import gameCalculations
 import time
 import playerClasses
 import projectileClasses
-import warshipClonkses
-import logHandler
 
 # will be determined later on, AI creation might have to be done in game
 

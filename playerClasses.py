@@ -4,7 +4,6 @@ import warshipClonkses
 import gameSettings
 import logging
 import math, random
-import logHandler
 
 from pygame.locals import *
 

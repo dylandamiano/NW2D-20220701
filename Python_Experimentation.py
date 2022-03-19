@@ -19,7 +19,6 @@ import pygame
 from pygame.locals import *
 import projectileClasses
 import playerClasses
-from os import path
 import spilled_oil
 
 '''

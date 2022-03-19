@@ -1,12 +1,5 @@
-import playerClasses
-import warshipClonkses
 import logging
 import pygame
-import time
-
-import gameSettings
-import logHandler
-
 from pygame.locals import *
 
 pygame.init()
