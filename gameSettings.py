@@ -14,6 +14,10 @@ playerOneKeys = {
 maxPlayers = 1
 playerCount = 0
 
+starting_credits = 10000
+current_credits = starting_credits
+
+
 activePlayers = []
 
 cloudLast = 0
