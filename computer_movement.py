@@ -12,7 +12,9 @@ import logHandler
 groups_created = 0
 active_entities = []
 
-x_offset = 0
+friendly_count = 0
+
+x_offset = 0 
 y_offset = 0
 
 '''
@@ -27,6 +29,12 @@ def createEntities(count, ent_type = "Carrier"):
     global x_offset
     global y_offset
 
+    """
+        Ent_Type(s):
+            - Carrier
+            - Fighter
+    """
+
     if ent_type == "Carrier":
         groups_created += 1
 
@@ -40,7 +48,7 @@ def createEntities(count, ent_type = "Carrier"):
             entity_name = "entity_" + str(groups_created) + "_" + str(i)
 
             ship_local = playerClasses.computerEntity(name=str(entity_name))
-            ship_local.createShip("Carrier", 250 + x_offset, 400 + y_offset)
+            ship_local.createShip("Carrier", 450 + x_offset, 450 + y_offset)
             ship_local.type = "sea"
 
             ship_local.last_move = int(time.time())
@@ -68,9 +76,6 @@ def createEntities(count, ent_type = "Carrier"):
             ship_local.last_rotate = int(time.time())
 
             active_entities.append(ship_local)
-
-createEntities(5)
-createEntities(5, "Fighter")
 
 for entity in active_entities:
     print(entity.AI)
@@ -178,21 +183,24 @@ def simulate_mouse(player, random_path: bool = False) -> tuple:
 
             for other in combined_entities:
                 if (other.username != entity.username):
-                    if closest_entity == None:
-                        closest_entity = other
-                        closest_distance = get_distance(entity, other)
-                    elif closest_entity != None:
-                        if get_distance(entity, other) < closest_distance: # error likely to occur here but we will let it happen so we can see what we are working with lol
+
+                    if entity.player_owned != other.player_owned:
+                        if closest_entity == None:
                             closest_entity = other
                             closest_distance = get_distance(entity, other)
+                        elif closest_entity != None:
+                            if get_distance(entity, other) < closest_distance: # error likely to occur here but we will let it happen so we can see what we are working with lol
+                                closest_entity = other
+                                closest_distance = get_distance(entity, other)
 
 
-            angle = gameCalculations.get_angle(
-                    (entity.ship.v2Pos.x, entity.ship.v2Pos.y),
-                    (closest_entity.ship.v2Pos.x + random_x(), closest_entity.ship.v2Pos.y + random_y())
-                )
+            if closest_entity != None:
+                angle = gameCalculations.get_angle(
+                        (entity.ship.v2Pos.x, entity.ship.v2Pos.y),
+                        (closest_entity.ship.v2Pos.x + random_x(), closest_entity.ship.v2Pos.y + random_y())
+                    )
 
-            projectileClasses.mouseFired(angle, entity)
+                projectileClasses.mouseFired(angle, entity)
 
     if random_path == True:
         x = random.randint(0, 900)
@@ -205,14 +213,54 @@ def simulate_mouse(player, random_path: bool = False) -> tuple:
 
     return coordinate
 
-def summon_player_entities(player):
-    if (player.type == "sea") and (player.ship.imageRestore == "Ships\\CarrierConcept.png"):
-        index = len(active_entities)
+def summon_player_entities(player, custom = False, variant = "") -> None:
+    global friendly_count
+    global x_offset, y_offset
 
-        createEntities(2, "Fighter")
+    x_offset = 0
+    y_offset = 0
 
-        active_entities[index - 1].player_owned = True
-        active_entities[index - 2].player_owned = True
+    if custom == False:
+        if (player.type == "sea") and (player.ship.imageRestore == "Ships\\CarrierConcept.png"):
 
-        active_entities[index - 1].player_sel = player
-        active_entities[index - 2].player_sel = player
+            createEntities(2, "Fighter")
+            index = len(active_entities)
+
+            friendly_count += 2
+
+            active_entities[index - 1].player_owned = True
+            active_entities[index - 2].player_owned = True
+
+            active_entities[index - 1].player_sel = player
+            active_entities[index - 2].player_sel = player
+
+    elif custom == True:
+
+        if variant == "Fighter":
+            createEntities(2, "Fighter")
+            index = len(active_entities)
+
+            friendly_count += 2
+            active_entities[index - 1].player_owned = True
+            active_entities[index - 2].player_owned = True
+
+            active_entities[index - 1].player_sel = player
+            active_entities[index - 2].player_sel = player
+
+        elif variant == "Carrier":
+            createEntities(1, "Carrier")
+            createEntities(2, "Fighter")
+            index = len(active_entities)
+
+            friendly_count += 3
+            active_entities[index - 1].player_owned = True
+            active_entities[index - 2].player_owned = True
+            active_entities[index - 3].player_owned = True
+
+            active_entities[index - 1].player_sel = player
+            active_entities[index - 2].player_sel = player
+            active_entities[index - 3].player_sel = player
+
+            
+        elif variant == "Destroyer":
+            pass

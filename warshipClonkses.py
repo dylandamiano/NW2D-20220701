@@ -51,6 +51,9 @@ class Ship(pygame.sprite.Sprite):
 
         self.v2Rot = 0
 
+        self.min_x = 0
+        self.min_y = 0
+
         self.owner = player # Will include the player's object
         self.smoked = True
         self.shipName = None
@@ -70,6 +73,45 @@ class Ship(pygame.sprite.Sprite):
             return self.v2Pos.x
         elif (req == "y"):
             return self.v2Pos.y
+
+    def setRotation(self, rotDir):
+        if self.owner.health != -1:
+            if (self.localOrientation <= 0):
+                self.localOrientation = 360
+            elif (self.localOrientation >= 360):
+                self.localOrientation = 0
+
+            if (rotDir == "Left"):
+                self.v2Vel.rotate_ip(-.25)
+                self.localOrientation += .25
+            elif (rotDir == "Right"):
+                self.v2Vel.rotate_ip(.25)
+                self.localOrientation -= .25
+
+            #print(self.localOrientation)
+
+            self.image = pygame.image.load(self.imageRestore)
+            self.image = pygame.transform.scale(self.image, (self.min_x, self.min_y))
+            self.image = pygame.transform.rotate(self.image, self.localOrientation)
+
+            self.rect = self.image.get_rect()
+            self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+            self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+    def setLocation(self, moveDir):
+        if self.owner.health != -1:
+            if (moveDir == "Forward"):
+                self.v2Pos += self.v2Vel
+                pass
+            elif (moveDir == "Backwards"):
+                self.v2Pos -= self.v2Vel
+                pass
+            #self.v2Pos += self.v2Vel
+            self.rect.center = self.v2Pos
+
+            self.rect = self.image.get_rect()
+            self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
 class Battleship(Ship):
     def __init__(self, player):
@@ -101,10 +143,21 @@ class Frigate(Ship):
         pass # Will be defined in more detail later once I get the core program setup
 
 class Destroyer(Ship):
-    def __init__(self, player):
-        super().__init__(player)
+    def __init__(self, player, x = 450, y = 450):
+        super().__init__(player, x, y)
 
         self.round_type = "heavy"
+
+        self.imageRestore = "Ships\\DestroyerConcept.png" # "Ships\\CarrierConcept.png"
+
+        self.min_x = 9
+        self.min_y = 34
+
+        self.image = pygame.image.load(self.imageRestore)
+        self.image = pygame.transform.scale(self.image, (self.min_x, self.min_y)) # (self.image, (20, 41))
+
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def fireCannons():
         print("Firing cannons!")
@@ -119,8 +172,11 @@ class Carrier(Ship):
 
         self.imageRestore = "Ships\\CarrierConcept.png" # "Ships\\CarrierConcept.png"
 
+        self.min_x = 20
+        self.min_y = 41
+
         self.image = pygame.image.load(self.imageRestore)
-        self.image = pygame.transform.scale(self.image, (20, 41)) # (self.image, (20, 41))
+        self.image = pygame.transform.scale(self.image, (self.min_x, self.min_y)) # (self.image, (20, 41))
 
         self.round_type = "light"
 
@@ -130,7 +186,7 @@ class Carrier(Ship):
     def test(self):
         print("Yes")
 
-
+    '''
     def setRotation(self, rotDir):
         if self.owner.health != -1:
             if (self.localOrientation <= 0):
@@ -169,6 +225,7 @@ class Carrier(Ship):
 
             self.rect = self.image.get_rect()
             self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+    '''
 
 
 class Aircraft(pygame.sprite.Sprite):
@@ -221,6 +278,9 @@ class Fighter(Aircraft):
 
         self.rect = self.image.get_rect()
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
+
+        self.max_health = 50
+        self.health = 50
 
     def test(self):
         print("Yes")

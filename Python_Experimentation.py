@@ -19,10 +19,12 @@ import threading
 import computer_movement
 import gameCalculations
 import gameSettings
+import wave_generation
 import graphicInterface
 import pygame, sys
 from pygame.locals import *
 import projectileClasses
+import credit_handler
 import warshipClonkses
 import playerClasses
 import os
@@ -99,6 +101,7 @@ log.createLog("Created Sprite for Player!")
 '''
 
 a = 5
+shop = False
 
 def createEntity():
     global friendlyAI_1
@@ -109,7 +112,7 @@ def createEntity():
         friendlyAI_1.type = "sea"
 
         gameSettings.activePlayers.append(friendlyAI_1)
-    elif graphicInterface.mainMenu.chosen == None:
+    elif graphicInterface.mainMenu.chosen == 1:
         friendlyAI_1 = playerClasses.Player("AI Entity #1")
         friendlyAI_1.createShip("Destroyer")
         friendlyAI_1.type = "sea"
@@ -183,12 +186,14 @@ def reset_defaults():
 
 def checkInput():
     global pause
+    global shop
     global running
     global pregame
     global friendlyAI_1
     global player_died
 
     for event in pygame.event.get():
+
         if event.type == pygame.QUIT:
             pause = True
             running = False
@@ -197,18 +202,31 @@ def checkInput():
             log.writeFile()
 
             pygame.display.quit()
+
         elif (event.type == pygame.KEYDOWN) and (pregame == False) and (pause == False):
             if (pause == False):
                 gameCalculations.key_PressedEvent(event, friendlyAI_1.ship)
                 gameSettings.setKeyStatus(event, "DOWN")
 
-            if (event.key == pygame.K_m):
+            if (event.key == pygame.K_m) and (shop == False):
                 if (pause == False):
                     pause = True
                     gameSettings.resetKeyStatus()
                 elif (pause == True):
                     pause = False
                     gameSettings.resetKeyStatus()
+
+            if (event.key == pygame.K_p) and (pause == False):
+                if (pause == False):
+                    if shop == False:
+                        shop = True
+                        graphicInterface.display_Shop(True)
+                        gameSettings.resetKeyStatus()
+
+                    elif shop == True:
+                        shop = False
+                        graphicInterface.display_Shop(False)
+                        gameSettings.resetKeyStatus()
 
             gui_return = graphicInterface.checkMouseInput()
 
@@ -225,6 +243,9 @@ def checkInput():
                 angleGiven = gameCalculations.get_angle(friendlyAI_1.ship.v2Pos, mouse_pos)
 
                 recent_attempt = time.time()
+
+                if shop == True:
+                    gui_return = graphicInterface.checkMouseInput(friendlyAI_1)
 
                 #print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
                 #print(friendlyAI_1.ship.localOrientation)
@@ -267,9 +288,6 @@ def checkInput():
 
                     reset_defaults()
 
-                    computer_movement.createEntities(2)
-                    computer_movement.createEntities(5, "Fighter")
-
             elif (pause == True) and (pregame == False) and (player_died == True):
                 gui_return = graphicInterface.checkMouseInput()
                 
@@ -280,8 +298,6 @@ def checkInput():
 
                     # Resetting default variables
                     reset_defaults()
-                    computer_movement.createEntities(2)
-                    computer_movement.createEntities(5, "Fighter")
 
 def showLogs():
     if graphicInterface.mainMenu.currentMenu() == "Debug":
@@ -335,73 +351,88 @@ while running == True:
         showLogs()
 
     elif (pause == False) and (pregame == False) and (player_died == False):
-        pygame.display.update()
-        pygame.time.Clock().tick(FPS)
+        if shop == True:
+            pygame.display.update()
+            pygame.time.Clock().tick(FPS)
+            DISPLAYSURF.blit(graphicInterface.mainMenu.image, graphicInterface.mainMenu.rect)
 
-        DISPLAYSURF.blit(mapInit.image, mapInit.rect)
+            checkInput()
+            showLogs()
 
-        spilled_oil.draw_spills(DISPLAYSURF)
-        DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
-        #pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
+            credit_handler.display_credits(DISPLAYSURF)
 
-        computer_movement.draw_entities(DISPLAYSURF)
-        computer_movement.move_entities(playerFired = True)
-        computer_movement.rotate_entities()
+        elif shop == False:
+            pygame.display.update()
+            pygame.time.Clock().tick(FPS)
 
-        gameCalculations.render_friendly(DISPLAYSURF, friendlyAI_1)
-        gameCalculations.render_health(DISPLAYSURF, friendlyAI_1)
+            DISPLAYSURF.blit(mapInit.image, mapInit.rect)
 
-        updateProjectiles()
+            spilled_oil.draw_spills(DISPLAYSURF)
+            DISPLAYSURF.blit(friendlyAI_1.ship.image, friendlyAI_1.ship.rect)
+            #pygame.draw.rect(DISPLAYSURF, (0, 0, 255), (125.2, 196.8, 309.1/2, 125.2/2))
 
-        for i in range (0, math.floor(random.randrange(0, 5))):
-            createCloud()                                                           
+            computer_movement.draw_entities(DISPLAYSURF)
+            computer_movement.move_entities(playerFired = True)
+            computer_movement.rotate_entities()
 
-        #t = time.time()
+            gameCalculations.render_friendly(DISPLAYSURF, friendlyAI_1)
+            gameCalculations.render_health(DISPLAYSURF, friendlyAI_1)
 
-        for x in range(0, len(gameSettings.activeClouds)):
+            updateProjectiles()
 
-            #if ((t - gameSettings.activeClouds[x].lastMove) >= gameSettings.activeClouds[x].moveInt):
-                #gameSettings.activeClouds[x].lastMove = t
-            gameSettings.activeClouds[x].rect.move_ip(gameSettings.activeClouds[x].moveSpeed, 0)
-            gameSettings.activeClouds[x].posX += gameSettings.activeClouds[x].moveSpeed
-            DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
-                #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
+            for i in range (0, math.floor(random.randrange(0, 5))):
+                createCloud()                                                           
+
+            #t = time.time()
+
+            for x in range(0, len(gameSettings.activeClouds)):
+
+                #if ((t - gameSettings.activeClouds[x].lastMove) >= gameSettings.activeClouds[x].moveInt):
+                    #gameSettings.activeClouds[x].lastMove = t
+                gameSettings.activeClouds[x].rect.move_ip(gameSettings.activeClouds[x].moveSpeed, 0)
+                gameSettings.activeClouds[x].posX += gameSettings.activeClouds[x].moveSpeed
+                DISPLAYSURF.blit(gameSettings.activeClouds[x].image, gameSettings.activeClouds[x].rect)
+                    #pygame.draw.rect(DISPLAYSURF, "Blue", friendlyAI_1.ship.rect)
     
-        checkInput()
+            checkInput()
     
-        for k in gameSettings.playerOneKeys:
-            if (gameSettings.playerOneKeys[k] == True):
-                if k == "W_Hold":
-                    gameCalculations.key_held("W", friendlyAI_1.ship)
-                elif k == "A_Hold":
-                    gameCalculations.key_held("A", friendlyAI_1.ship)
-                elif k == "S_Hold":
-                    gameCalculations.key_held("S", friendlyAI_1.ship)
-                elif k == "D_Hold":
-                    gameCalculations.key_held("D", friendlyAI_1.ship) 
+            for k in gameSettings.playerOneKeys:
+                if (gameSettings.playerOneKeys[k] == True):
+                    if k == "W_Hold":
+                        gameCalculations.key_held("W", friendlyAI_1.ship)
+                    elif k == "A_Hold":
+                        gameCalculations.key_held("A", friendlyAI_1.ship)
+                    elif k == "S_Hold":
+                        gameCalculations.key_held("S", friendlyAI_1.ship)
+                    elif k == "D_Hold":
+                        gameCalculations.key_held("D", friendlyAI_1.ship) 
 
-                if k == "Q_Hold":
-                    gameCalculations.key_held("Q", friendlyAI_1.ship)
-                elif k == "E_Hold":
-                    gameCalculations.key_held("E", friendlyAI_1.ship)
+                    if k == "Q_Hold":
+                        gameCalculations.key_held("Q", friendlyAI_1.ship)
+                    elif k == "E_Hold":
+                        gameCalculations.key_held("E", friendlyAI_1.ship)
                     
-        gameCalculations.checkCollisions(computer_movement.active_entities, friendlyAI_1, projectileClasses.activeProjectiles)
-        gameCalculations.garbage_collect(projectileClasses.activeProjectiles, computer_movement.active_entities)
+            gameCalculations.checkCollisions(computer_movement.active_entities, friendlyAI_1, projectileClasses.activeProjectiles)
+            gameCalculations.garbage_collect(projectileClasses.activeProjectiles, computer_movement.active_entities)
 
-        gameSettings.checkClouds()
-        computer_movement.simulate_mouse(friendlyAI_1)
+            gameSettings.checkClouds()
+            computer_movement.simulate_mouse(friendlyAI_1)
 
-        if friendlyAI_1.ship.health <= 0:
-            player_died = True
-            pregame = False
-            pause = True
+            if friendlyAI_1.ship.health <= 0:
+                player_died = True
+                pregame = False
+                pause = True
 
-            graphicInterface.mainMenu.setDeath()
+                graphicInterface.mainMenu.setDeath()
 
-            computer_movement.x_offset = 0
-            computer_movement.y_offset = 0
+                computer_movement.x_offset = 0
+                computer_movement.y_offset = 0
 
-        gameSettings.display_input(DISPLAYSURF)
+            gameSettings.display_input(DISPLAYSURF)
+
+            credit_handler.update_credits()
+            wave_generation.update_wave()
+            gameSettings.passive_heal(friendlyAI_1)
 
     elif (pause == True) and (pregame == False) and (player_died == True):
         pygame.display.update()

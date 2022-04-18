@@ -46,9 +46,11 @@ class Player(pygame.sprite.Sprite):
             self.ship = warshipClonkses.Carrier(self, x, y)
             print(self.ship.owner)
         elif (ship_type == "Frigate"):
-            pass
+            self.ship = warshipClonkses.Destroyer(self, x, y)
+            print(self.ship.owner)
         elif (ship_type == "Destroyer"):
-            pass
+            self.ship = warshipClonkses.Destroyer(self, x, y)
+            print(self.ship.owner)
 
     def destroy(self):
         self.health = 0

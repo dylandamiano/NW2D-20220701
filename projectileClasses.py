@@ -107,7 +107,7 @@ class lightRound(projectile):
         logHandler.createLog("Object lightRound has been created!")
 
         self.image = lightImg
-        self.damage = 10
+        self.damage = 100/10
 
         super().__init__(orientation, owner, lightDimensions, self.image, self.damage)
 
@@ -116,7 +116,7 @@ class heavyRound(projectile):
         logHandler.createLog("Object lightRound has been created!")
 
         self.image = heavyImg
-        self.damage = 5
+        self.damage = 100/5
          
         super().__init__(orientation, owner, heavyDimensions, self.image, self.damage)
 

@@ -11,6 +11,7 @@ import warshipClonkses
 import playerClasses
 import logHandler
 import projectileClasses
+import credit_handler
 import computer_movement
 import spilled_oil
 
@@ -557,8 +558,14 @@ def cleanup_npc(entities):
     to_remove = []
 
     for i in range(0, len(entities)):
-        if entities[i].ship.health <= True:
+        if entities[i].ship.health <= 0:
             to_remove.append(i)
+
+            if (entities[i].player_owned == False):
+                credit_handler.destroyed_ships += 1
+            if (entities[i].player_owned == True) and (entities[i].AI == True):
+                computer_movement.friendly_count -= 1
+
 
     for rm in reversed(to_remove):
         spilled_oil.create_spill(computer_movement.active_entities[rm])
@@ -578,16 +585,17 @@ def checkCollisions(entity_list, player, projectiles): # Tends to degrade perfor
     for entity in combined_entities:
         for other in combined_entities:
             if (entity.ship.rect.colliderect(other.ship.rect) == True) and (other.username != entity.username):
-                if (entity.type != "air"):
-                    if  (other.type != "air"):
-                        entity.ship.health = 0
-                        other.ship.health = 0
-                        logHandler.createLog(entity.username + " and " + other.username + " have collided!")
+                if (entity.type != "air") and (other.type != "air") and (( (entity.player_owned == True) and (other.player_owned == False) ) or ( (entity.player_owned == False) and (other.player_owned == True) )):
+                    entity.ship.health = 0
+                    other.ship.health = 0
+                    logHandler.createLog(entity.username + " and " + other.username + " have collided!")
 
     for projectile in projectiles:
         for entity in combined_entities:
             if (projectile.rect.colliderect(entity.ship.rect) == True) and (projectile.owner.username != entity.username):
                 if (projectile.owner.player_owned == True) and (entity.player_owned == True):
+                    pass
+                elif (projectile.owner.player_owned == False) and (entity.player_owned == False):
                     pass
                 else:
                     entity.ship.health -= projectile.damage

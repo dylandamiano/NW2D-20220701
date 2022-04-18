@@ -1,0 +1,7 @@
+Current Issues:
+
+Some elements of the SHOP UI will NOT!!! work current.
+
+This includes:
+	- Summoning Jets - FIXED
+	- Healing - FIXED

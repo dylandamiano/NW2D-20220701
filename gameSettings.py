@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 import logHandler
+import time
 
 playerOneKeys = {
     "W_Hold": False,
@@ -13,10 +14,7 @@ playerOneKeys = {
 
 maxPlayers = 1
 playerCount = 0
-
-starting_credits = 10000
-current_credits = starting_credits
-
+last_heal = time.time()
 
 activePlayers = []
 
@@ -150,3 +148,12 @@ def display_input(surface):
 
     text = pygame.font.Font.render(font, held + " active", 1, (255,255,255))
     surface.blit(text, (25, 850))
+
+def passive_heal(plr_sprite):
+    global last_heal 
+
+    if (time.time() - last_heal) >= 1:
+        if (plr_sprite.ship.health < plr_sprite.ship.max_health):
+            print("Heal")
+            last_heal = time.time()
+            plr_sprite.ship.health += 1
