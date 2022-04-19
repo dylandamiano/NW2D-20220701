@@ -182,7 +182,19 @@ def reset_defaults():
     friendlyAI_1.health = 100
 
     computer_movement.active_entities = []
+    computer_movement.friendly_count = 0
+
     spilled_oil.active_spills = []
+
+    computer_movement.x_offset = 0
+    computer_movement.y_offset = 0
+
+    wave_generation.wave_count = 0
+    wave_generation.entities_remain = 0
+    wave_generation.interwave_count = 0
+    wave_generation.time_since_wave = 0
+    wave_generation.update_tick = time.time()
+
 
 def checkInput():
     global pause
@@ -228,7 +240,7 @@ def checkInput():
                         graphicInterface.display_Shop(False)
                         gameSettings.resetKeyStatus()
 
-            gui_return = graphicInterface.checkMouseInput()
+            gui_return = graphicInterface.checkMouseInput(None, DISPLAYSURF)
 
         elif (event.type == pygame.KEYUP) and (pause == False) and (pregame == False):
             gameSettings.setKeyStatus(event, "UP")
@@ -245,7 +257,7 @@ def checkInput():
                 recent_attempt = time.time()
 
                 if shop == True:
-                    gui_return = graphicInterface.checkMouseInput(friendlyAI_1)
+                    gui_return = graphicInterface.checkMouseInput(friendlyAI_1, DISPLAYSURF)
 
                 #print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
                 #print(friendlyAI_1.ship.localOrientation)
@@ -260,7 +272,7 @@ def checkInput():
                     friendlyAI_1.last_fired = recent_attempt
 
             elif ((pause == True) or (pregame == True)) and (player_died == False):
-                gui_return = graphicInterface.checkMouseInput()
+                gui_return = graphicInterface.checkMouseInput(None, DISPLAYSURF)
                 
                 if gui_return == "PLAY":
                     if pregame == True:
@@ -283,13 +295,10 @@ def checkInput():
                     pregame = True
                     player_died = False
 
-                    computer_movement.x_offset = 0
-                    computer_movement.y_offset = 0
-
                     reset_defaults()
 
             elif (pause == True) and (pregame == False) and (player_died == True):
-                gui_return = graphicInterface.checkMouseInput()
+                gui_return = graphicInterface.checkMouseInput(None, DISPLAYSURF)
                 
                 if gui_return == "fix_death":
                     pause = True
@@ -325,6 +334,8 @@ def ship_selection():
         rect = (275, 250)
 
         DISPLAYSURF.blit(ship_img, rect)
+
+        graphicInterface.update_text(DISPLAYSURF)
 
 while running == True:
 
@@ -427,6 +438,9 @@ while running == True:
 
                 computer_movement.x_offset = 0
                 computer_movement.y_offset = 0
+
+                wave_generation.wave_count = 0
+                wave_generation.entities_remain = 0
 
             gameSettings.display_input(DISPLAYSURF)
 

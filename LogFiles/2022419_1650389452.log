@@ -1,0 +1,19 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-04-19 13:30:52.699293 >> Initialized Log handler...
+(ENTRY #2) 2022-04-19 13:30:53.415328 >> Initialized Warship handler...
+(ENTRY #3) 2022-04-19 13:30:53.416328 >> Initialized Projectile handler...
+(ENTRY #4) 2022-04-19 13:30:53.425327 >> Initialized GUI handler...
+(ENTRY #5) 2022-04-19 13:30:53.425327 >> Starting Naval Warfare 2D...
+(ENTRY #6) 2022-04-19 13:30:58.566080 >> Created Sprite for Player!
+(ENTRY #7) 2022-04-19 13:30:58.566080 >> Finished initalizing!
+(ENTRY #8) 2022-04-19 14:09:46.556865 >> Returning to menu!
+(ENTRY #9) 2022-04-19 14:09:47.864987 >> Game resumed!
+(ENTRY #10) 2022-04-19 14:09:47.864987 >> Dumb-AI Entity created!
+(ENTRY #11) 2022-04-19 14:09:47.865987 >> Dumb-AI Entity created!
+(ENTRY #12) 2022-04-19 14:09:47.878996 >> Cloud created! ID: #1
+(ENTRY #13) 2022-04-19 14:09:47.936986 >> Dumb-AI Entity created!
+(ENTRY #14) 2022-04-19 14:09:48.877137 >> Activating shop!
+(ENTRY #15) 2022-04-19 14:09:49.628255 >> Returning to game!
+(ENTRY #16) 2022-04-19 14:09:49.680782 >> Cloud created! ID: #2
+(ENTRY #17) 2022-04-19 14:14:19.086345 >> Naval Warfare 2D Closed...

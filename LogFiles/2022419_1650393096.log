@@ -1,0 +1,63 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-04-19 14:31:36.210961 >> Initialized Log handler...
+(ENTRY #2) 2022-04-19 14:31:36.927553 >> Initialized Warship handler...
+(ENTRY #3) 2022-04-19 14:31:36.928553 >> Initialized Projectile handler...
+(ENTRY #4) 2022-04-19 14:31:36.946552 >> Initialized GUI handler...
+(ENTRY #5) 2022-04-19 14:31:36.946552 >> Starting Naval Warfare 2D...
+(ENTRY #6) 2022-04-19 14:31:42.080946 >> Created Sprite for Player!
+(ENTRY #7) 2022-04-19 14:31:42.080946 >> Finished initalizing!
+(ENTRY #8) 2022-04-19 14:31:47.908462 >> Returning to menu!
+(ENTRY #9) 2022-04-19 14:31:48.749235 >> Game resumed!
+(ENTRY #10) 2022-04-19 14:31:48.750232 >> Dumb-AI Entity created!
+(ENTRY #11) 2022-04-19 14:31:48.750232 >> Dumb-AI Entity created!
+(ENTRY #12) 2022-04-19 14:31:48.763232 >> Cloud created! ID: #1
+(ENTRY #13) 2022-04-19 14:31:48.816322 >> Dumb-AI Entity created!
+(ENTRY #14) 2022-04-19 14:31:49.264573 >> MOUSEPOS: (282, 318)
+(ENTRY #15) 2022-04-19 14:31:49.264573 >> SLOPE CALC:None
+(ENTRY #16) 2022-04-19 14:31:49.264573 >> LIN CALC FIN: 268.0
+(ENTRY #17) 2022-04-19 14:31:49.264573 >> LIN CALC RAW: 632.0
+(ENTRY #18) 2022-04-19 14:31:49.264573 >> Below!
+(ENTRY #19) 2022-04-19 14:31:49.264573 >> Object lightRound has been created!
+(ENTRY #20) 2022-04-19 14:31:49.265573 >> Protectile #2 has been created! Type: Light
+(ENTRY #21) 2022-04-19 14:31:49.265573 >> Projectile created! ID: #2
+(ENTRY #22) 2022-04-19 14:31:49.772040 >> Cloud created! ID: #2
+(ENTRY #23) 2022-04-19 14:31:49.974322 >> Activating shop!
+(ENTRY #24) 2022-04-19 14:31:50.587627 >> Returning to game!
+(ENTRY #25) 2022-04-19 14:31:50.770983 >> MOUSEPOS: (139.52036941769114, 231.01465359294178)
+(ENTRY #26) 2022-04-19 14:31:50.770983 >> SLOPE CALC:None
+(ENTRY #27) 2022-04-19 14:31:50.770983 >> LIN CALC FIN: 208.2814398226285
+(ENTRY #28) 2022-04-19 14:31:50.770983 >> LIN CALC RAW: 691.7185601773715
+(ENTRY #29) 2022-04-19 14:31:50.770983 >> Below!
+(ENTRY #30) 2022-04-19 14:31:50.770983 >> Object lightRound has been created!
+(ENTRY #31) 2022-04-19 14:31:50.770983 >> Protectile #4 has been created! Type: Light
+(ENTRY #32) 2022-04-19 14:31:50.770983 >> Projectile created! ID: #4
+(ENTRY #33) 2022-04-19 14:31:50.770983 >> MOUSEPOS: (167.52036941769114, 238.01465359294178)
+(ENTRY #34) 2022-04-19 14:31:50.770983 >> SLOPE CALC:None
+(ENTRY #35) 2022-04-19 14:31:50.770983 >> LIN CALC FIN: 212.18437087961183
+(ENTRY #36) 2022-04-19 14:31:50.770983 >> LIN CALC RAW: 687.8156291203882
+(ENTRY #37) 2022-04-19 14:31:50.770983 >> Below!
+(ENTRY #38) 2022-04-19 14:31:50.770983 >> Object lightRound has been created!
+(ENTRY #39) 2022-04-19 14:31:50.770983 >> Protectile #6 has been created! Type: Light
+(ENTRY #40) 2022-04-19 14:31:50.770983 >> Projectile created! ID: #6
+(ENTRY #41) 2022-04-19 14:31:50.770983 >> MOUSEPOS: (145.24425927008917, 218.0053296750265)
+(ENTRY #42) 2022-04-19 14:31:50.770983 >> SLOPE CALC:None
+(ENTRY #43) 2022-04-19 14:31:50.770983 >> LIN CALC FIN: 219.73854344533981
+(ENTRY #44) 2022-04-19 14:31:50.770983 >> LIN CALC RAW: 680.2614565546602
+(ENTRY #45) 2022-04-19 14:31:50.770983 >> Above!
+(ENTRY #46) 2022-04-19 14:31:50.770983 >> Object lightRound has been created!
+(ENTRY #47) 2022-04-19 14:31:50.770983 >> Protectile #8 has been created! Type: Light
+(ENTRY #48) 2022-04-19 14:31:50.770983 >> Projectile created! ID: #8
+(ENTRY #49) 2022-04-19 14:31:50.783983 >> Projectile has hit!
+(ENTRY #50) 2022-04-19 14:31:50.783983 >> Projectile has hit!
+(ENTRY #51) 2022-04-19 14:31:50.783983 >> Projectile removed!
+(ENTRY #52) 2022-04-19 14:31:50.783983 >> Projectile removed!
+(ENTRY #53) 2022-04-19 14:31:50.810180 >> Cloud created! ID: #3
+(ENTRY #54) 2022-04-19 14:31:50.846126 >> Activating shop!
+(ENTRY #55) 2022-04-19 14:31:51.230756 >> Returning to game!
+(ENTRY #56) 2022-04-19 14:31:51.436395 >> Activating shop!
+(ENTRY #57) 2022-04-19 14:31:51.666917 >> Returning to game!
+(ENTRY #58) 2022-04-19 14:31:51.812068 >> Cloud created! ID: #4
+(ENTRY #59) 2022-04-19 14:31:52.016480 >> Activating shop!
+(ENTRY #60) 2022-04-19 14:31:52.279351 >> Returning to game!
+(ENTRY #61) 2022-04-19 14:31:54.382077 >> Naval Warfare 2D Closed...

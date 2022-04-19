@@ -620,10 +620,10 @@ def render_health(surface, player):
 def render_friendly(surface, player):
     player_pos = player.ship.v2Pos
 
-    pygame.draw.rect(surface, (0, 0, 255), (player_pos.x - 11 + 25/3, player_pos.y - 25, 25/2, 3))
+    pygame.draw.rect(surface, (255, 255, 0), (player_pos.x - 11 + 25/3, player_pos.y - 25, 25/2, 3))
 
     for entity in computer_movement.active_entities:
-        if entity.player_owned == True:
+        if (entity.player_owned == True) and (entity.AI == True):
             entity_pos = entity.ship.v2Pos
 
             pygame.draw.rect(surface, (0, 0, 255), (entity_pos.x - 11 + 25/3, entity_pos.y - 25, 25/2, 3))

@@ -25,7 +25,6 @@ import computer_movement
 
 userInterfaces = []
 
-
 class menuInterface(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -150,6 +149,24 @@ class headsUpDisplay(pygame.sprite.Sprite):
 
 mainMenu = menuInterface()
 
+def multiple_lines(surface, *args):
+    font = pygame.font.SysFont("Segoe UI Light", 32)
+    skip = 0
+
+    for i in range(0, len(args)):
+        text = pygame.font.Font.render(font, str(args[i]), 1, (0,0,0))
+        surface.blit(text, (150, 520 + skip))
+        skip += 24
+
+def update_text(surface):
+    font = pygame.font.SysFont("Segoe UI Light", 16)
+    if mainMenu.selection == 0:
+        multiple_lines(surface, "1x Carrier", "Comes with 2 Jets", "10 Damage p/Shot", "Project firepower from afar")
+    elif mainMenu.selection == 1:
+        multiple_lines(surface, "1x Destroyer", "No jets", "20 Damage p/Shot", "Protects the battlegroup")
+    elif mainMenu.selection == 2:
+        multiple_lines(surface, "1x Fighter", "You are not the A-10 Brrt Hog", "10 Damage p/Shot", "Bring the fight to the enemy from the skies!")
+
 def checkShip():
     if mainMenu.selection == 0:
         return "Graphics/ship_select_icons/CARRIER.png"
@@ -158,7 +175,7 @@ def checkShip():
     elif mainMenu.selection == 2:
         return "Graphics/ship_select_icons/jet.png"
 
-def checkMouseInput(player = None):
+def checkMouseInput(player = None, DISPLAYSURF = None):
     mousePosition = pygame.mouse.get_pos() # Returns as tuple (x, y)
     print(mousePosition[0])
     print(mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][0])
@@ -302,7 +319,7 @@ def checkMouseInput(player = None):
                 if credit_handler.purchase_item("Carrier") == True:
                     computer_movement.summon_player_entities(player, True, "Carrier")
             elif (mousePosition[0] >= 591.6) and (mousePosition[0] <= 591.6+222.4): # Friendly Destroyer
-                pass
+                    computer_movement.summon_player_entities(player, True, "Destroyer")
             print("Region 1")
 
         elif (mousePosition[1] >= 609.3) and (mousePosition[1] <= 609.3 + 230.8): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0] <= mousePosition[0]): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][1] <= mousePosition[1]):

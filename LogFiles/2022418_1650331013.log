@@ -1,0 +1,90 @@
+Log for Naval Warfare 2D, intended for debugging purposes only! 
+
+(ENTRY #1) 2022-04-18 21:16:53.143213 >> Initialized Log handler...
+(ENTRY #2) 2022-04-18 21:16:53.773725 >> Initialized Warship handler...
+(ENTRY #3) 2022-04-18 21:16:53.773725 >> Initialized Projectile handler...
+(ENTRY #4) 2022-04-18 21:16:53.782726 >> Initialized GUI handler...
+(ENTRY #5) 2022-04-18 21:16:53.783726 >> Starting Naval Warfare 2D...
+(ENTRY #6) 2022-04-18 21:16:58.918321 >> Created Sprite for Player!
+(ENTRY #7) 2022-04-18 21:16:58.918321 >> Finished initalizing!
+(ENTRY #8) 2022-04-18 21:16:59.960321 >> Returning to menu!
+(ENTRY #9) 2022-04-18 21:17:00.817321 >> Game resumed!
+(ENTRY #10) 2022-04-18 21:17:00.817321 >> Dumb-AI Entity created!
+(ENTRY #11) 2022-04-18 21:17:00.818322 >> Dumb-AI Entity created!
+(ENTRY #12) 2022-04-18 21:17:00.831322 >> Cloud created! ID: #1
+(ENTRY #13) 2022-04-18 21:17:00.889321 >> Dumb-AI Entity created!
+(ENTRY #14) 2022-04-18 21:17:01.838366 >> Cloud created! ID: #2
+(ENTRY #15) 2022-04-18 21:17:02.839105 >> MOUSEPOS: (151.89773957895633, 157.63759679953253)
+(ENTRY #16) 2022-04-18 21:17:02.839105 >> SLOPE CALC:None
+(ENTRY #17) 2022-04-18 21:17:02.839105 >> LIN CALC FIN: 157.32567765464705
+(ENTRY #18) 2022-04-18 21:17:02.839105 >> LIN CALC RAW: 742.674322345353
+(ENTRY #19) 2022-04-18 21:17:02.839105 >> Below!
+(ENTRY #20) 2022-04-18 21:17:02.839105 >> Object lightRound has been created!
+(ENTRY #21) 2022-04-18 21:17:02.839105 >> Protectile #2 has been created! Type: Light
+(ENTRY #22) 2022-04-18 21:17:02.839105 >> Projectile created! ID: #2
+(ENTRY #23) 2022-04-18 21:17:02.839105 >> MOUSEPOS: (108.89773957895633, 153.63759679953253)
+(ENTRY #24) 2022-04-18 21:17:02.839105 >> SLOPE CALC:None
+(ENTRY #25) 2022-04-18 21:17:02.839105 >> LIN CALC FIN: 173.22047340473716
+(ENTRY #26) 2022-04-18 21:17:02.839105 >> LIN CALC RAW: 726.7795265952628
+(ENTRY #27) 2022-04-18 21:17:02.839105 >> Above!
+(ENTRY #28) 2022-04-18 21:17:02.839105 >> Object lightRound has been created!
+(ENTRY #29) 2022-04-18 21:17:02.839105 >> Protectile #4 has been created! Type: Light
+(ENTRY #30) 2022-04-18 21:17:02.839105 >> Projectile created! ID: #4
+(ENTRY #31) 2022-04-18 21:17:02.839105 >> MOUSEPOS: (153.6248368589134, 158.0527749346041)
+(ENTRY #32) 2022-04-18 21:17:02.839105 >> SLOPE CALC:None
+(ENTRY #33) 2022-04-18 21:17:02.839105 >> LIN CALC FIN: 195.3646940794896
+(ENTRY #34) 2022-04-18 21:17:02.839105 >> LIN CALC RAW: 704.6353059205104
+(ENTRY #35) 2022-04-18 21:17:02.839105 >> Above!
+(ENTRY #36) 2022-04-18 21:17:02.839105 >> Object lightRound has been created!
+(ENTRY #37) 2022-04-18 21:17:02.839105 >> Protectile #6 has been created! Type: Light
+(ENTRY #38) 2022-04-18 21:17:02.839105 >> Projectile created! ID: #6
+(ENTRY #39) 2022-04-18 21:17:02.892104 >> Cloud created! ID: #3
+(ENTRY #40) 2022-04-18 21:17:02.918104 >> Projectile has hit!
+(ENTRY #41) 2022-04-18 21:17:02.918104 >> Projectile removed!
+(ENTRY #42) 2022-04-18 21:17:03.061101 >> Projectile has hit!
+(ENTRY #43) 2022-04-18 21:17:03.061101 >> Projectile removed!
+(ENTRY #44) 2022-04-18 21:17:03.270102 >> Game resumed!
+(ENTRY #45) 2022-04-18 21:17:04.535104 >> Returning to menu!
+(ENTRY #46) 2022-04-18 21:17:05.559583 >> Returning to menu!
+(ENTRY #47) 2022-04-18 21:17:06.331819 >> Game resumed!
+(ENTRY #48) 2022-04-18 21:17:06.332818 >> Dumb-AI Entity created!
+(ENTRY #49) 2022-04-18 21:17:06.333818 >> Dumb-AI Entity created!
+(ENTRY #50) 2022-04-18 21:17:06.359818 >> Cloud created! ID: #4
+(ENTRY #51) 2022-04-18 21:17:07.409916 >> Cloud created! ID: #5
+(ENTRY #52) 2022-04-18 21:17:08.002214 >> MOUSEPOS: (120, 146)
+(ENTRY #53) 2022-04-18 21:17:08.002214 >> SLOPE CALC:None
+(ENTRY #54) 2022-04-18 21:17:08.002214 >> LIN CALC FIN: 430.0
+(ENTRY #55) 2022-04-18 21:17:08.002214 >> LIN CALC RAW: 470.0
+(ENTRY #56) 2022-04-18 21:17:08.002214 >> Above!
+(ENTRY #57) 2022-04-18 21:17:08.002214 >> Object lightRound has been created!
+(ENTRY #58) 2022-04-18 21:17:08.002214 >> Protectile #8 has been created! Type: Light
+(ENTRY #59) 2022-04-18 21:17:08.002214 >> Projectile created! ID: #8
+(ENTRY #60) 2022-04-18 21:17:08.418283 >> Cloud created! ID: #6
+(ENTRY #61) 2022-04-18 21:17:09.441283 >> Cloud created! ID: #7
+(ENTRY #62) 2022-04-18 21:17:09.921094 >> Activating shop!
+(ENTRY #63) 2022-04-18 21:17:11.219094 >> Returning to game!
+(ENTRY #64) 2022-04-18 21:17:11.233094 >> Cloud created! ID: #8
+(ENTRY #65) 2022-04-18 21:17:12.825094 >> Returning to menu!
+(ENTRY #66) 2022-04-18 21:17:14.571837 >> Returning to menu!
+(ENTRY #67) 2022-04-18 21:17:15.472869 >> Game resumed!
+(ENTRY #68) 2022-04-18 21:17:15.473870 >> Dumb-AI Entity created!
+(ENTRY #69) 2022-04-18 21:17:15.474870 >> Dumb-AI Entity created!
+(ENTRY #70) 2022-04-18 21:17:15.487871 >> Cloud created! ID: #9
+(ENTRY #71) 2022-04-18 21:17:16.238675 >> Projectile removed!
+(ENTRY #72) 2022-04-18 21:17:16.367882 >> MOUSEPOS: (145, 233)
+(ENTRY #73) 2022-04-18 21:17:16.367882 >> SLOPE CALC:None
+(ENTRY #74) 2022-04-18 21:17:16.367882 >> LIN CALC FIN: 405.0
+(ENTRY #75) 2022-04-18 21:17:16.367882 >> LIN CALC RAW: 495.0
+(ENTRY #76) 2022-04-18 21:17:16.367882 >> Above!
+(ENTRY #77) 2022-04-18 21:17:16.367882 >> Object lightRound has been created!
+(ENTRY #78) 2022-04-18 21:17:16.367882 >> Protectile #10 has been created! Type: Light
+(ENTRY #79) 2022-04-18 21:17:16.367882 >> Projectile created! ID: #10
+(ENTRY #80) 2022-04-18 21:17:16.573563 >> Cloud created! ID: #10
+(ENTRY #81) 2022-04-18 21:17:17.887766 >> Returning to menu!
+(ENTRY #82) 2022-04-18 21:17:18.977373 >> Returning to menu!
+(ENTRY #83) 2022-04-18 21:17:19.748424 >> Game resumed!
+(ENTRY #84) 2022-04-18 21:17:19.749424 >> Dumb-AI Entity created!
+(ENTRY #85) 2022-04-18 21:17:19.750424 >> Dumb-AI Entity created!
+(ENTRY #86) 2022-04-18 21:17:19.762425 >> Cloud created! ID: #11
+(ENTRY #87) 2022-04-18 21:17:20.344424 >> Game resumed!
+(ENTRY #88) 2022-04-18 21:17:21.289427 >> Naval Warfare 2D Closed...

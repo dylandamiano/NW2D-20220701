@@ -7,7 +7,7 @@ import projectileClasses
 import warshipClonkses
 import logHandler
 
-# will be determined later on, AI creation might have to be done in game
+# will be determined later on, Entity creation might have to be done in game
 
 groups_created = 0
 active_entities = []
@@ -18,8 +18,8 @@ x_offset = 0
 y_offset = 0
 
 '''
-    Function below creates the AI entity. The game will automatically determine if it is a jet or a boat.
-    However, each AI will move at different times determined by the computer when the time for movement comes.
+    Function below creates the Entity entity. The game will automatically determine if it is a jet or a boat.
+    However, each Entity will move at different times determined by the computer when the time for movement comes.
 
     There is really no set difficulty level in terms of how well it will play as well.
 '''
@@ -74,6 +74,27 @@ def createEntities(count, ent_type = "Carrier"):
 
             ship_local.last_move = int(time.time())
             ship_local.last_rotate = int(time.time())
+
+            active_entities.append(ship_local)
+
+    if ent_type == "Destroyer":
+        groups_created += 1
+
+        x_offset += 0
+        y_offset += 0
+
+        for i in range(0, count):
+            x_offset += 50
+            y_offset += 40
+
+            entity_name = "entity_" + str(groups_created) + "_" + str(i)
+
+            ship_local = playerClasses.computerEntity(name=str(entity_name))
+            ship_local.createShip("Destroyer", 450 + x_offset, 450 + y_offset)
+            ship_local.type = "sea"
+
+            ship_local.last_move = int(time.time())
+            ship_local.last_fired = int(time.time())
 
             active_entities.append(ship_local)
 
@@ -263,4 +284,10 @@ def summon_player_entities(player, custom = False, variant = "") -> None:
 
             
         elif variant == "Destroyer":
-            pass
+            createEntities(1, "Destroyer")
+            index = len(active_entities)
+
+            friendly_count += 1
+            active_entities[index - 1].player_owned = True
+
+            active_entities[index - 1].player_sel = player
