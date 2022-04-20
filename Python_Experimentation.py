@@ -1,4 +1,4 @@
-'''q?                                                         
+'''                                                         
     NAVAL Warfare 2D
 
     Quick Overview:
