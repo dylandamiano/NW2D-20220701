@@ -5,7 +5,7 @@ import time
 import playerClasses
 import projectileClasses
 import warshipClonkses
-import logHandler
+#import logHandler
 
 # will be determined later on, Entity creation might have to be done in game
 
@@ -137,7 +137,7 @@ def move_entities(playerFired = False):
             elif entity.move_direction == -1:
                 gameCalculations.checkBorder(entity.ship, "Backwards")
 
-            #logHandler.createLog(str(rtrn))
+            ##logHandler.createLog(str(rtrn))
 
 def rotate_entities():
     for entity in active_entities:
@@ -291,3 +291,16 @@ def summon_player_entities(player, custom = False, variant = "") -> None:
             active_entities[index - 1].player_owned = True
 
             active_entities[index - 1].player_sel = player
+
+        elif variant == "Group":
+            createEntities(1, "Carrier")
+            createEntities(2, "Destroyer")
+            createEntities(4, "Fighter")
+            index = len(active_entities)
+
+            friendly_count += 7
+
+            for i in range (1, 8):
+                print(i)
+                active_entities[index - i].player_owned = True
+                active_entities[index - i].player_sel = player

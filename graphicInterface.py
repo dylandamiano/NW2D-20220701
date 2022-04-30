@@ -1,5 +1,5 @@
 import pygame
-import logHandler
+#import logHandler
 
 import credit_handler
 import computer_movement
@@ -136,7 +136,7 @@ class menuInterface(pygame.sprite.Sprite):
 
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-        logHandler.createLog("Death menu active!")
+        #logHandler.createLog("Death menu active!")
 
 class headsUpDisplay(pygame.sprite.Sprite):
     def __init__(self):
@@ -183,41 +183,41 @@ def checkMouseInput(player = None, DISPLAYSURF = None):
     if mainMenu.currentSelection == "Main":
         if (mousePosition[0] >= 26.3) and (mousePosition[0] <= 26.3 + 222.4): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0] <= mousePosition[0]): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][1] <= mousePosition[1]):
             if (mousePosition[1] >= 262.2) and (mousePosition[1] <= 262.2+65.9): # start game
-                logHandler.createLog("Game resumed!")
+                #logHandler.createLog("Game resumed!")
                 return "PLAY"
             elif (mousePosition[1] >= 370.4) and (mousePosition[1] <= 370.4+58): # debug
                 mainMenu.currentSelection = "Debug"
                 mainMenu.originalMenu = mainMenu.images["debugMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Opened Debug Menu!")
+                #logHandler.createLog("Opened Debug Menu!")
             elif (mousePosition[1] >= 436.3) and (mousePosition[1] <= 436.3+58): # about
                 mainMenu.currentSelection = "About"
                 mainMenu.originalMenu = mainMenu.images["aboutMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Opened about menu!")
+                #logHandler.createLog("Opened about menu!")
             elif (mousePosition[1] >= 494.5) and (mousePosition[1] <= 494.5+58): # plr stat
                 mainMenu.currentSelection = "statMenu"
                 
                 mainMenu.originalMenu = mainMenu.images["statMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Returning to menu!")
+                #logHandler.createLog("Returning to menu!")
             elif (mousePosition[1] >= 552.3) and (mousePosition[1] <= 552.3+58): # controls
                 mainMenu.currentSelection = "controlMenu"
                 
                 mainMenu.originalMenu = mainMenu.images["controlMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Returning to menu!")
+                #logHandler.createLog("Returning to menu!")
             elif (mousePosition[1] >= 668.3) and (mousePosition[1] <= 668.3+58): # restart
                 mainMenu.currentSelection = "shipMenu"
                 
                 mainMenu.originalMenu = mainMenu.images["shipMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Returning to menu!")
+                #logHandler.createLog("Returning to menu!")
 
                 return "RESTART"
             elif (mousePosition[1] >= 726.7) and (mousePosition[1] <= 726.7+58): # exit
@@ -233,28 +233,28 @@ def checkMouseInput(player = None, DISPLAYSURF = None):
                 mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Returning to menu!")
+                #logHandler.createLog("Returning to menu!")
 
     elif mainMenu.currentSelection == "Debug":
         mainMenu.currentSelection = "Main"
         mainMenu.originalMenu = mainMenu.images["homeMenu"]
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-        logHandler.createLog("Returning to menu!")
+        #logHandler.createLog("Returning to menu!")
 
     elif mainMenu.currentSelection == "statMenu":
         mainMenu.currentSelection = "Main"
         mainMenu.originalMenu = mainMenu.images["homeMenu"]
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-        logHandler.createLog("Returning to menu!")
+        #logHandler.createLog("Returning to menu!")
 
     elif mainMenu.currentSelection == "controlMenu":
         mainMenu.currentSelection = "Main"
         mainMenu.originalMenu = mainMenu.images["homeMenu"]
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-        logHandler.createLog("Returning to menu!")
+        #logHandler.createLog("Returning to menu!")
 
     elif mainMenu.currentSelection == "shipMenu":
         if (mousePosition[0] >= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["top-left"][0])) and ((mousePosition[0] <= abs(mainMenu.buttonRegions["SHIP_SELECT"]["select"]["bottom-right"][0]))):
@@ -264,7 +264,7 @@ def checkMouseInput(player = None, DISPLAYSURF = None):
                 mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                logHandler.createLog("Returning to menu!")
+                #logHandler.createLog("Returning to menu!")
 
                 return "Menu"
 
@@ -295,7 +295,7 @@ def checkMouseInput(player = None, DISPLAYSURF = None):
                 #mainMenu.originalMenu = mainMenu.images["homeMenu"]
                 #mainMenu.image = pygame.image.load(mainMenu.originalMenu)
                 #mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-                #logHandler.createLog("Returning to menu!")
+                ##logHandler.createLog("Returning to menu!")
 
                 mainMenu.chosen = mainMenu.selection
 
@@ -306,7 +306,7 @@ def checkMouseInput(player = None, DISPLAYSURF = None):
         mainMenu.originalMenu = mainMenu.images["shipMenu"]
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-        logHandler.createLog("Returning to menu!")
+        #logHandler.createLog("Returning to menu!")
 
         return "fix_death"
 
@@ -319,18 +319,27 @@ def checkMouseInput(player = None, DISPLAYSURF = None):
                 if credit_handler.purchase_item("Carrier") == True:
                     computer_movement.summon_player_entities(player, True, "Carrier")
             elif (mousePosition[0] >= 591.6) and (mousePosition[0] <= 591.6+222.4): # Friendly Destroyer
+                if credit_handler.purchase_item("Destroyer") == True:
                     computer_movement.summon_player_entities(player, True, "Destroyer")
-            print("Region 1")
+                    print("Region 1")
+            else:
+                return "PLAY"
 
         elif (mousePosition[1] >= 609.3) and (mousePosition[1] <= 609.3 + 230.8): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][0] <= mousePosition[0]): #and (mainMenu.buttonRegions["MAIN"]["left-one"]["top-left"][1] >= mousePosition[1]) and (mainMenu.buttonRegions["MAIN"]["left-one"]["bottom-right"][1] <= mousePosition[1]):
             if (mousePosition[0] >= 86) and (mousePosition[0] <= 86+222.4): # Self Heal
                 if credit_handler.purchase_item("Heal") == True:
                     player.ship.health = player.ship.max_health
             elif (mousePosition[0] >= 370.4) and (mousePosition[0] <= 370.4+222.4): # Battlegroup
-                print("TEST 1")
+                if credit_handler.purchase_item("Battlegroup") == True:
+                    computer_movement.summon_player_entities(player, True, "Group")
             elif (mousePosition[0] >= 591.6) and (mousePosition[0] <= 591.6+222.4): # Clear Wave
                 print("TEST 2")
+            else:
+                return "PLAY"
             print("Region 2")
+
+        else:
+            return "PLAY"
 
 def display_Shop(activate: bool) -> None:
     if activate == True:
@@ -338,12 +347,12 @@ def display_Shop(activate: bool) -> None:
         mainMenu.originalMenu = mainMenu.images["shopMenu"]
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-        logHandler.createLog("Activating shop!")
+        #logHandler.createLog("Activating shop!")
     elif activate == False:
         mainMenu.currentSelection = "Main"
         mainMenu.originalMenu = mainMenu.images["homeMenu"]
         mainMenu.image = pygame.image.load(mainMenu.originalMenu)
         mainMenu.image = pygame.transform.scale(mainMenu.image, (900, 900))
-        logHandler.createLog("Returning to game!")
+        #logHandler.createLog("Returning to game!")
 
-logHandler.createLog("Initialized GUI handler...")
+#logHandler.createLog("Initialized GUI handler...")

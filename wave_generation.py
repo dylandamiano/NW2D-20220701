@@ -61,17 +61,9 @@ def summon_wave():
         wave_count += 1
         interwave_count = 0
 
-        if wave_count < 5:
+        if (wave_count % 1) == 0:
             for x in range (0, wave_count):
                 computer_movement.createEntities(1, "Fighter")
-        elif wave_count >= 5:
-            computer_movement.createEntities(2, "Carrier")
-
-            if wave_count <= 10:
-                for x in range (0, wave_count - 5):
-                    computer_movement.createEntities(1, "Fighter")
-
-
 
 def check_wave():
 

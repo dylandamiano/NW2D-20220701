@@ -5,7 +5,7 @@ import pygame
 import time
 
 import gameSettings
-import logHandler
+#import logHandler
 
 from pygame.locals import *
 
@@ -71,8 +71,9 @@ class projectile(pygame.sprite.Sprite):
         self.rect.center = (self.v2Pos.x, self.v2Pos.y)
 
     def __del__(self):
-        logHandler.createLog("Projectile has been removed!")
-
+        #logHandler.createLog("Projectile has been removed!")
+        pass
+    
     def findNearestTarget(self):
         pass
 
@@ -100,11 +101,12 @@ class projectile(pygame.sprite.Sprite):
 
     def __del__(self,):
         #print("Projectile has been removed!")
-        logHandler.createLog("Projectile removed!")        
+        #logHandler.createLog("Projectile removed!")     
+        pass   
 
 class lightRound(projectile):
     def __init__(self, orientation, owner):
-        logHandler.createLog("Object lightRound has been created!")
+        #logHandler.createLog("Object lightRound has been created!")
 
         self.image = lightImg
         self.damage = 100/10
@@ -113,7 +115,7 @@ class lightRound(projectile):
 
 class heavyRound(projectile):
     def __init__(self, orientation, owner):
-        logHandler.createLog("Object lightRound has been created!")
+        #logHandler.createLog("Object lightRound has been created!")
 
         self.image = heavyImg
         self.damage = 100/5
@@ -131,13 +133,13 @@ def createProjectile(orientation, owner):
     if owner.ship.round_type == "light":
         tempObj = lightRound(orientation, owner)
         activeProjectiles.append(tempObj)
-        logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
+        #logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
     elif owner.ship.round_type == "heavy":
         tempObj = heavyRound(orientation, owner)
         activeProjectiles.append(tempObj)
-        logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
+        #logHandler.createLog("Protectile #" + str(projectileCount) + " has been created! Type: Light")
 
-logHandler.createLog("Initialized Projectile handler...")
+#logHandler.createLog("Initialized Projectile handler...")
 
 def mouseFired(orientation, owner):
     global projectileCount
@@ -146,7 +148,7 @@ def mouseFired(orientation, owner):
     createProjectile(orientation, owner)
 
     #print("Mouse clicked, firing projectile!")
-    logHandler.createLog("Projectile created! ID: #" + str(projectileCount))
+    #logHandler.createLog("Projectile created! ID: #" + str(projectileCount))
 
 def updateProjectiles():
     global activeProjectiles
@@ -162,3 +164,8 @@ def updateProjectiles():
 
     for index in reversed(toDelete):
         del activeProjectiles[index]
+
+def clearProjectiles():
+    global activeProjectiles
+
+    activeProjectiles = []

@@ -2,7 +2,8 @@ import gameSettings
 import time
 import pygame
 
-starting_credits = 999999999
+
+starting_credits = 10000
 current_credits = starting_credits
 
 last_update = time.time()
@@ -20,7 +21,7 @@ def update_credits() -> None:
     entity_credits()
     purchase_item()
 
-    print(current_credits)
+    #print(current_credits)
 
 def time_credits() -> None:
 

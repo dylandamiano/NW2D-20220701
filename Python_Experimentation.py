@@ -1,4 +1,4 @@
-'''q?                                                         
+'''                                                
     NAVAL Warfare 2D
 
     Quick Overview:
@@ -13,7 +13,7 @@ import math, random
 from pygame import display
 #import threading
 #import cairo
-import logHandler as log
+#import logHandler as log
 import time
 import threading
 import computer_movement
@@ -40,7 +40,7 @@ import spilled_oil
         - Capping the framerate to 60 FPS to limit system resources
         - Setting the window title to inform the user on which one they have open
 '''
-log.createLog("Starting Naval Warfare 2D...")
+#log.createLog("Starting Naval Warfare 2D...")
 
 pygame.init()
 
@@ -91,7 +91,7 @@ friendlyAI_1 = playerClasses.Player("AI Entity #1")
 friendlyAI_1.createShip("Carrier")
 friendlyAI_1.type = "sea"
 
-log.createLog("Created Sprite for Player!")
+#log.createLog("Created Sprite for Player!")
 
 '''
     The function below will do the following:
@@ -162,7 +162,7 @@ pause = True
 def drawLogs():
     logHistory = log.getDisplayLog()
 
-log.createLog("Finished initalizing!")
+#log.createLog("Finished initalizing!")
 
 def updateProjectiles():
     projectileClasses.updateProjectiles()
@@ -195,6 +195,8 @@ def reset_defaults():
     wave_generation.time_since_wave = 0
     wave_generation.update_tick = time.time()
 
+    projectileClasses.clearProjectiles()
+
 
 def checkInput():
     global pause
@@ -210,8 +212,8 @@ def checkInput():
             pause = True
             running = False
 
-            log.createLog("Naval Warfare 2D Closed...")
-            log.writeFile()
+            #log.createLog("Naval Warfare 2D Closed...")
+            #log.writeFile()
 
             pygame.display.quit()
 
@@ -259,6 +261,9 @@ def checkInput():
                 if shop == True:
                     gui_return = graphicInterface.checkMouseInput(friendlyAI_1, DISPLAYSURF)
 
+                    if gui_return == "PLAY":
+                        shop = False
+
                 #print("CALCULATED ANGLE OF THETA: " + str(angleGiven))
                 #print(friendlyAI_1.ship.localOrientation)
 
@@ -285,8 +290,8 @@ def checkInput():
                     running = False
                     pygame.display.quit()
 
-                    log.createLog("Naval Warfare 2D Closed...")
-                    log.writeFile()
+                    #log.createLog("Naval Warfare 2D Closed...")
+                    #log.writeFile()
                 elif gui_return == "Select":
                     createEntity()
 
@@ -461,4 +466,4 @@ while running == True:
 
         #pygame.draw.line(DISPLAYSURF,(255,0,0), (friendlyAI_1.ship.v2Pos.x + 900,friendlyAI_1.ship.v2Pos.y - 900), (friendlyAI_1.ship.v2Pos.x, friendlyAI_1.ship.v2Pos.y), 2)
 
-log.createLog("Cleaning up for close...")
+#log.createLog("Cleaning up for close...")
