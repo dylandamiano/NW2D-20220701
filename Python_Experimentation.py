@@ -30,6 +30,7 @@ import playerClasses
 import os
 from os import path
 import spilled_oil
+import logHandler
 
 '''
     As you see below,
@@ -315,15 +316,15 @@ def checkInput():
 
 def showLogs():
     if graphicInterface.mainMenu.currentMenu() == "Debug":
-        font = pygame.font.SysFont("Segoe UI Light", log.fontSize)
-        log.update_display_log()
+        font = pygame.font.SysFont("Segoe UI Light", logHandler.fontSize)
+        logHandler.update_display_log()
 
         log_iteration = 0
 
         y_start = 60.7
 
 
-        for log_entry in log.logDisplay:
+        for log_entry in logHandler.logDisplay:
             y_add = 18 * log_iteration
 
             text = pygame.font.Font.render(font, log_entry.formatOutput(), 1, (255,255,255))
