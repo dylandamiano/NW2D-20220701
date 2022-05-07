@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.venv\\Lib\\site-packages",
+    "\\.venv\\Lib\\site-packages\\PyInstaller",
+    "\\.venv\\Lib\\site-packages\\pyinstaller-5.0.1.dist-info",
+    "\\.venv\\Lib\\site-packages\\PyInstaller\\utils",
+    "\\.venv\\Lib\\site-packages\\pyinstaller_hooks_contrib-2022.4.dist-info",
+    "\\.venv\\Lib\\site-packages\\setuptools-57.4.0.dist-info",
+    "\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks",
+    "\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\tests",
+    "\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\__pycache__"
   ],
+  "SelectedNode": "\\.venv",
   "PreviewInSolutionExplorer": false
 }
