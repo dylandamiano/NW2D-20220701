@@ -9,7 +9,7 @@ import pygame
 import math
 import warshipClonkses
 import playerClasses
-#import logHandler
+import logHandler
 import projectileClasses
 import credit_handler
 import computer_movement
@@ -467,7 +467,7 @@ def key_held(keyHeld, character):
 
 '''
 def get_angle(origin, mousePos):
-    #logHandler.createLog("MOUSEPOS: " + str(mousePos))
+    logHandler.createLog("MOUSEPOS: " + str(mousePos))
     slope = None
     theta_rad = None
     theta_deg = None
@@ -484,55 +484,55 @@ def get_angle(origin, mousePos):
         # RETURN TO!
         pass
 
-    #logHandler.createLog("SLOPE CALC:" + str(slope))
+    logHandler.createLog("SLOPE CALC:" + str(slope))
     # referenceY = linearEquation(1, (origin[0] + origin[1]), mousePos[0]) -- SOMETHING LIKE THIS!
 
     if (mousePos[0] > origin[0]) and (mousePos[1] < origin[1]): # If the player is aiming mouse RIGHT of CENTER, QUADRANT 1
         if mousePos[1] < 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Above!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
             return 270 - theta_deg
         elif mousePos[1] > 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Below!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
             return 270 - theta_deg
 
     elif (mousePos[0] < origin[0]) and (mousePos[1] < origin[1]): # If the player is aiming mouse LEFT of CENTER, QUADRANT 2
         if mousePos[1] < 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Above!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
             return 90 - theta_deg
         elif mousePos[1] > 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Below!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
             return 90 - theta_deg
 
     elif (mousePos[0] < origin[0]) and (mousePos[1] > origin[1]): # If the player is aiming mouse LEFT of CENTER, QUADRANT 3
         if mousePos[1] < 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Above!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
             return 90 + abs(theta_deg)
         elif mousePos[1] > 900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Below!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(-1, (origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
             return 90 + abs(theta_deg)
 
     elif (mousePos[0] > origin[0]) and (mousePos[1] > origin[1]): # If the player is aiming mouse RIGHT of CENTER, QUADRANT 4
         if mousePos[1] < 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Above!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Above!")
             return 270 - theta_deg
         elif mousePos[1] > 900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0]):
-            #logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
-            #logHandler.createLog("Below!")
+            logHandler.createLog("LIN CALC FIN: " + str(900 - linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("LIN CALC RAW: " + str(linearEquation(1, (-origin[0] + origin[1]), mousePos[0])))
+            logHandler.createLog("Below!")
             return 270 - theta_deg
 
     elif (mousePos[0] == origin[0]) and (mousePos[1] < origin[1]):
@@ -588,7 +588,7 @@ def checkCollisions(entity_list, player, projectiles): # Tends to degrade perfor
                 if (entity.type != "air") and (other.type != "air") and (( (entity.player_owned == True) and (other.player_owned == False) ) or ( (entity.player_owned == False) and (other.player_owned == True) )):
                     entity.ship.health = 0
                     other.ship.health = 0
-                    #logHandler.createLog(entity.username + " and " + other.username + " have collided!")
+                    logHandler.createLog(entity.username + " and " + other.username + " have collided!")
 
     for projectile in projectiles:
         for entity in combined_entities:
@@ -600,7 +600,7 @@ def checkCollisions(entity_list, player, projectiles): # Tends to degrade perfor
                 else:
                     entity.ship.health -= projectile.damage
                     projectile.remove = True
-                    #logHandler.createLog("Projectile has hit!")
+                    logHandler.createLog("Projectile has hit!")
 
 def render_health(surface, player):
 

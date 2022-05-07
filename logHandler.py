@@ -18,6 +18,7 @@ logDisplay = [];
 
 logPath = "LogFiles"
 
+'''
 if os.path.exists(os.path.join(logPath, fileName)) == True:
         pass
 elif os.path.exists(os.path.join(logPath, fileName)) == False:
@@ -25,6 +26,7 @@ elif os.path.exists(os.path.join(logPath, fileName)) == False:
         f.write("Log for Naval Warfare 2D, intended for debugging purposes only! \n\n")
 
 print(os.listdir(logPath))
+'''
 
 log_to_dist_index = 0
 
@@ -47,6 +49,7 @@ def update_display_log() -> None:
 def getDisplayLog() -> list:
     return logDisplay
 
+'''
 def writeFile():
     if os.path.exists(os.path.join(logPath, fileName)) == True:
         with open(os.path.join(logPath, fileName), "a") as f:
@@ -55,6 +58,7 @@ def writeFile():
     else:
         #print("File does not exist!")
         pass
+'''
 
 def getTime() -> dt.datetime:
     return dt.datetime.now()
